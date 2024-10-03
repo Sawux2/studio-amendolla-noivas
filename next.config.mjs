@@ -1,4 +1,11 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+    experimental: {
+      appDir: true, // Ativa a estrutura da pasta app/
+    },
+  };
+  
+  module.exports = nextConfig;
+  
