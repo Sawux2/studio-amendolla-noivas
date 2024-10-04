@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '../../components/seo/SEO';
-import Schema from '../../components/schema/Schema';
-import BreadcrumbSchema from '../../components/schema/BreadcrumbSchema';
+import Schema from '../../schemas/Schema';
+import BreadcrumbSchema from '../../schemas/BreadcrumbSchema';
 
 interface Service {
     title: string;

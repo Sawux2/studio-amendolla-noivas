@@ -1,6 +1,6 @@
 // pages/sobre.tsx
 import SEO from '../components/seo/SEO';
-import Schema from '../components/schema/Schema';
+import Schema from '../schemas/Schema';
 
 const SobrePage = () => {
   const pageTitle = "Sobre o Studio Amendolla Noivas";

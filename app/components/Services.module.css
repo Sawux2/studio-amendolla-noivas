@@ -1,0 +1,41 @@
+/* app/components/Services.module.css */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Cor de fundo suave */
+  }
+  
+  .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .servicesList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .serviceCard {
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white; /* Fundo branco para os cards */
+    width: 300px; /* Largura fixa dos cards */
+  }
+  
+  .serviceCard img {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    border-radius: 10px 10px 0 0; /* Arredonda o topo da imagem */
+  }
+  
+  .serviceCard h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+  
+  .serviceCard p {
+    color: #666;
+  }
+  
