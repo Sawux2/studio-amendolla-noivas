@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Menu from './components/Menu'; // Importando o Menu
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Script from 'next/script'; // Importa o componente Script do Next.js
+import Footer from './components/Footer'; // Importe o Footer
 
 // Definindo as propriedades de SEO
 interface SEOProps {
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body>
         <Menu /> {/* Certifique-se de que o Menu está sendo chamado aqui */}
         {children}
+        <Footer />
         <VercelAnalytics /> {/* Esse é o Analytics da Vercel */}
       </body>
     </html>

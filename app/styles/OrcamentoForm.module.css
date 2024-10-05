@@ -1,0 +1,71 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  width: 100%; /* Garantindo que todos os campos usem 100% da largura */
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: left; /* Alinha o texto das labels à esquerda */
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%; /* Garante que todos os campos usem a largura completa */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Para garantir que o padding seja considerado na largura total */
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #ff7f7f;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 127, 127, 0.5);
+}
+
+.formGroup textarea {
+  resize: none; /* Remove as opções de redimensionamento do textarea */
+  height: 100px; /* Ajuste de altura adequado */
+}
+
+.button {
+  padding: 14px 28px;
+  background-color: #ff7f7f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #ff4f4f;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
