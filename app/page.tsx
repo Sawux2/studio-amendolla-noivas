@@ -1,11 +1,9 @@
-// app/page.tsx
 "use client";
 
 import Hero from './components/Hero';
 import Services from './components/Services';
 import { useEffect, useMemo } from 'react';
 import Head from 'next/head';
-import { generateOrganizationSchema } from './schemas/organizationSchema';
 import { generateBreadcrumbSchema } from './schemas/BreadcrumbSchema';
 import { generateFAQSchema } from './schemas/FAQSchema';
 import { generateImageObjectSchema } from './schemas/ImageObjectSchema';
@@ -78,16 +76,6 @@ export default function HomePage() {
   }), []);
 
   useEffect(() => {
-    const organizationSchema = generateOrganizationSchema({
-      name: 'Studio Amendolla Noivas',
-      url: pageUrl,
-      description: 'Salão de noivas especializado em maquiagem, penteados e dia da noiva.',
-      logoUrl: 'https://www.studioamendollanoivas.com.br/logo.webp',
-      telephone: '+5511977670498',
-      contactType: 'Customer Service',
-      areaServed: 'São Paulo, Brasil',
-    });
-
     const breadcrumbSchema = generateBreadcrumbSchema([
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
@@ -97,8 +85,8 @@ export default function HomePage() {
     const faqSchema = generateFAQSchema(faqData); 
     const articleSchema = generateArticleSchema(articleData);
 
-    // Adiciona todos os schemas, inclusive os de imagem
-    const schemas = [organizationSchema, breadcrumbSchema, serviceSchema, faqSchema, articleSchema, ...imageSchemas];
+    // Adiciona todos os schemas, exceto o de organização
+    const schemas = [breadcrumbSchema, serviceSchema, faqSchema, articleSchema, ...imageSchemas];
 
     schemas.forEach(schema => {
       const script = document.createElement('script');

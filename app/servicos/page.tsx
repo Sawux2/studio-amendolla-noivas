@@ -5,7 +5,6 @@ import OrcamentoForm from '../components/OrcamentoForm'; // Componente de formul
 import styles from '../styles/Servicos.module.css'; // CSS da página de serviços
 
 // Import dos schemas dinâmicos
-import { generateOrganizationSchema } from '../schemas/organizationSchema';
 import { generateBreadcrumbSchema } from '../schemas/BreadcrumbSchema';
 import { generateFAQSchema } from '../schemas/FAQSchema';
 import { generateImageObjectSchema } from '../schemas/ImageObjectSchema';
@@ -53,16 +52,6 @@ const faqData = [
 const ServicosPage = () => {
   useEffect(() => {
     // Gerar schemas dinâmicos
-    const organizationSchema = generateOrganizationSchema({
-      name: 'Studio Amendolla Noivas',
-      url: 'https://www.studioamendollanoivas.com.br',
-      description: 'Salão de noivas especializado em maquiagem, penteados e dia da noiva.',
-      logoUrl: 'https://www.studioamendollanoivas.com.br/logo.webp',
-      telephone: '+5511977670498',
-      contactType: 'Customer Service',
-      areaServed: 'São Paulo, Brasil',
-    });
-
     const breadcrumbSchema = generateBreadcrumbSchema([
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
@@ -81,7 +70,7 @@ const ServicosPage = () => {
     );
 
     // Adicionar os schemas ao head
-    const schemas = [organizationSchema, breadcrumbSchema, serviceSchema, faqSchema, ...imageSchemas];
+    const schemas = [breadcrumbSchema, serviceSchema, faqSchema, ...imageSchemas];
 
     schemas.forEach((schema) => {
       const script = document.createElement('script');
