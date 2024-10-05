@@ -1,67 +1,43 @@
 import React from 'react';
-import SEO from '../../components/seo/SEO';
-import Schema from '../../schemas/Schema';
-import BreadcrumbSchema from '../../schemas/BreadcrumbSchema';
 
 interface Service {
-    title: string;
-    description: string;
-    keywords: string;
-    slug: string;
-    priceRange: string;
-    image?: string;
+  title: string;
+  description: string;
+  slug: string;
+  priceRange: string;
 }
 
 interface Question {
-    question: string;
-    answer: string;
-}
-
-interface Breadcrumb {
-    name: string;
-    url: string;
+  question: string;
+  answer: string;
 }
 
 interface ServicePageProps {
-    service: Service;
-    questions: Question[];
-    breadcrumbs: Breadcrumb[];
+  service: Service;
+  questions: Question[];
 }
 
-const ServicePage: React.FC<ServicePageProps> = ({ service, questions, breadcrumbs }) => {
-    return (
-        <>
-            <SEO
-                title={service.title}
-                description={service.description}
-                keywords={service.keywords}
-                url={`https://www.studioamendollanoivas.com.br/servicos/${service.slug}`}
-            />
-            <Schema
-                type="Service"
-                name={service.title}
-                description={service.description}
-                url={`https://www.studioamendollanoivas.com.br/servicos/${service.slug}`}
-                priceRange={service.priceRange}
-                image={service.image}
-            />
-            <BreadcrumbSchema breadcrumbs={breadcrumbs} />
+const ServicePage: React.FC<ServicePageProps> = ({ service, questions }) => {
+  return (
+    <div>
+      <h1>{service.title}</h1>
+      <p>{service.description}</p>
+      <p>Preço: {service.priceRange}</p>
 
-            {/* Exibindo as perguntas e respostas */}
-            {questions.length > 0 && (
-                <div>
-                    <h2>Perguntas Frequentes</h2>
-                    <ul>
-                        {questions.map((q, index) => (
-                            <li key={index}>
-                                <strong>{q.question}</strong>: {q.answer}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-        </>
-    );
+      {questions.length > 0 && (
+        <div>
+          <h2>Perguntas Frequentes</h2>
+          <ul>
+            {questions.map((q, index) => (
+              <li key={index}>
+                <strong>{q.question}</strong>: {q.answer}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default ServicePage;

@@ -1,12 +1,12 @@
 /* app/components/Hero.module.css */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Importa a fonte Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap'); /* Importa a fonte Great Vibes e Playfair Display */
 
 .hero {
   position: relative;
-  height: 80vh; /* Aumenta a altura para uma presença mais impactante */
-  border-radius: 15px; /* Bordas arredondadas */
-  overflow: hidden; /* Para garantir que nada saia do contêiner */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave para o hero */
+  height: 80vh;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .overlay {
@@ -15,50 +15,70 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(240, 240, 240, 0.9); /* Cinza claro com um toque de opacidade */
-  z-index: 1; /* Coloca o overlay acima da imagem */
+  background-color: rgba(240, 240, 240, 0.9);
+  z-index: 1;
 }
 
 .content {
   position: absolute;
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta para centralizar o conteúdo */
-  color: #333; /* Cor do texto escura para contraste com o fundo claro */
-  z-index: 2; /* Garante que o texto esteja acima do overlay */
-  text-align: center; /* Centraliza o texto */
-  padding: 0 20px; /* Adiciona um pouco de espaço nas laterais */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .title {
-  font-family: 'Playfair Display', serif; /* Aplica a nova fonte */
-  font-size: 3.5rem; /* Tamanho do título aumentado para maior destaque */
-  margin: 0; /* Remove margens para um melhor ajuste */
-  font-weight: bold; /* Deixa o título em negrito */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Sombra mais leve para melhorar a legibilidade */
+  font-family: 'Great Vibes', cursive; /* Aplica a nova fonte cursiva para um toque sofisticado */
+  font-size: 4rem; /* Tamanho do título ajustado */
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-  font-family: 'Playfair Display', serif; /* Aplica a nova fonte */
-  font-size: 1.8rem; /* Tamanho do subtítulo aumentado para maior legibilidade */
-  margin: 1rem 0; /* Margem para separar o subtítulo do título */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra mais leve para o subtítulo */
+  font-family: 'Playfair Display', serif; /* Mantém o Playfair Display para o subtítulo */
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button {
-  padding: 14px 32px; /* Tamanho do botão ajustado para mais conforto */
-  border: none; /* Remove borda do botão */
-  border-radius: 8px; /* Arredonda os cantos do botão */
-  background-color: #ffb3b3; /* Cor suave para o botão */
-  color: #333; /* Cor do texto do botão escura para contraste */
-  font-size: 1.1rem; /* Tamanho do texto do botão aumentado para maior destaque */
-  cursor: pointer; /* Indica que o botão é clicável */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos suaves na cor de fundo e transformação */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para o botão */
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffb3b3;
+  color: #333;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-  background-color: #ff7f7f; /* Coral suave ao passar o mouse */
-  transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+  background-color: #ff7f7f;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.7rem; /* Tamanho do título reduzido para dispositivos móveis */
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .button {
+    font-size: 1,1rem;
+    padding: 10px 20px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
 }
