@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps) {
     title: 'Studio Amendolla Noivas',
     description: 'Salão especializado em maquiagem, penteados e pacotes de dia da noiva.',
     url: 'https://www.studioamendollanoivas.com.br',
-    image: 'https://www.studioamendollanoivas.com.br/images/logo.png',
+    image: 'https://www.studioamendollanoivas.com.br/images/favicon.ico',
     keywords: 'maquiagem para noivas, penteados para noivas, maquiagem para madrinhas, maquiagem debutantes, dia da noiva',
   };
 
@@ -72,7 +72,7 @@ export default function RootLayout({ children }: LayoutProps) {
               "@type": "Organization",
               name: "Studio Amendolla Noivas",
               url: "https://www.studioamendollanoivas.com.br",
-              logo: "https://www.studioamendollanoivas.com.br/images/logo.png",
+              logo: "https://www.studioamendollanoivas.com.br/images/favicon.ico",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+5511977670498",
@@ -80,6 +80,43 @@ export default function RootLayout({ children }: LayoutProps) {
                 areaServed: "São Paulo, Brasil",
               },
               description: defaultSEO.description,
+            }),
+          }}
+        />
+
+        {/* Profile Page Schema */}
+        <Script
+          id="profile-page-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Priscila Amendolla",
+              url: "https://www.studioamendollanoivas.com.br",
+              sameAs: [
+                "https://www.instagram.com/studioamendolla/",
+                "https://www.facebook.com/studioamendolla/?_rdr"
+              ]
+            }),
+          }}
+        />
+
+        {/* Website Schema para vinculação no Google */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Studio Amendolla Noivas",
+              url: "https://www.studioamendollanoivas.com.br",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://www.studioamendollanoivas.com.br/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
             }),
           }}
         />

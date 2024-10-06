@@ -5,11 +5,8 @@ import Image from 'next/image'; // Importando o componente Image
 import OrcamentoForm from '../components/OrcamentoForm'; // Componente de formulário
 import styles from '../styles/Servicos.module.css'; // CSS da página de serviços
 
-// Import dos schemas dinâmicos
-import { generateBreadcrumbSchema } from '../schemas/BreadcrumbSchema';
-import { generateFAQSchema } from '../schemas/FAQSchema';
-import { generateImageObjectSchema } from '../schemas/ImageObjectSchema';
-import { generateServiceSchema } from '../schemas/ServiceSchema';
+// Importando os schemas unificados
+import { generateBreadcrumbSchema, generateFAQSchema, generateImageObjectSchema, generateServiceSchema } from '../schemas/UnifiedSchemas';
 
 const servicesData = [
   {
@@ -46,8 +43,9 @@ const servicesData = [
 
 const faqData = [
   { question: 'Qual o preço da maquiagem?', answer: 'A partir de R$150.' },
-  { question: 'Onde estamos localizados?', answer: 'São Paulo, Brasil.' },
+  { question: 'Onde estamos localizados?', answer: 'Nosso salão fica na Avenida Julio Buono, 2386, São Paulo, Brasil.' },
   { question: 'Quais serviços oferecemos?', answer: 'Oferecemos pacotes de maquiagem, penteados e dia da noiva.' },
+  { question: 'Por que escolher o Studio Amendolla?', answer: 'Somos referência na Zona Norte de São Paulo em penteados e maquiagem para noivas.' },
 ];
 
 const ServicosPage = () => {
@@ -91,31 +89,33 @@ const ServicosPage = () => {
 
   return (
     <div className={styles.servicosContainer}>
+      {/* Adicionando o H1 na página */}
+      <h1>Serviços Oferecidos no Studio Amendolla Noivas</h1>
+      
       {/* Grid de serviços: 3 colunas de serviços */}
-      <div className={styles.coluna1}>
+      <div className={styles.gridContainer}>
         <div className={styles.servicosGrid}>
           {servicesData.map((service, index) => (
             <div key={index} className={styles.servicoCard}>
-              {/* Substituímos <img> por <Image> */}
               <Image
                 src={service.image}
                 alt={service.title}
-                width={800} // Defina a largura das imagens conforme necessário
-                height={600} // Defina a altura das imagens conforme necessário
+                width={800}
+                height={600}
                 className={styles.servicoImage}
-                quality={80} // Qualidade da imagem
+                quality={80}
               />
               <h3 className={styles.servicoTitle}>{service.title}</h3>
               <p className={styles.servicoDescription}>{service.description}</p>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Coluna do formulário */}
-      <div className={styles.coluna3}>
-        <h2>Solicite um Orçamento</h2>
-        <OrcamentoForm />
+        {/* Coluna do formulário */}
+        <div className={styles.colunaForm}>
+          <h2>Solicite um Orçamento</h2>
+          <OrcamentoForm />
+        </div>
       </div>
 
       {/* FAQ Section */}

@@ -1,105 +1,127 @@
 .servicosContainer {
+  margin: 0 auto;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* Duas colunas: serviços e formulário */
-  gap: 20px; /* Gap entre as colunas */
-  background-color: #f5f5f5; /* Cor de fundo suave */
+  max-width: 1200px;
 }
 
+/* Grid principal: 3 colunas para os serviços e 1 coluna para o formulário */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Ajuste: 3 partes para os cards, 1 parte para o formulário */
+  gap: 20px;
+  align-items: start;
+  justify-content: center; /* Isso ajuda a centralizar o conteúdo */
+}
+
+/* Grid dos cards dos serviços */
 .servicosGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colunas para os cards */
-  gap: 20px; /* Espaçamento entre os cards */
+  grid-template-columns: repeat(3, 1fr); /* Três colunas para os cards */
+  gap: 20px; /* Espaço entre as colunas */
+  justify-items: center; /* Centraliza os cards dentro da grid */
 }
 
+/* Cards de serviços */
 .servicoCard {
   background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 10px; /* Bordas arredondadas suaves */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 350px; /* Define uma largura máxima para centralizar os cards */
 }
 
+/* Efeito hover nos cards */
 .servicoCard:hover {
-  transform: translateY(-5px); /* Efeito de elevação */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Imagem dos cards */
 .servicoImage {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px; /* Espaçamento menor entre imagem e texto */
+  height: 300px; /* Tornando a imagem mais quadrada */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .servicoTitle {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-top: 15px;
   color: #333;
+  font-weight: bold;
 }
 
 .servicoDescription {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin-top: 10px;
   color: #666;
+  flex-grow: 1;
 }
 
-/* Coluna do formulário */
-.coluna3 {
-  background-color: #fff;
+/* Estilo para o formulário */
+.colunaForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #fafafa;
   padding: 20px;
-  border-radius: 10px; /* Bordas arredondadas suaves */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px; /* Diminuindo a largura do formulário */
+  width: 100%;
+  margin: 0 auto;
 }
 
-.coluna3 h2 {
-  font-size: 1.6rem;
+/* Título do formulário */
+.colunaForm h2 {
   margin-bottom: 20px;
-  color: #ff7f7f;
+  font-size: 1.8rem;
+  color: #333;
 }
 
 /* FAQ Section */
 .faqSection {
-  grid-column: 1 / span 2; /* O FAQ ocupa toda a largura */
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
 .faqItem h4 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 5px;
 }
 
 .faqItem p {
   font-size: 1rem;
   color: #666;
-  line-height: 1.6; /* Aumenta a legibilidade */
 }
 
-/* Responsividade */
+/* Ajustes responsivos */
 @media (max-width: 768px) {
-  .servicosContainer {
-    grid-template-columns: 1fr; /* Coloca o formulário abaixo dos serviços no mobile */
-    gap: 20px;
+  .gridContainer {
+    grid-template-columns: 1fr; /* Uma coluna de serviços e formulário em telas menores */
+    justify-content: center; /* Centraliza o conteúdo no mobile */
   }
 
   .servicosGrid {
-    grid-template-columns: 1fr; /* Ajusta para uma coluna no mobile */
+    grid-template-columns: 1fr; /* Apenas um card por linha em telas pequenas */
+    justify-items: center; /* Centraliza os cards dentro da grid */
   }
 
-  .coluna3 {
+  .colunaForm {
     margin-top: 20px;
-    width: 100%; /* O formulário ocupa toda a largura no mobile */
-  }
-
-  .faqSection {
-    grid-column: 1;
-    padding: 15px;
+    max-width: 100%; /* Garante que o formulário use toda a largura em mobile */
   }
 }

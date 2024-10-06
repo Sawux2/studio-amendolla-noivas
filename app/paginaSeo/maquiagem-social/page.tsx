@@ -4,11 +4,8 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/PaginaSeo.module.css'; // Importando o CSS unificado para páginas SEO
 
-// Importando os schemas
-import { generateArticleSchema } from 'app/schemas/ArticleSchema';
-import { generateFAQSchema } from 'app/schemas/FAQSchema';
-import { generateServiceSchema } from 'app/schemas/ServiceSchema';
-import { generateBreadcrumbSchema } from 'app/schemas/BreadcrumbSchema';
+// Importando os schemas unificados
+import { generateArticleSchema, generateFAQSchema, generateServiceSchema, generateBreadcrumbSchema } from '../../schemas/UnifiedSchemas';
 
 const MaquiagemSocialPage = () => {
   useEffect(() => {
