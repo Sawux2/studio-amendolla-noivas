@@ -1,5 +1,6 @@
 import styles from '../styles/Footer.module.css';
-import { FaFacebook, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa'; // Importando ícones
+import { FaFacebook, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link'; // Importando o componente Link
 
 const Footer = () => {
   return (
@@ -16,10 +17,19 @@ const Footer = () => {
         {/* Coluna de Acessos Rápidos */}
         <div className={styles.column}>
           <h4>Acessos Rápidos</h4>
-          <p><a href="/home" className={styles.accessButton}>Início</a></p>
-          <p><a href="/servicos" className={styles.accessButton}>Serviços</a></p>
-          <p><a href="/sobre" className={styles.accessButton}>Sobre Nós</a></p>
-          <p><a href="/contato" className={styles.accessButton}>Contato</a></p>
+          {/* Substituindo <a> por <Link /> para navegação interna */}
+          <p>
+            <Link href="/" className={styles.accessButton}>Início</Link>
+          </p>
+          <p>
+            <Link href="/servicos" className={styles.accessButton}>Serviços</Link>
+          </p>
+          <p>
+            <Link href="/sobre" className={styles.accessButton}>Sobre Nós</Link>
+          </p>
+          <p>
+            <Link href="/contato" className={styles.accessButton}>Contato</Link>
+          </p>
         </div>
 
         {/* Coluna de Contato */}
@@ -39,16 +49,25 @@ const Footer = () => {
             <FaEnvelope className={styles.icon} />{' '}
             <a href="mailto:priscilaamendola.sa@hotmail.com">priscilaamendola.sa@hotmail.com</a>
           </p>
+          <p>Avenida Julio Buono, 2386</p>
         </div>
 
         {/* Coluna de Redes Sociais */}
         <div className={styles.column}>
           <h4>Redes Sociais</h4>
           <div className={styles.socialIcons}>
-            <a href="https://www.instagram.com/studioamendolla/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/studioamendolla/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
-            <a href="https://www.facebook.com/studioamendolla/?_rdr" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/studioamendolla/?_rdr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebook />
             </a>
           </div>

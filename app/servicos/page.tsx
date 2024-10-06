@@ -1,6 +1,7 @@
 "use client"; // Indica que este é um Client Component
 
 import { useEffect } from 'react';
+import Image from 'next/image'; // Importando o componente Image
 import OrcamentoForm from '../components/OrcamentoForm'; // Componente de formulário
 import styles from '../styles/Servicos.module.css'; // CSS da página de serviços
 
@@ -95,7 +96,15 @@ const ServicosPage = () => {
         <div className={styles.servicosGrid}>
           {servicesData.map((service, index) => (
             <div key={index} className={styles.servicoCard}>
-              <img src={service.image} alt={service.title} className={styles.servicoImage} />
+              {/* Substituímos <img> por <Image> */}
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={800} // Defina a largura das imagens conforme necessário
+                height={600} // Defina a altura das imagens conforme necessário
+                className={styles.servicoImage}
+                quality={80} // Qualidade da imagem
+              />
               <h3 className={styles.servicoTitle}>{service.title}</h3>
               <p className={styles.servicoDescription}>{service.description}</p>
             </div>

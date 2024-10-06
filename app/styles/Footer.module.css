@@ -1,100 +1,96 @@
 .footerContainer {
-    background-color: #f7f7f7;
-    padding: 40px 20px;
-    border-top: 1px solid #e5e5e5;
-    text-align: center; /* Centraliza todo o conteúdo */
-  }
-  
+  background-color: #f7f7f7;
+  padding: 20px 10px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between; /* Distribui as colunas de maneira uniforme */
+  align-items: stretch; /* Garante que todas as colunas tenham a mesma altura */
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1 1 250px; /* Flexível, mas com largura mínima de 250px */
+  margin-bottom: 10px;
+  text-align: left; /* Textos das colunas alinhados à esquerda */
+  display: flex;
+  flex-direction: column; /* Garante que os elementos internos fiquem empilhados */
+  justify-content: flex-start; /* Alinha os itens ao topo */
+}
+
+.column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #ff7f7f;
+}
+
+.column a {
+  font-size: 1rem;
+  color: #333; /* Altere essa cor conforme o estilo desejado */
+  text-decoration: none; /* Remove o underline */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.column a:hover {
+  color: #ff7f7f; /* Altere para a cor de destaque desejada */
+  transform: scale(1.05);
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-start; /* Alinha os ícones à esquerda */
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialIcons a {
+  font-size: 1.5rem;
+  color: #ff7f7f;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #ff4f4f;
+  transform: scale(1.15);
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 10px;
+}
+
+.footerBottom p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
   .footerContent {
-    display: flex;
-    justify-content: center; /* Centraliza os itens */
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-direction: column; /* Coloca as colunas em pilha */
+    align-items: center; /* Centraliza o conteúdo para dispositivos móveis */
   }
-  
+
   .column {
-    flex: 1 1 300px;
+    text-align: center; /* Centraliza o texto */
+    flex: 1 1 100%; /* Faz as colunas ocuparem 100% da largura */
     margin-bottom: 20px;
-    text-align: center; /* Centraliza o conteúdo da coluna */
   }
-  
-  .column h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #ff7f7f;
-  }
-  
-  .column p,
-  .column a {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .column a:hover {
-    color: #ff7f7f;
-    transform: scale(1.05);
-  }
-  
-  .footerBottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 20px;
-  }
-  
-  .footerBottom p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  /* Estilo para os ícones */
-  .column svg {
-    margin-right: 8px;
-    vertical-align: middle;
-    color: #ff7f7f;
-    transition: transform 0.3s ease;
-  }
-  
-  .column svg:hover {
-    transform: rotate(10deg);
-  }
-  
+
   .socialIcons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
+    justify-content: center; /* Centraliza os ícones nas redes sociais */
+    gap: 10px; /* Reduz o espaço entre os ícones para celular */
   }
-  
+
   .socialIcons a {
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    font-size: 1.5rem;
-    color: #ff7f7f;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.3rem; /* Ajusta o tamanho dos ícones para dispositivos móveis */
   }
-  
-  .socialIcons a:hover {
-    color: #ff4f4f;
-    transform: scale(1.2);
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .footerContent {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .column {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-  
-    .socialIcons a {
-      font-size: 1.3rem;
-    }
-  }
-  
+}

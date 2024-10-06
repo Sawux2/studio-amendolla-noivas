@@ -1,104 +1,105 @@
 .servicosContainer {
-    padding: 20px; /* Reduz o padding */
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 15px; /* Gap menor */
-    background-color: #f5f5f5; /* Cor de fundo suave */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Duas colunas: serviços e formulário */
+  gap: 20px; /* Gap entre as colunas */
+  background-color: #f5f5f5; /* Cor de fundo suave */
+}
+
+.servicosGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colunas para os cards */
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+.servicoCard {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px; /* Bordas arredondadas suaves */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicoCard:hover {
+  transform: translateY(-5px); /* Efeito de elevação */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+.servicoImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Espaçamento menor entre imagem e texto */
+}
+
+.servicoTitle {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+.servicoDescription {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Coluna do formulário */
+.coluna3 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px; /* Bordas arredondadas suaves */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center;
+}
+
+.coluna3 h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ff7f7f;
+}
+
+/* FAQ Section */
+.faqSection {
+  grid-column: 1 / span 2; /* O FAQ ocupa toda a largura */
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faqItem h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6; /* Aumenta a legibilidade */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .servicosContainer {
+    grid-template-columns: 1fr; /* Coloca o formulário abaixo dos serviços no mobile */
+    gap: 20px;
   }
-  
+
   .servicosGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colunas para conteúdo e imagens */
-    gap: 15px; /* Reduzimos o espaço entre os cards */
+    grid-template-columns: 1fr; /* Ajusta para uma coluna no mobile */
   }
-  
-  .servicoCard {
-    background-color: #fff;
-    padding: 15px; /* Padding reduzido */
-    border-radius: 8px; /* Bordas suavemente arredondadas */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .servicoCard:hover {
-    transform: translateY(-5px); /* Efeito de elevação sutil */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra ao passar o mouse */
-  }
-  
-  .servicoImage {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 8px; /* Menos espaço entre imagem e texto */
-  }
-  
-  .servicoTitle {
-    font-size: 1.3rem; /* Reduzido para uma aparência mais delicada */
-    margin-bottom: 8px;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-  }
-  
-  .servicoDescription {
-    font-size: 1.1rem;
-    color: #666; /* Texto mais suave */
-  }
-  
-  /* Estilo da Coluna 3 (Formulário) */
+
   .coluna3 {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px; /* Bordas suavemente arredondadas */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .coluna3 h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #ff7f7f; /* Cor suave para harmonizar com o tema */
-  }
-  
-  .faqSection {
-    grid-column: 1 / span 2; /* O FAQ ocupa toda a largura */
     margin-top: 20px;
+    width: 100%; /* O formulário ocupa toda a largura no mobile */
+  }
+
+  .faqSection {
+    grid-column: 1;
     padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
-  
-  .faqItem h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .faqItem p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.4;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .servicosContainer {
-      grid-template-columns: 1fr; /* Coloca o formulário abaixo dos serviços no mobile */
-    }
-  
-    .servicosGrid {
-      grid-template-columns: 1fr; /* Ajusta para uma coluna no mobile */
-    }
-  
-    .coluna3 {
-      margin-top: 20px;
-      max-width: 100%; /* Largura completa no mobile */
-    }
-  
-    .faqSection {
-      grid-column: 1; /* O FAQ ocupa toda a largura */
-      padding: 10px; /* Padding reduzido para dispositivos móveis */
-    }
-  }
-  
+}

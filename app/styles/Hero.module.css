@@ -1,9 +1,9 @@
 /* app/components/Hero.module.css */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap'); /* Importa a fonte Great Vibes e Playfair Display */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"); /* Importa a fonte Great Vibes e Playfair Display */
 
 .hero {
   position: relative;
-  height: 80vh;
+  height: calc(100vh - 70px);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -31,7 +31,7 @@
 }
 
 .title {
-  font-family: 'Great Vibes', cursive; /* Aplica a nova fonte cursiva para um toque sofisticado */
+  font-family: "Great Vibes", cursive; /* Aplica a nova fonte cursiva para um toque sofisticado */
   font-size: 4rem; /* Tamanho do título ajustado */
   margin: 0;
   font-weight: bold;
@@ -39,7 +39,7 @@
 }
 
 .subtitle {
-  font-family: 'Playfair Display', serif; /* Mantém o Playfair Display para o subtítulo */
+  font-family: "Playfair Display", serif; /* Mantém o Playfair Display para o subtítulo */
   font-size: 1.8rem;
   margin: 1rem 0;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -53,7 +53,8 @@
   color: #333;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,19 +67,43 @@
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
   .title {
-    font-size: 2.7rem; /* Tamanho do título reduzido para dispositivos móveis */
+    font-size: 2.7rem; /* Tamanho do título reduzido para tablets */
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Subtítulo menor para tablets */
   }
 
   .button {
-    font-size: 1,1rem;
+    font-size: 1rem;
     padding: 10px 20px;
   }
 
   .hero {
     height: 60vh;
+  }
+}
+
+/* Ajustes para dispositivos menores que 480px (celulares) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem; /* Título ainda menor para celulares */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Subtítulo menor para celulares */
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 16px; /* Botão menor para caber na tela */
+  }
+
+  .hero {
+    height: calc(100vh - 70px);
+  }
+
+  .content {
+    padding: 0 10px; /* Reduz o padding para caber melhor em telas menores */
   }
 }

@@ -1,0 +1,12 @@
+# Bloqueia o acesso à API, áreas administrativas e de configuração
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+
+# Permite o rastreamento de todas as outras páginas
+Allow: /
+
+# Especifica o caminho para o sitemap
+Sitemap: https://studioamendollanoivas.com.br/sitemap.xml

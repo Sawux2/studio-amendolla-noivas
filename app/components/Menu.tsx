@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import styles from './Menu.module.css';
+import styles from '../styles/Menu.module.css';
 import Image from 'next/image';
 import logo from '../../public/images/logo.png'; // Corrigido para o caminho correto
 
