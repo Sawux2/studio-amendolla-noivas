@@ -1,19 +1,18 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
       {
         source: '/sitemap.xml',
-        destination: '/api/sitemap.xml', // Mapeia a rota para o arquivo sitemap.xml.ts
+        destination: '/api/sitemap.xml', // Rota para o arquivo sitemap.xml
       },
       {
         source: '/robots.txt',
-        destination: '/api/robots.txt', // Mapeia a rota para o arquivo robots.txt.ts
+        destination: '/api/robots.txt', // Rota para o arquivo robots.txt
       },
       {
-        source: '/:slug', // Quando o slug for acessado diretamente
-        destination: '/paginaSeo/:slug', // Redireciona para a página dentro do diretório paginaSeo
+        source: '/:slug',
+        destination: '/paginaSeo/:slug', // Rota para páginas SEO dinâmicas
       },
     ];
   },
