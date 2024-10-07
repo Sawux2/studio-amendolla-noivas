@@ -1,12 +1,10 @@
 "use client"; // Indica que este é um Client Component
 
-import { useEffect } from 'react';
-import Image from 'next/image'; // Importando o componente Image
-import OrcamentoForm from '../components/OrcamentoForm'; // Componente de formulário
-import styles from '../styles/Servicos.module.css'; // CSS da página de serviços
-
-// Importando os schemas unificados
-import { generateBreadcrumbSchema, generateFAQSchema, generateImageObjectSchema, generateServiceSchema } from '../schemas/UnifiedSchemas';
+import Image from 'next/image';
+import OrcamentoForm from '../components/OrcamentoForm';
+import styles from '../styles/Servicos.module.css';
+import CanonicalURL from '../components/CanonicalURL'; // Componente para URL canônica
+import UnifiedSchemas from '../schemas/UnifiedSchemas'; // Componente unificado de schemas
 
 const servicesData = [
   {
@@ -49,49 +47,24 @@ const faqData = [
 ];
 
 const ServicosPage = () => {
-  useEffect(() => {
-    // Gerar schemas dinâmicos
-    const breadcrumbSchema = generateBreadcrumbSchema([
+  // Dados para os schemas
+  const pageData = {
+    services: servicesData,
+    faq: faqData,
+    breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-    ]);
-
-    const serviceSchema = generateServiceSchema(servicesData);
-    const faqSchema = generateFAQSchema(faqData);
-
-    const imageSchemas = servicesData.map((service) =>
-      generateImageObjectSchema({
-        url: service.image,
-        description: service.description,
-        width: 800,
-        height: 600,
-      })
-    );
-
-    // Adicionar os schemas ao head
-    const schemas = [breadcrumbSchema, serviceSchema, faqSchema, ...imageSchemas];
-
-    schemas.forEach((schema) => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(schema);
-      document.head.appendChild(script);
-    });
-
-    return () => {
-      document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
-        if (script && script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      });
-    };
-  }, []);
+    ],
+  };
 
   return (
     <div className={styles.servicosContainer}>
       {/* Adicionando o H1 na página */}
       <h1>Serviços Oferecidos no Studio Amendolla Noivas</h1>
-      
+
+      <CanonicalURL /> {/* Ajuste da URL canônica */}
+      <UnifiedSchemas pageData={pageData} /> {/* Schema unificado para SEO */}
+
       {/* Grid de serviços: 3 colunas de serviços */}
       <div className={styles.gridContainer}>
         <div className={styles.servicosGrid}>

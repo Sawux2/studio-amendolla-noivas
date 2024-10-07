@@ -1,97 +1,121 @@
-'use client';
+"use client"; // Indica que este é um Client Component
 
-import React, { useEffect } from 'react';
 import Image from 'next/image';
-import styles from '../../styles/PaginaSeo.module.css'; // Importando o CSS unificado para páginas SEO
+import { useState } from 'react';
+import OrcamentoForm from 'app/components/OrcamentoForm';
+import styles from 'app/styles/PaginaSeo.module.css';
+import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL canônica
+import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
 
-// Importando os schemas unificados
-import { generateArticleSchema, generateFAQSchema, generateServiceSchema, generateBreadcrumbSchema } from '../../schemas/UnifiedSchemas';
+const serviceData = {
+  title: 'Maquiagem Social',
+  description: 'Realce sua beleza natural com nossa maquiagem social, perfeita para todas as ocasiões. Nossa equipe de especialistas garante um look impecável.',
+  detailedDescription: `A maquiagem social no Studio Amendolla é ideal para eventos como casamentos, formaturas, festas e outros momentos especiais. 
+  Utilizamos produtos de alta qualidade e técnicas avançadas para garantir uma durabilidade estendida, adaptada a diferentes tipos de pele.`,
+  image: '/images/maquiagem-social.webp',
+  images: [
+    '/images/maquiagem-social1.webp',
+    '/images/maquiagem-social2.webp',
+    '/images/maquiagem-social3.webp',
+  ],
+};
+
+const faqData = [
+  { question: 'Qual o preço da maquiagem social?', answer: 'A partir de R$170.' },
+  { question: 'Qual a duração da maquiagem?', answer: 'A maquiagem social tem duração média de 40 a 1:20 hora, dependendo do tipo de pele e ambiente.' },
+  { question: 'Onde estamos localizados?', answer: 'Nosso salão fica na Avenida Julio Buono, 2386, São Paulo, Brasil.' },
+  { question: 'Por que escolher o Studio Amendolla para maquiagem social?', answer: 'Nossos maquiadores são experientes e utilizam produtos de alta qualidade para garantir o melhor resultado.' },
+];
 
 const MaquiagemSocialPage = () => {
-  useEffect(() => {
-    // Dados para os schemas
-    const articleData = {
-      headline: 'Maquiagem Social no Studio Amendolla Noivas',
-      description: 'Realce sua beleza com a maquiagem social oferecida pelo Studio Amendolla.',
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handleNextImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
+  };
+
+  const pageData = {
+    article: {
+      headline: 'Maquiagem Social no Studio Amendolla',
+      description: serviceData.description,
       author: 'Priscila Amendolla',
-      datePublished: '2024-10-05',
-      image: '/images/maquiagem-social.webp',
-    };
-
-    const faqData = [
-      { question: 'Quanto tempo dura a maquiagem?', answer: 'Dura de 8 a 12 horas.' },
-      { question: 'Qual o preço?', answer: 'A partir de R$150.' },
-    ];
-
-    const serviceData = [
+      datePublished: '2024-10-07',
+      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+    },
+    services: [
       {
-        title: 'Maquiagem Social',
-        description: 'Realce sua beleza natural com nossa maquiagem social.',
-        image: '/images/maquiagem-social.webp',
-      }
-    ];
-
-    const breadcrumbData = [
+        title: serviceData.title,
+        description: serviceData.description,
+        image: serviceData.image,
+      },
+    ],
+    faq: faqData,
+    breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Maquiagem Social', url: 'https://www.studioamendollanoivas.com.br/maquiagem-social' },
-    ];
-
-    // Gera os schemas
-    const schemas = [
-      generateArticleSchema(articleData),
-      generateFAQSchema(faqData),
-      generateServiceSchema(serviceData),
-      generateBreadcrumbSchema(breadcrumbData),
-    ];
-
-    // Adiciona os schemas no <head> para SEO
-    schemas.forEach((schema) => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(schema);
-      document.head.appendChild(script);
-    });
-
-    return () => {
-      // Remove os schemas ao desmontar o componente
-      document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
-        script.remove();
-      });
-    };
-  }, []);
+      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
+      { name: 'Maquiagem Social', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-social' },
+    ],
+    image: {
+      url: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      description: serviceData.description,
+      width: 600,
+      height: 400,
+    },
+  };
 
   return (
     <div className={styles.servicePage}>
-      <h1>Maquiagem Social</h1>
-      <div className={styles.serviceContent}>
-        <div className={styles.serviceDetails}>
-          <p>Realce sua beleza natural com nossa <strong>Maquiagem Social</strong>. Ideal para eventos especiais!</p>
-          <p>Profissionais altamente qualificados garantem que você fique impecável em qualquer ocasião.</p>
-          <p><strong>Faixa de Preço:</strong> R$150 - R$300</p>
-        </div>
-        <div className={styles.serviceImage}>
-          <Image
-            src="/images/maquiagem-social.webp"
-            alt="Maquiagem Social"
-            width={500}
-            height={400}
-          />
-        </div>
-      </div>
+      <h1>Maquiagem Social - Studio Amendolla Noivas</h1>
+      <CanonicalURL />
+      <UnifiedSchemas pageData={pageData} />
 
-      {/* Seção de FAQ */}
-      <div className={styles.faqSection}>
-        <h2>Perguntas Frequentes</h2>
-        <ul>
-          <li><strong>Quanto tempo dura a maquiagem?</strong> Dura de 8 a 12 horas.</li>
-          <li><strong>Qual o preço?</strong> A partir de R$150.</li>
-        </ul>
-      </div>
+      <div className={styles.gridContainer}>
+        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
+        <div className={styles.photosColumn}>
+          <div className={styles.carousel}>
+            <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
+            <div className={styles.highlightImage}>
+              <Image
+                src={serviceData.images[currentImage]}
+                alt={serviceData.title}
+                width={400}
+                height={300}
+                className={styles.serviceImage}
+                quality={80}
+              />
+            </div>
+            <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
+          </div>
+          <div className={styles.detailedDescription}>
+            <p>{serviceData.detailedDescription}</p>
+          </div>
+        </div>
 
-      {/* Seção de formulário de orçamento */}
-      <div className={styles.formSection}>
-        <h2>Solicite um Orçamento</h2>
-        {/* Inclua o formulário de orçamento aqui */}
+        {/* Segunda Coluna: Conteúdo e FAQ */}
+        <div className={styles.contentColumn}>
+          <div className={styles.descriptionSection}>
+            <p>{serviceData.description}</p>
+          </div>
+          <div className={styles.faqSection}>
+            <h2>Perguntas Frequentes sobre Maquiagem Social</h2>
+            {faqData.map((faq, index) => (
+              <div key={index} className={styles.faqItem}>
+                <h4>{faq.question}</h4>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Terceira Coluna: Formulário de Orçamento */}
+        <div className={styles.formColumn}>
+          <h2>Solicite um Orçamento para Maquiagem Social</h2>
+          <OrcamentoForm />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
-import React from 'react';
+"use client";
 
-// Tipos para cada schema (exemplo simplificado)
+import React, { useEffect } from 'react';
+
+// Tipos para cada schema
 interface ArticleProps {
   headline: string;
   description: string;
@@ -32,7 +34,6 @@ interface ImageObjectProps {
   height: number;
 }
 
-// Interface para o conjunto de dados da página (pageData)
 interface PageData {
   article?: ArticleProps;
   faq?: FAQItem[];
@@ -107,27 +108,36 @@ export const generateImageObjectSchema = (imageData: ImageObjectProps) => ({
   height: imageData.height,
 });
 
-// Schema Component (to render in your pages)
+// Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
-  const schemaData = {
-    article: pageData.article ? generateArticleSchema(pageData.article) : null,
-    breadcrumb: pageData.breadcrumb ? generateBreadcrumbSchema(pageData.breadcrumb) : null,
-    faq: pageData.faq ? generateFAQSchema(pageData.faq) : null,
-    services: pageData.services ? generateServiceSchema(pageData.services) : null,
-    imageObject: pageData.image ? generateImageObjectSchema(pageData.image) : null,
-  };
+  useEffect(() => {
+    const schemaData = {
+      article: pageData.article ? generateArticleSchema(pageData.article) : null,
+      breadcrumb: pageData.breadcrumb ? generateBreadcrumbSchema(pageData.breadcrumb) : null,
+      faq: pageData.faq ? generateFAQSchema(pageData.faq) : null,
+      services: pageData.services ? generateServiceSchema(pageData.services) : null,
+      imageObject: pageData.image ? generateImageObjectSchema(pageData.image) : null,
+    };
 
-  return (
-    <>
-      {Object.values(schemaData).map((schema, index) =>
-        schema ? (
-          <script key={index} type="application/ld+json">
-            {JSON.stringify(schema)}
-          </script>
-        ) : null
-      )}
-    </>
-  );
+    Object.values(schemaData).forEach((schema, index) => {
+      if (schema) {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(schema);
+        script.id = `schema-${index}`;
+        document.head.appendChild(script);
+      }
+    });
+
+    return () => {
+      Object.keys(schemaData).forEach((_, index) => {
+        const existingScript = document.getElementById(`schema-${index}`);
+        if (existingScript) existingScript.remove();
+      });
+    };
+  }, [pageData]);
+
+  return null;
 };
 
 export default UnifiedSchemas;
