@@ -1,6 +1,6 @@
 import styles from '../styles/Footer.module.css';
 import { FaFacebook, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
-import Link from 'next/link'; // Importando o componente Link
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -17,7 +17,6 @@ const Footer = () => {
         {/* Coluna de Acessos Rápidos */}
         <div className={styles.column}>
           <h4>Acessos Rápidos</h4>
-          {/* Substituindo <a> por <Link /> para navegação interna */}
           <p>
             <Link href="/" className={styles.accessButton}>Início</Link>
           </p>
@@ -41,13 +40,16 @@ const Footer = () => {
               href="https://api.whatsapp.com/send?phone=5511977670498&text=Olá, encontrei o Studio Amendolla Noivas no Google e gostaria de saber mais sobre os seus serviços!"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Conversar via WhatsApp"
             >
               (11) 97767-0498
             </a>
           </p>
           <p>
             <FaEnvelope className={styles.icon} />{' '}
-            <a href="mailto:priscilaamendola.sa@hotmail.com">priscilaamendola.sa@hotmail.com</a>
+            <a href="mailto:priscilaamendola.sa@hotmail.com" aria-label="Enviar email para priscilaamendola.sa@hotmail.com">
+              priscilaamendola.sa@hotmail.com
+            </a>
           </p>
           <p>Avenida Julio Buono, 2386</p>
         </div>
@@ -60,15 +62,19 @@ const Footer = () => {
               href="https://www.instagram.com/studioamendolla/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Siga-nos no Instagram"
             >
               <FaInstagram />
+              <span className={styles.srOnly}>Instagram</span>
             </a>
             <a
               href="https://www.facebook.com/studioamendolla/?_rdr"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Siga-nos no Facebook"
             >
               <FaFacebook />
+              <span className={styles.srOnly}>Facebook</span>
             </a>
           </div>
         </div>

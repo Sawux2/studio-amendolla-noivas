@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link"; // Importando o Link do Next.js
+import Link from "next/link";
 import styles from "../styles/Hero.module.css";
 
 const Hero = () => {
@@ -11,8 +11,11 @@ const Hero = () => {
         alt="Salão de Noivas"
         fill
         style={{ objectFit: "cover", borderRadius: "15px" }}
-        quality={100}
+        quality={75}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
         priority
+        placeholder="blur"
+        blurDataURL="data:image/webp;base64,...suaImagemEmBase64..."
       />
       <div className={styles.overlay} />
       <div className={styles.content}>
@@ -20,9 +23,8 @@ const Hero = () => {
         <p className={styles.subtitle}>
           Transforme seu sonho em realidade com nossos serviços exclusivos.
         </p>
-        {/* Substituindo o <a> por <Link /> para a navegação correta */}
         <button className={styles.button}>
-          <Link href="/sobre" style={{ textDecoration: 0, color: "black" }}>
+          <Link href="/sobre" className={styles.buttonLink}>
             Saiba Mais
           </Link>
         </button>
