@@ -9,7 +9,7 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 1.5fr 1.2fr 1.3fr; /* Ajusta a proporção das colunas */
+  grid-template-columns: 1.5fr 1.2fr 1.3fr;
   gap: 20px;
   margin-top: 20px;
 }
@@ -17,14 +17,13 @@
 .photosColumn {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .carousel {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 .carouselButton {
@@ -58,20 +57,22 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.detailedDescription {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 400px; /* Limita a largura da descrição à da imagem */
+  margin: 0 auto;
+}
+
 .serviceImage {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-}
-
-.detailedDescription {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
 }
 
 /* Segunda Coluna: Descrição e FAQ */
@@ -113,7 +114,6 @@
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formColumn:hover {
@@ -140,7 +140,7 @@
     max-width: 100%;
   }
 
-  .formColumn {
-    margin-top: 20px;
+  .detailedDescription {
+    max-width: 100%;
   }
 }
