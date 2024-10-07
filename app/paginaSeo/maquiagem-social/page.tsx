@@ -22,7 +22,7 @@ const serviceData = {
 
 const faqData = [
   { question: 'Qual o preço da maquiagem social?', answer: 'A partir de R$170.' },
-  { question: 'Qual a duração da maquiagem?', answer: 'A maquiagem social tem duração média de 40 a 1:20 hora, dependendo do tipo de pele e ambiente.' },
+  { question: 'Qual a duração da maquiagem?', answer: 'A maquiagem social tem duração média de 10 a 24 horas, dependendo do tipo de pele e ambiente.' },
   { question: 'Onde estamos localizados?', answer: 'Nosso salão fica na Avenida Julio Buono, 2386, São Paulo, Brasil.' },
   { question: 'Por que escolher o Studio Amendolla para maquiagem social?', answer: 'Nossos maquiadores são experientes e utilizam produtos de alta qualidade para garantir o melhor resultado.' },
 ];
