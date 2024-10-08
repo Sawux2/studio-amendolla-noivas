@@ -6,6 +6,7 @@ import CanonicalURL from './components/CanonicalURL';
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Script from 'next/script';
 import Footer from './components/Footer';
+import ContactWidget from './components/ContactWidget';
 
 interface SEOProps {
   title?: string;
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps) {
       </head>
       <body>
         <Menu />
+        <ContactWidget />
         <Suspense fallback={null}>
           <CanonicalURL />
         </Suspense>
