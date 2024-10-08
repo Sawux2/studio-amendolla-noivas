@@ -8,26 +8,26 @@ import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL c
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
 
 const serviceData = {
-  title: 'Pacotes para Noivas',
-  description: 'Descubra os pacotes exclusivos do Studio Amendolla para noivas, ideais para o seu grande dia. Oferecemos serviços completos para que você esteja radiante em cada momento.',
-  detailedDescription: `No Studio Amendolla, você encontra pacotes de beleza personalizados para noivas, que incluem maquiagem, penteados e cuidados especiais para garantir que cada detalhe esteja perfeito no seu grande dia. 
-  Escolha entre os nossos pacotes *Bronze*, *Prata* e *Ouro*, cada um com características exclusivas, sempre adaptados às suas necessidades. Atendemos também a domicílio, garantindo conforto e praticidade para o seu momento.`,
-  image: '/images/pacotes-noivas.webp',
+  title: 'Combos para Madrinhas',
+  description: 'Garanta que suas madrinhas estejam deslumbrantes com os combos exclusivos do Studio Amendolla. Inclui maquiagem e penteados personalizados para um visual impecável.',
+  detailedDescription: `No Studio Amendolla, oferecemos combos especiais para madrinhas que buscam um visual harmonioso e elegante no grande dia da noiva. 
+  Cada pacote inclui maquiagem de longa duração, penteados sofisticados e um atendimento exclusivo para garantir que cada madrinha se sinta única. Escolha entre nossos pacotes *Essencial*, *Premium* e *Luxo*, com opções para todos os estilos e necessidades.`,
+  image: '/images/combos-para-madrinhas.webp',
   images: [
-    '/images/pacotes-noivas-bronze.webp',
-    '/images/pacotes-noivas-prata.webp',
-    '/images/pacotes-noivas-ouro.webp',
+    '/images/combos-para-madrinhas-essencial.webp',
+    '/images/combos-para-madrinhas-premium.webp',
+    '/images/combos-para-madrinhas-luxo.webp',
   ],
 };
 
 const faqData = [
-  { question: 'Quais pacotes de noiva vocês oferecem?', answer: 'Oferecemos os pacotes Bronze, Prata e Ouro, adaptados para diferentes necessidades e preferências das noivas.' },
-  { question: 'Vocês atendem a domicílio?', answer: 'Sim, atendemos a domicílio para maior conforto, com valores sob consulta.' },
-  { question: 'Como funciona os pacotes?', answer: 'O pacotes inclui maquiagem, penteado, massagem relaxante e um tratamento completo de pele, ideal para noivas que desejam um cuidado especial. Tudo conforme o planejado e adicionado pela Noiva, consulte nossos melhores valores.' },
-  { question: 'Os preços são fixos?', answer: 'Os valores dos pacotes são sob consulta, pois variam conforme as necessidades e os serviços adicionais desejados.' },
+  { question: 'O que está incluído nos combos para madrinhas?', answer: 'Os combos incluem maquiagem profissional e penteado personalizado para cada madrinha.' },
+  { question: 'Qual o valor dos combos para madrinhas?', answer: 'Os valores variam conforme o pacote escolhido, com preços a partir de R$170 por madrinha.' },
+  { question: 'Vocês fazem atendimento a domicílio?', answer: 'Sim, realizamos atendimento a domicílio para maior comodidade das madrinhas, com valores adicionais sob consulta.' },
+  { question: 'Como agendar um horário para as madrinhas?', answer: 'Entre em contato pelo WhatsApp ou telefone para verificar a disponibilidade e realizar seu agendamento.' },
 ];
 
-const PacotesNoivasPage = () => {
+const CombosMadrinhasPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -40,7 +40,7 @@ const PacotesNoivasPage = () => {
 
   const pageData = {
     article: {
-      headline: 'Pacotes para Noivas no Studio Amendolla',
+      headline: 'Combos para Madrinhas no Studio Amendolla',
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
@@ -57,11 +57,11 @@ const PacotesNoivasPage = () => {
     breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Pacotes para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/pacotes-noivas' },
+      { name: 'Combos para Madrinhas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/combos-para-madrinhas' },
     ],
     images: serviceData.images.map((image) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: serviceData.description,
+      description: `Combos para madrinhas no Studio Amendolla - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,
     })),
@@ -69,7 +69,7 @@ const PacotesNoivasPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <h1>Pacotes para Noivas - Studio Amendolla Noivas</h1>
+      <h1>Combos para Madrinhas - Studio Amendolla Noivas</h1>
       <CanonicalURL />
       <UnifiedSchemas pageData={pageData} />
 
@@ -81,7 +81,7 @@ const PacotesNoivasPage = () => {
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`${serviceData.title} - Imagem ${currentImage + 1}`}
+                alt={`Combos para Madrinhas - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -102,7 +102,7 @@ const PacotesNoivasPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Pacotes para Noivas</h2>
+            <h2>Perguntas Frequentes sobre Combos para Madrinhas</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -114,7 +114,7 @@ const PacotesNoivasPage = () => {
 
         {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Pacotes de Noivas</h2>
+          <h2>Solicite um Orçamento para Combos de Madrinhas</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -122,4 +122,4 @@ const PacotesNoivasPage = () => {
   );
 };
 
-export default PacotesNoivasPage;
+export default CombosMadrinhasPage;

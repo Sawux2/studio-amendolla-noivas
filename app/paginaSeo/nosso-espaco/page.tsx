@@ -8,26 +8,28 @@ import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL c
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
 
 const serviceData = {
-  title: 'Pacotes para Noivas',
-  description: 'Descubra os pacotes exclusivos do Studio Amendolla para noivas, ideais para o seu grande dia. Oferecemos serviços completos para que você esteja radiante em cada momento.',
-  detailedDescription: `No Studio Amendolla, você encontra pacotes de beleza personalizados para noivas, que incluem maquiagem, penteados e cuidados especiais para garantir que cada detalhe esteja perfeito no seu grande dia. 
-  Escolha entre os nossos pacotes *Bronze*, *Prata* e *Ouro*, cada um com características exclusivas, sempre adaptados às suas necessidades. Atendemos também a domicílio, garantindo conforto e praticidade para o seu momento.`,
-  image: '/images/pacotes-noivas.webp',
+  title: 'Nosso Espaço',
+  description: 'Conheça o espaço exclusivo do Studio Amendolla, ideal para noivas e suas madrinhas. Ambiente confortável e acolhedor para que cada momento seja especial.',
+  detailedDescription: `No Studio Amendolla, você encontrará um espaço pensado para proporcionar conforto e exclusividade no seu grande dia. Nosso ambiente é preparado para atender noivas, madrinhas e acompanhantes, oferecendo um atendimento personalizado em um espaço acolhedor. Cada detalhe do nosso espaço foi planejado para garantir que você se sinta em casa enquanto se prepara para momentos inesquecíveis.`,
+  image: '/images/nosso-espaco.webp',
   images: [
-    '/images/pacotes-noivas-bronze.webp',
-    '/images/pacotes-noivas-prata.webp',
-    '/images/pacotes-noivas-ouro.webp',
+    '/images/nosso-espaco-sala.webp',
+    '/images/nosso-espaco-sala1.webp',
+    '/images/nosso-espaco-sala2.webp',
+    '/images/nosso-espaco-sala3.webp',
+    '/images/nosso-espaco-sala4.webp',
+    '/images/nosso-espaco.webp',
   ],
 };
 
 const faqData = [
-  { question: 'Quais pacotes de noiva vocês oferecem?', answer: 'Oferecemos os pacotes Bronze, Prata e Ouro, adaptados para diferentes necessidades e preferências das noivas.' },
-  { question: 'Vocês atendem a domicílio?', answer: 'Sim, atendemos a domicílio para maior conforto, com valores sob consulta.' },
-  { question: 'Como funciona os pacotes?', answer: 'O pacotes inclui maquiagem, penteado, massagem relaxante e um tratamento completo de pele, ideal para noivas que desejam um cuidado especial. Tudo conforme o planejado e adicionado pela Noiva, consulte nossos melhores valores.' },
-  { question: 'Os preços são fixos?', answer: 'Os valores dos pacotes são sob consulta, pois variam conforme as necessidades e os serviços adicionais desejados.' },
+  { question: 'Como agendar uma visita ao nosso espaço?', answer: 'Entre em contato pelo WhatsApp ou telefone para agendar uma visita ao Studio Amendolla e conhecer nosso espaço.' },
+  { question: 'Quantas pessoas podem ser atendidas ao mesmo tempo?', answer: 'Nosso espaço pode acomodar até 6 pessoas simultaneamente, garantindo um atendimento confortável para noivas e madrinhas.' },
+  { question: 'O Studio Amendolla oferece serviços de maquiagem e penteado no local?', answer: 'Sim, realizamos todos os serviços de maquiagem, penteados e cuidados especiais em nosso espaço, garantindo um atendimento completo.' },
+  { question: 'Vocês têm estacionamento?', answer: 'Sim, temos estacionamento próximo para maior comodidade de nossas clientes.' },
 ];
 
-const PacotesNoivasPage = () => {
+const NossoEspacoPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -40,7 +42,7 @@ const PacotesNoivasPage = () => {
 
   const pageData = {
     article: {
-      headline: 'Pacotes para Noivas no Studio Amendolla',
+      headline: 'Nosso Espaço no Studio Amendolla',
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
@@ -57,11 +59,11 @@ const PacotesNoivasPage = () => {
     breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Pacotes para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/pacotes-noivas' },
+      { name: 'Nosso Espaço', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/nosso-espaco' },
     ],
     images: serviceData.images.map((image) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: serviceData.description,
+      description: `Nosso espaço no Studio Amendolla - Imagem ${serviceData.images.indexOf(image) + 1}`,
       width: 600,
       height: 400,
     })),
@@ -69,7 +71,7 @@ const PacotesNoivasPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <h1>Pacotes para Noivas - Studio Amendolla Noivas</h1>
+      <h1>Nosso Espaço - Studio Amendolla Noivas</h1>
       <CanonicalURL />
       <UnifiedSchemas pageData={pageData} />
 
@@ -81,7 +83,7 @@ const PacotesNoivasPage = () => {
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`${serviceData.title} - Imagem ${currentImage + 1}`}
+                alt={`Nosso Espaço - Imagem ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -102,7 +104,7 @@ const PacotesNoivasPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Pacotes para Noivas</h2>
+            <h2>Perguntas Frequentes sobre Nosso Espaço</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -114,7 +116,7 @@ const PacotesNoivasPage = () => {
 
         {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Pacotes de Noivas</h2>
+          <h2>Solicite um Orçamento para Serviços em Nosso Espaço</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -122,4 +124,4 @@ const PacotesNoivasPage = () => {
   );
 };
 
-export default PacotesNoivasPage;
+export default NossoEspacoPage;
