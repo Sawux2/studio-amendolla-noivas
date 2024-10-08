@@ -23,7 +23,6 @@ const serviceData = {
 const faqData = [
   { question: 'Qual o preço da maquiagem social?', answer: 'A partir de R$170.' },
   { question: 'Qual a duração da maquiagem?', answer: 'A maquiagem social tem duração média de 10 a 24 horas, dependendo do tipo de pele e ambiente.' },
-  { question: 'Onde estamos localizados?', answer: 'Nosso salão fica na Avenida Julio Buono, 2386, São Paulo, Brasil.' },
   { question: 'Por que escolher o Studio Amendolla para maquiagem social?', answer: 'Nossos maquiadores são experientes e utilizam produtos de alta qualidade para garantir o melhor resultado.' },
 ];
 
@@ -59,12 +58,20 @@ const MaquiagemSocialPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Maquiagem Social', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-social' },
     ],
-    image: {
-      url: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
-      description: serviceData.description,
-      width: 600,
-      height: 400,
-    },
+    images: [
+      {
+        url: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+        description: serviceData.description,
+        width: 600,
+        height: 400,
+      },
+      ...serviceData.images.map((image, index) => ({
+        url: `https://www.studioamendollanoivas.com.br${image}`,
+        description: `Imagem ${index + 1} da Maquiagem Social no Studio Amendolla`,
+        width: 600,
+        height: 400,
+      })),
+    ],
   };
 
   return (
@@ -81,7 +88,7 @@ const MaquiagemSocialPage = () => {
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={serviceData.title}
+                alt={`Imagem ${currentImage + 1} da Maquiagem Social`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}

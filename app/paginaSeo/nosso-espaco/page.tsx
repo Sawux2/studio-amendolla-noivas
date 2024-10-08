@@ -18,15 +18,22 @@ const serviceData = {
     '/images/nosso-espaco-sala2.webp',
     '/images/nosso-espaco-sala3.webp',
     '/images/nosso-espaco-sala4.webp',
+    '/images/nosso-espaco-sala5.webp',
+    '/images/nosso-espaco-sala6.webp',
+    '/images/nosso-espaco-sala7.webp',
+    '/images/nosso-espaco-sala8.webp',
+    '/images/nosso-espaco-sala9.webp',
+    '/images/nosso-espaco-sala10.webp',
+    '/images/nosso-espaco-sala11.webp',
     '/images/nosso-espaco.webp',
   ],
 };
 
 const faqData = [
   { question: 'Como agendar uma visita ao nosso espaço?', answer: 'Entre em contato pelo WhatsApp ou telefone para agendar uma visita ao Studio Amendolla e conhecer nosso espaço.' },
-  { question: 'Quantas pessoas podem ser atendidas ao mesmo tempo?', answer: 'Nosso espaço pode acomodar até 6 pessoas simultaneamente, garantindo um atendimento confortável para noivas e madrinhas.' },
+  { question: 'Quantas pessoas comportam em nosso espaço?', answer: 'já atendemos 22 madrinhas no mesmo dia temos equipe preparada, nosso estudio é exclusivo para noivas e suas acompanhantes, garantindo um atendimento confortável e exclusivo para noivas e madrinhas.' },
   { question: 'O Studio Amendolla oferece serviços de maquiagem e penteado no local?', answer: 'Sim, realizamos todos os serviços de maquiagem, penteados e cuidados especiais em nosso espaço, garantindo um atendimento completo.' },
-  { question: 'Vocês têm estacionamento?', answer: 'Sim, temos estacionamento próximo para maior comodidade de nossas clientes.' },
+  { question: 'Vocês têm estacionamento?', answer: 'Sim, temos 3 vagas na porta do estabelecimento para maior comodidade de nossas clientes.' },
 ];
 
 const NossoEspacoPage = () => {

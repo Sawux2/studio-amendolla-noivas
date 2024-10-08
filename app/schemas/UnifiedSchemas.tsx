@@ -39,7 +39,7 @@ interface PageData {
   faq?: FAQItem[];
   services?: ServiceItem[];
   breadcrumb?: Breadcrumb[];
-  image?: ImageObjectProps;
+  images?: ImageObjectProps[]; // Atualizado para lidar com múltiplas imagens
 }
 
 // Geradores de schema
@@ -99,14 +99,16 @@ export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
   })),
 });
 
-export const generateImageObjectSchema = (imageData: ImageObjectProps) => ({
-  '@context': 'https://schema.org',
-  '@type': 'ImageObject',
-  contentUrl: imageData.url,
-  description: imageData.description,
-  width: imageData.width,
-  height: imageData.height,
-});
+// Função para gerar múltiplos ImageObject
+export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
+  images.map((imageData) => ({
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: imageData.url,
+    description: imageData.description,
+    width: imageData.width,
+    height: imageData.height,
+  }));
 
 // Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
@@ -116,7 +118,7 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       breadcrumb: pageData.breadcrumb ? generateBreadcrumbSchema(pageData.breadcrumb) : null,
       faq: pageData.faq ? generateFAQSchema(pageData.faq) : null,
       services: pageData.services ? generateServiceSchema(pageData.services) : null,
-      imageObject: pageData.image ? generateImageObjectSchema(pageData.image) : null,
+      images: pageData.images ? generateImageObjectSchema(pageData.images) : null,
     };
 
     Object.values(schemaData).forEach((schema, index) => {
