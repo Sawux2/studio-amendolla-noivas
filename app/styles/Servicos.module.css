@@ -7,18 +7,18 @@
 /* Grid principal: 3 colunas para os serviços e 1 coluna para o formulário */
 .gridContainer {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* Ajuste: 3 partes para os cards, 1 parte para o formulário */
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
   align-items: start;
-  justify-content: center; /* Isso ajuda a centralizar o conteúdo */
+  justify-content: center;
 }
 
 /* Grid dos cards dos serviços */
 .servicosGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Três colunas para os cards */
-  gap: 20px; /* Espaço entre as colunas */
-  justify-items: center; /* Centraliza os cards dentro da grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+  justify-items: center;
 }
 
 /* Cards de serviços */
@@ -26,7 +26,7 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,7 +34,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  max-width: 350px; /* Define uma largura máxima para centralizar os cards */
+  max-width: 350px;
 }
 
 /* Efeito hover nos cards */
@@ -46,7 +46,8 @@
 /* Imagem dos cards */
 .servicoImage {
   width: 100%;
-  height: 300px; /* Tornando a imagem mais quadrada */
+  height: auto;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -74,7 +75,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 350px; /* Diminuindo a largura do formulário */
+  max-width: 350px;
   width: 100%;
   margin: 0 auto;
 }
@@ -111,17 +112,16 @@
 /* Ajustes responsivos */
 @media (max-width: 768px) {
   .gridContainer {
-    grid-template-columns: 1fr; /* Uma coluna de serviços e formulário em telas menores */
-    justify-content: center; /* Centraliza o conteúdo no mobile */
+    grid-template-columns: 1fr;
   }
 
   .servicosGrid {
-    grid-template-columns: 1fr; /* Apenas um card por linha em telas pequenas */
-    justify-items: center; /* Centraliza os cards dentro da grid */
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .colunaForm {
     margin-top: 20px;
-    max-width: 100%; /* Garante que o formulário use toda a largura em mobile */
+    max-width: 100%;
   }
 }

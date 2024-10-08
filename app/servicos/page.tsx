@@ -77,6 +77,8 @@ const ServicosPage = () => {
                 height={600}
                 className={styles.servicoImage}
                 quality={80}
+                loading={index === 0 ? 'eager' : 'lazy'} // Carrega a primeira imagem rapidamente
+                priority={index === 0} // Prioriza o carregamento da primeira imagem
               />
               <h3 className={styles.servicoTitle}>{service.title}</h3>
               <p className={styles.servicoDescription}>{service.description}</p>
