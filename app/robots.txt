@@ -1,19 +1,8 @@
-// pages/api/robots.ts
-import { NextApiRequest, NextApiResponse } from 'next';
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Allow: /
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  const robotsTxt = `
-    User-agent: *
-    Disallow: /api/
-    Disallow: /admin/
-    Disallow: /private/
-    Disallow: /config/
-    Allow: /
-
-    Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
-  `;
-
-  res.setHeader('Content-Type', 'text/plain');
-  res.write(robotsTxt);
-  res.end();
-};
+Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
