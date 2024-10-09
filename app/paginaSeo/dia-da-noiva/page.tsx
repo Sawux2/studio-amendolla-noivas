@@ -8,60 +8,68 @@ import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL c
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
 
 const serviceData = {
-  title: 'Pacotes para Noivas',
-  description: 'Descubra os pacotes exclusivos do Studio Amendolla para noivas, ideais para o seu grande dia. Oferecemos serviços completos para que você esteja radiante em cada momento.',
-  detailedDescription: `No Studio Amendolla, você encontra pacotes de beleza personalizados para noivas, que incluem maquiagem, penteados e cuidados especiais para garantir que cada detalhe esteja perfeito no seu grande dia. 
-  Escolha entre os nossos pacotes *Bronze*, *Prata* e *Ouro*, cada um com características exclusivas, sempre adaptados às suas necessidades. Atendemos também a domicílio, garantindo conforto e praticidade para o seu momento.`,
-  image: '/images/pacotes-noivas.webp',
-  images: [
-    '/images/pacotes-noivas-bronze.webp',
-    '/images/pacotes-noivas-prata.webp',
-    '/images/pacotes-noivas-ouro.webp',
-  ],
+  title: 'Dia da Noiva',
+  description: 'Desfrute de um Dia da Noiva completo no Studio Amendolla, com penteados, maquiagem e cuidados especiais. Transforme seu dia em uma experiência única e inesquecível.',
+  detailedDescription: `O Dia da Noiva no Studio Amendolla é uma experiência pensada para que você se sinta deslumbrante em cada momento. Nosso espaço exclusivo oferece maquiagem profissional, penteados personalizados e serviços de relaxamento para noivas. 
+  Cada detalhe é planejado para garantir que você esteja perfeita para o grande momento, com um ambiente tranquilo e confortável, ideal para noivas que desejam um atendimento personalizado e de alta qualidade.`
 };
 
 const faqData = [
-  { question: 'Quais pacotes de noiva vocês oferecem?', answer: 'Oferecemos os pacotes Bronze, Prata e Ouro, adaptados para diferentes necessidades e preferências das noivas.' },
-  { question: 'Vocês atendem a domicílio?', answer: 'Sim, atendemos a domicílio para maior conforto, com valores sob consulta.' },
-  { question: 'Como funciona os pacotes?', answer: 'O pacotes inclui maquiagem, penteado, massagem relaxante, ideal para noivas que desejam um cuidado especial. Tudo conforme o planejado e adicionado pela Noiva, consulte nossos melhores valores.' },
-  { question: 'Os preços são fixos?', answer: 'Os valores dos pacotes são sob consulta, pois variam conforme as necessidades e os serviços adicionais desejados.' },
+  { question: 'O que inclui o pacote Dia da Noiva?', answer: 'O pacote inclui maquiagem completa, penteado, prévia de penteado e maquiagem, massagem relaxante, cafe da manhã, assessoria completa e vestimenta da noiva (assessoria sob consulta), e espaço exclusivo para a noiva e suas acompanhantes.' },
+  { question: 'Quanto tempo dura o preparo para o Dia da Noiva?', answer: 'O preparo pode durar entre 4 a 6 horas, dependendo dos serviços escolhidos e do estilo desejado.' },
+  { question: 'O Studio Amendolla oferece atendimento a domicílio?', answer: 'Sim, também oferecemos a opção de atendimento a domicílio para maior conforto e comodidade da noiva.' },
+  { question: 'Quais são as formas de pagamento aceitas?', answer: 'Aceitamos cartão de crédito, débito e pagamentos via Pix. Consulte para mais informações.' },
 ];
 
-const PacotesNoivasPage = () => {
+const imageKeywords = [
+  'dia-da-noiva-no-studio-amendolla',
+  'maquiagem-para-noivas',
+  'penteados-para-noivas',
+  'preparacao-da-noiva',
+  'espaco-para-dia-da-noiva',
+  'noiva-studio-amendolla'
+];
+
+const serviceImages = imageKeywords.map((keyword, index) => ({
+  src: `/images/${keyword}.webp`,
+  alt: `Imagem ${index + 1} - ${keyword.replace(/-/g, ' ')}`,
+}));
+
+const DiaDaNoivaPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
+    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceImages.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
+    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceImages.length) % serviceImages.length);
   };
 
   const pageData = {
     article: {
-      headline: 'Pacotes para Noivas no Studio Amendolla',
+      headline: 'Dia da Noiva no Studio Amendolla',
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://www.studioamendollanoivas.com.br${serviceImages[0].src}`,
     },
     services: [
       {
         title: serviceData.title,
         description: serviceData.description,
-        image: serviceData.image,
+        image: serviceImages[0].src,
       },
     ],
     faq: faqData,
     breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Pacotes para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/pacotes-noivas' },
+      { name: 'Dia da Noiva', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva' },
     ],
-    images: serviceData.images.map((image) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: serviceData.description,
+    images: serviceImages.map((image) => ({
+      url: `https://www.studioamendollanoivas.com.br${image.src}`,
+      description: image.alt,
       width: 600,
       height: 400,
     })),
@@ -69,7 +77,7 @@ const PacotesNoivasPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <h1>Pacotes para Noivas - Studio Amendolla Noivas</h1>
+      <h1>Dia da Noiva - Studio Amendolla Noivas</h1>
       <CanonicalURL />
       <UnifiedSchemas pageData={pageData} />
 
@@ -80,8 +88,8 @@ const PacotesNoivasPage = () => {
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
-                src={serviceData.images[currentImage]}
-                alt={`${serviceData.title} - Imagem ${currentImage + 1}`}
+                src={serviceImages[currentImage].src}
+                alt={serviceImages[currentImage].alt}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -102,7 +110,7 @@ const PacotesNoivasPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Pacotes para Noivas</h2>
+            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -114,7 +122,7 @@ const PacotesNoivasPage = () => {
 
         {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Pacotes de Noivas</h2>
+          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -122,4 +130,4 @@ const PacotesNoivasPage = () => {
   );
 };
 
-export default PacotesNoivasPage;
+export default DiaDaNoivaPage;

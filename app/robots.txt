@@ -1,12 +1,19 @@
-# Bloqueia o acesso à API, áreas administrativas e de configuração
-User-agent: *
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-Disallow: /config/
+// pages/api/robots.ts
+import { NextApiRequest, NextApiResponse } from 'next';
 
-# Permite o rastreamento de todas as outras páginas
-Allow: /
+export default (req: NextApiRequest, res: NextApiResponse) => {
+  const robotsTxt = `
+    User-agent: *
+    Disallow: /api/
+    Disallow: /admin/
+    Disallow: /private/
+    Disallow: /config/
+    Allow: /
 
-# Especifica o caminho para o sitemap
-Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
+    Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
+  `;
+
+  res.setHeader('Content-Type', 'text/plain');
+  res.write(robotsTxt);
+  res.end();
+};

@@ -8,60 +8,66 @@ import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL c
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
 
 const serviceData = {
-  title: 'Pacotes para Noivas',
-  description: 'Descubra os pacotes exclusivos do Studio Amendolla para noivas, ideais para o seu grande dia. Oferecemos serviços completos para que você esteja radiante em cada momento.',
-  detailedDescription: `No Studio Amendolla, você encontra pacotes de beleza personalizados para noivas, que incluem maquiagem, penteados e cuidados especiais para garantir que cada detalhe esteja perfeito no seu grande dia. 
-  Escolha entre os nossos pacotes *Bronze*, *Prata* e *Ouro*, cada um com características exclusivas, sempre adaptados às suas necessidades. Atendemos também a domicílio, garantindo conforto e praticidade para o seu momento.`,
-  image: '/images/pacotes-noivas.webp',
-  images: [
-    '/images/pacotes-noivas-bronze.webp',
-    '/images/pacotes-noivas-prata.webp',
-    '/images/pacotes-noivas-ouro.webp',
-  ],
+  title: 'SPA e Relaxamento Dia de Noivas',
+  description: 'Experimente os tratamentos de SPA do Studio Amendolla, incluindo massagem relaxante, spa dos pés, peeling facial e mais. Rejuvenescimento e relaxamento garantidos.',
+  detailedDescription: `No Studio Amendolla, oferecemos uma experiência completa de SPA e relaxamento. Desde massagem relaxante para aliviar o estresse até spa dos pés e tratamentos de peeling facial, nosso espaço é ideal para quem busca momentos de tranquilidade e cuidado pessoal. Nossos profissionais são especializados em proporcionar uma experiência única, garantindo que você saia renovada.`,
 };
 
 const faqData = [
-  { question: 'Quais pacotes de noiva vocês oferecem?', answer: 'Oferecemos os pacotes Bronze, Prata e Ouro, adaptados para diferentes necessidades e preferências das noivas.' },
-  { question: 'Vocês atendem a domicílio?', answer: 'Sim, atendemos a domicílio para maior conforto, com valores sob consulta.' },
-  { question: 'Como funciona os pacotes?', answer: 'O pacotes inclui maquiagem, penteado, massagem relaxante, ideal para noivas que desejam um cuidado especial. Tudo conforme o planejado e adicionado pela Noiva, consulte nossos melhores valores.' },
-  { question: 'Os preços são fixos?', answer: 'Os valores dos pacotes são sob consulta, pois variam conforme as necessidades e os serviços adicionais desejados.' },
+  { question: 'O que inclui a massagem relaxante?', answer: 'A massagem relaxante inclui técnicas para aliviar tensões musculares e promover o bem-estar geral, com duração de 60 minutos.' },
+  { question: 'Como funciona o spa dos pés?', answer: 'O spa dos pés inclui esfoliação, hidratação profunda e massagem nos pés, proporcionando relaxamento e alívio de tensões.' },
+  { question: 'Quais os benefícios do peeling facial?', answer: 'O peeling facial renova a pele, reduz manchas e linhas finas, deixando o rosto com um aspecto mais jovem e saudável.' },
+  { question: 'Como agendar uma sessão de SPA?', answer: 'Entre em contato pelo WhatsApp ou telefone para agendar sua sessão de SPA no Studio Amendolla.' },
 ];
 
-const PacotesNoivasPage = () => {
+const imageKeywords = [
+  'massagem-relaxante-studio-amendolla',
+  'spa-dos-pes',
+  'massagem-para-noivas',
+  'massagem-zona-norte',
+  'dia-de-noiva-zona-norte',
+];
+
+const serviceImages = imageKeywords.map((keyword, index) => ({
+  src: `/images/${keyword}.webp`,
+  alt: `Imagem ${index + 1} - ${keyword.replace(/-/g, ' ')}`,
+}));
+
+const SpaPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
+    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceImages.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
+    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceImages.length) % serviceImages.length);
   };
 
   const pageData = {
     article: {
-      headline: 'Pacotes para Noivas no Studio Amendolla',
+      headline: 'SPA e Relaxamento no Studio Amendolla',
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://www.studioamendollanoivas.com.br${serviceImages[0].src}`,
     },
     services: [
       {
         title: serviceData.title,
         description: serviceData.description,
-        image: serviceData.image,
+        image: serviceImages[0].src,
       },
     ],
     faq: faqData,
     breadcrumb: [
       { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Pacotes para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/pacotes-noivas' },
+      { name: 'SPA e Relaxamento', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/spa-relaxamento' },
     ],
-    images: serviceData.images.map((image) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: serviceData.description,
+    images: serviceImages.map((image) => ({
+      url: `https://www.studioamendollanoivas.com.br${image.src}`,
+      description: image.alt,
       width: 600,
       height: 400,
     })),
@@ -69,7 +75,7 @@ const PacotesNoivasPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <h1>Pacotes para Noivas - Studio Amendolla Noivas</h1>
+      <h1>SPA e Relaxamento Dia de Noiva</h1>
       <CanonicalURL />
       <UnifiedSchemas pageData={pageData} />
 
@@ -80,8 +86,8 @@ const PacotesNoivasPage = () => {
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
-                src={serviceData.images[currentImage]}
-                alt={`${serviceData.title} - Imagem ${currentImage + 1}`}
+                src={serviceImages[currentImage].src}
+                alt={serviceImages[currentImage].alt}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -102,7 +108,7 @@ const PacotesNoivasPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Pacotes para Noivas</h2>
+            <h2>Perguntas Frequentes sobre o SPA</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -114,7 +120,7 @@ const PacotesNoivasPage = () => {
 
         {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Pacotes de Noivas</h2>
+          <h2>Solicite um Orçamento para nossos Serviços de SPA</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -122,4 +128,4 @@ const PacotesNoivasPage = () => {
   );
 };
 
-export default PacotesNoivasPage;
+export default SpaPage;

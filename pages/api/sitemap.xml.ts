@@ -1,54 +1,36 @@
+// pages/api/sitemap.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
 
-// Função para percorrer o diretório app e capturar todas as páginas
-const getAllPages = (dirPath: string, removeDir: string = ''): string[] => {
-  if (!fs.existsSync(dirPath)) {
-    console.error(`Diretório não encontrado: ${dirPath}`);
-    return [];
-  }
+const baseUrl = 'https://studioamendollanoivas.com.br';
 
-  const files = fs.readdirSync(dirPath);
-  let arrayOfFiles: string[] = [];
+// URLs estáticas (home, contato, etc.)
+const staticUrls = [
+  '',
+  'contato',
+  'servicos',
+  'sobre',
+];
 
-  files.forEach((file) => {
-    const filePath = path.join(dirPath, file);
-
-    if (fs.statSync(filePath).isDirectory()) {
-      arrayOfFiles = arrayOfFiles.concat(getAllPages(filePath, removeDir));
-    } else {
-      console.log(`Arquivo encontrado: ${filePath}`); // Log para verificação
-      arrayOfFiles.push(filePath.replace(removeDir, ''));
-    }
-  });
-
-  return arrayOfFiles;
-};
+// URLs dinâmicas que você pode ter em 'app/paginaSeo'
+const dynamicPages = [
+  'dia-da-noiva',
+  'maquiagem-social',
+  'combo-madrinhas',
+  'nosso-espaco',
+  'pacotes-noivas',
+  'spa'
+];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const baseUrl = 'https://studioamendollanoivas.com.br'; // Altere para seu domínio
-  const appPagesDir = path.join(process.cwd(), 'app', 'paginaSeo'); // Caminho correto
+  const allUrls = [
+    ...staticUrls.map((slug) => `${baseUrl}/${slug}`),
+    ...dynamicPages.map((slug) => `${baseUrl}/paginaSeo/${slug}`),
+  ];
 
-  console.log(`Buscando páginas em: ${appPagesDir}`); // Verifica se o caminho está correto
-
-  // Obtenha todas as páginas no diretório 'app/paginaSeo'
-  const staticPages = getAllPages(appPagesDir)
-    .map((page) => {
-      const relativePath = page.replace(process.cwd() + '/app/', '').replace('.tsx', '');
-      const route = relativePath === 'index' ? '' : relativePath;
-      console.log(`Rota gerada: ${route}`); // Log para verificação das rotas
-      return `${baseUrl}/${route}`;
-    });
-
-  if (staticPages.length === 0) {
-    console.warn('Nenhuma página encontrada para o sitemap.');
-  }
-
-  // Gerar o sitemap em XML
+  // Gera o XML do sitemap
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${staticPages
+    ${allUrls
       .map((url) => {
         return `
         <url>
@@ -61,7 +43,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .join('')}
   </urlset>`;
 
-  // Enviar o sitemap como resposta
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);
   res.end();

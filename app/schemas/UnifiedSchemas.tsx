@@ -39,10 +39,10 @@ interface PageData {
   faq?: FAQItem[];
   services?: ServiceItem[];
   breadcrumb?: Breadcrumb[];
-  images?: ImageObjectProps[]; // Atualizado para lidar com múltiplas imagens
+  images?: ImageObjectProps[];
 }
 
-// Geradores de schema
+// Geradores de schema (mantidos)
 export const generateArticleSchema = (articleData: ArticleProps) => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -121,6 +121,7 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       images: pageData.images ? generateImageObjectSchema(pageData.images) : null,
     };
 
+    // Adicionar schemas ao <head>
     Object.values(schemaData).forEach((schema, index) => {
       if (schema) {
         const script = document.createElement('script');
@@ -131,6 +132,32 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       }
     });
 
+    // Adicionar metas dinâmicas ao <head>
+    if (pageData.article) {
+      document.title = pageData.article.headline;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+
+      if (metaDescription) {
+        metaDescription.setAttribute('content', pageData.article.description);
+      } else {
+        const newMetaDescription = document.createElement('meta');
+        newMetaDescription.name = 'description';
+        newMetaDescription.content = pageData.article.description;
+        document.head.appendChild(newMetaDescription);
+      }
+
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', pageData.article.headline.replace(/,|\./g, '').split(' ').join(', '));
+      } else {
+        const newMetaKeywords = document.createElement('meta');
+        newMetaKeywords.name = 'keywords';
+        newMetaKeywords.content = pageData.article.headline.replace(/,|\./g, '').split(' ').join(', ');
+        document.head.appendChild(newMetaKeywords);
+      }
+    }
+
+    // Cleanup para remover scripts ao desmontar o componente
     return () => {
       Object.keys(schemaData).forEach((_, index) => {
         const existingScript = document.getElementById(`schema-${index}`);
