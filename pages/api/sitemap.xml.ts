@@ -1,31 +1,47 @@
 // pages/api/sitemap.ts
 import { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
+import path from 'path';
 
 const baseUrl = 'https://studioamendollanoivas.com.br';
 
-// URLs estáticas (home, contato, etc.)
-const staticUrls = [
-  '',
-  'contato',
-  'servicos',
-  'sobre',
-];
-
-// URLs dinâmicas que você pode ter em 'app/paginaSeo'
-const dynamicPages = [
-  'dia-da-noiva',
-  'maquiagem-social',
-  'combo-madrinhas',
-  'nosso-espaco',
-  'pacotes-noivas',
-  'spa'
-];
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const allUrls = [
-    ...staticUrls.map((slug) => `${baseUrl}/${slug}`),
-    ...dynamicPages.map((slug) => `${baseUrl}/paginaSeo/${slug}`),
+  // Caminho para a pasta que contém suas páginas em `app`
+  const paginaSeoDir = path.join(process.cwd(), 'app', 'paginaSeo');
+
+  // Função para buscar as URLs das páginas dentro de `paginaSeo`
+  const getUrlsFromDir = (dir: string, basePath: string = ''): string[] => {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    return entries.flatMap((entry) => {
+      const fullPath = path.join(dir, entry.name);
+      const urlPath = path.join(basePath, entry.name.replace(/\.tsx|\.ts|\.js/, ''));
+
+      if (entry.isDirectory()) {
+        return getUrlsFromDir(fullPath, `${urlPath}/`);
+      }
+
+      if (entry.isFile() && /\.(tsx|ts|js)$/.test(entry.name)) {
+        const slug = urlPath.replace(/\\/g, '/').replace(/\/index$/, '');
+        return `${baseUrl}/paginaSeo/${slug}`;
+      }
+
+      return [];
+    });
+  };
+
+  // URLs estáticas para as outras páginas em `app`
+  const staticUrls = [
+    `${baseUrl}/`,
+    `${baseUrl}/contato`,
+    `${baseUrl}/servicos`,
+    `${baseUrl}/sobre`
   ];
+
+  // URLs dinâmicas das páginas em `paginaSeo`
+  const dynamicUrls = getUrlsFromDir(paginaSeoDir, '');
+
+  // Combina as URLs estáticas e dinâmicas
+  const allUrls = [...staticUrls, ...dynamicUrls];
 
   // Gera o XML do sitemap
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -43,6 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .join('')}
   </urlset>`;
 
+  // Define o cabeçalho do sitemap
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);
   res.end();
