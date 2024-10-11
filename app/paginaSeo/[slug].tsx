@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+/*import { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 
@@ -37,3 +37,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   };
 };
+*/

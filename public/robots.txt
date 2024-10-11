@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://studioamendollanoivas.com.br
+
+# Sitemaps
+Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
