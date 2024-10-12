@@ -99,6 +99,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
   })),
 });
 
+// Função para gerar múltiplos ImageObject
 export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
   images.map((imageData) => ({
     '@context': 'https://schema.org',
@@ -109,6 +110,7 @@ export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
     height: imageData.height,
   }));
 
+// Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
   useEffect(() => {
     const schemaData = {
@@ -129,6 +131,31 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
         document.head.appendChild(script);
       }
     });
+
+    // Adicionar metas dinâmicas ao <head>
+    if (pageData.article) {
+      document.title = pageData.article.headline;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+
+      if (metaDescription) {
+        metaDescription.setAttribute('content', pageData.article.description);
+      } else {
+        const newMetaDescription = document.createElement('meta');
+        newMetaDescription.name = 'description';
+        newMetaDescription.content = pageData.article.description;
+        document.head.appendChild(newMetaDescription);
+      }
+
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', pageData.article.headline.replace(/,|\./g, '').split(' ').join(', '));
+      } else {
+        const newMetaKeywords = document.createElement('meta');
+        newMetaKeywords.name = 'keywords';
+        newMetaKeywords.content = pageData.article.headline.replace(/,|\./g, '').split(' ').join(', ');
+        document.head.appendChild(newMetaKeywords);
+      }
+    }
 
     // Cleanup para remover scripts ao desmontar o componente
     return () => {

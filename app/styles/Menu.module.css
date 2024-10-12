@@ -20,6 +20,7 @@
     cursor: pointer; 
     flex-direction: column; 
     transition: transform 0.3s ease; 
+    padding: 15px; /* Aumenta a área de clique do botão hamburger */
 }
 
 .bar {
@@ -56,6 +57,12 @@
     padding: 15px 20px; 
     transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; 
     border-radius: 8px; /* Adiciona bordas arredondadas aos itens do menu */
+    margin-right: 10px; /* Adiciona um espaçamento lateral entre os itens do menu */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre ícone e texto */
+    cursor: pointer; /* Torna a área clicável */
+    height: 10px;
 }
 
 .menu li:hover {
@@ -69,6 +76,15 @@
     text-decoration: none; 
     color: black; 
     font-weight: bold; 
+    padding: 10px 20px; /* Expande a área clicável dos links */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Aumenta a área de clique */
+}
+
+.menu li svg {
+    font-size: 20px; /* Tamanho do ícone */
+    color: #ff7f7f; /* Cor do ícone */
 }
 
 .line {
@@ -86,11 +102,17 @@
 
     .menuToggle {
         display: flex; 
+        padding: 15px; /* Aumenta a área de clique do botão hamburger */
     }
 
     .menu.active {
         display: flex; 
         animation: slideDown 0.3s ease; 
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
     }
 }
 

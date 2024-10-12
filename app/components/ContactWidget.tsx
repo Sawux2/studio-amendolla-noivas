@@ -35,6 +35,7 @@ const serviceLinks = [
   { name: "Dia da Noiva", link: "/dia-da-noiva" },
   { name: "SPA", link: "/spa" },
   { name: "Nosso Espaço", link: "/nosso-espaco" },
+  { name: "Galeria de fotos", link: "/galeria-de-fotos-maquiagem-e-penteados" },
   { name: "Home", link: "https://studioamendollanoivas.com.br/" },
 ];
 
@@ -43,6 +44,11 @@ const ContactWidget = () => {
 
   const toggleServiceMenu = () => {
     setIsServiceMenuOpen((prev) => !prev);
+  };
+
+  // Função para fechar o menu ao clicar em um link
+  const handleLinkClick = () => {
+    setIsServiceMenuOpen(false);
   };
 
   return (
@@ -76,7 +82,7 @@ const ContactWidget = () => {
         {isServiceMenuOpen && (
           <div className={styles.serviceLinks}>
             {serviceLinks.map((service, index) => (
-              <Link key={index} href={service.link} className={styles.serviceLink}>
+              <Link key={index} href={service.link} className={styles.serviceLink} onClick={handleLinkClick}>
                 {service.name}
               </Link>
             ))}
