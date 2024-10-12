@@ -37,8 +37,6 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
 
-        <meta property="og:title" content={defaultSEO.title} />
-        <meta property="og:description" content={defaultSEO.description} />
         <meta property="og:image" content={defaultSEO.image} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Studio Amendolla Noivas" />
