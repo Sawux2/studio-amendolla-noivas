@@ -42,6 +42,21 @@ interface PageData {
   services?: ServiceItem[];
   breadcrumb?: Breadcrumb[];
   images?: ImageObjectProps[];
+  business?: LocalBusinessProps;
+}
+
+interface LocalBusinessProps {
+  name: string;
+  address: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  telephone: string;
+  openingHours: string;
+  priceRange: string;
 }
 
 // Geradores de schema (mantidos)
@@ -55,7 +70,20 @@ export const generateArticleSchema = (articleData: ArticleProps) => ({
     name: articleData.author,
   },
   datePublished: articleData.datePublished,
+  dateModified: articleData.datePublished, // Se o artigo for modificado
   image: articleData.image,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Studio Amendolla Noivas',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://www.studioamendollanoivas.com.br/pagina-do-artigo', // Ajustar a URL real
+  },
 });
 
 export const generateFAQSchema = (faqItems: FAQItem[]) => ({
@@ -72,21 +100,33 @@ export const generateFAQSchema = (faqItems: FAQItem[]) => ({
 });
 
 export const generateServiceSchema = (services: ServiceItem[]) => ({
-  "@context": "https://schema.org",
-  "@type": "Service",
+  '@context': 'https://schema.org',
+  '@type': 'Service',
   serviceType: services.map(service => service.title).join(', '),
   provider: {
-    "@type": "Organization",
-    "name": "Studio Amendolla Noivas",
-    "url": "https://www.studioamendollanoivas.com.br",
+    '@type': 'Organization',
+    name: 'Studio Amendolla Noivas',
+    url: 'https://www.studioamendollanoivas.com.br',
   },
   offers: services.map(service => ({
-    "@type": "Offer",
-    "description": service.description,
-    "image": service.image,
-    "priceCurrency": "BRL",
-    "price": "Consultar",
-    "url": "https://www.studioamendollanoivas.com.br/servicos"
+    '@type': 'Offer',
+    description: service.description,
+    image: service.image,
+    priceCurrency: 'BRL',
+    price: 'Consultar',
+    url: 'https://www.studioamendollanoivas.com.br/servicos',
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5', // Exemplo de avaliação
+        bestRating: '5',
+      },
+      author: {
+        '@type': 'Person',
+        name: 'Cliente Exemplo',
+      },
+    },
   })),
 });
 
@@ -106,27 +146,58 @@ export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
     contentUrl: imageData.url,
-    url: imageData.url, // Adicionando a URL também
+    url: imageData.url,
     width: imageData.width,
     height: imageData.height,
-    name: imageData.name, // Usando o nome da imagem
-    description: imageData.description, // Descrição específica da imagem
+    name: imageData.name,
+    description: imageData.description,
     author: {
       '@type': 'Organization',
-      name: 'Studio Amendolla Noivas', // Nome da organização
+      name: 'Studio Amendolla Noivas',
     },
-    datePublished: imageData.datePublished, // Usando a data de publicação da imagem
-    inLanguage: 'pt-BR', // Definindo o idioma
-    license: 'https://creativecommons.org/licenses/by/4.0/', // Adicionando uma licença genérica
+    datePublished: imageData.datePublished,
+    inLanguage: 'pt-BR',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
     publisher: {
       '@type': 'Organization',
-      name: 'Studio Amendolla Noivas', // Nome do publicador
+      name: 'Studio Amendolla Noivas',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // Certifique-se de que o logo esteja no caminho correto
+        url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
       },
     },
+    creditText: 'Fotografia por Studio Amendolla Noivas',
+    copyrightNotice: '© Studio Amendolla Noivas 2024',
+    acquireLicensePage: 'https://www.studioamendollanoivas.com.br/licensing',
+    creator: {
+      '@type': 'Organization',
+      name: 'Studio Amendolla Noivas',
+    },
   }));
+
+// Schema para LocalBusiness
+export const generateLocalBusinessSchema = (businessData: LocalBusinessProps) => ({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: businessData.name,
+  image: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // Exemplo de imagem do negócio
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: businessData.address.streetAddress,
+    addressLocality: businessData.address.addressLocality,
+    addressRegion: businessData.address.addressRegion,
+    postalCode: businessData.address.postalCode,
+    addressCountry: businessData.address.addressCountry,
+  },
+  telephone: businessData.telephone,
+  openingHours: businessData.openingHours,
+  priceRange: businessData.priceRange,
+  url: 'https://www.studioamendollanoivas.com.br',
+  sameAs: [
+    'https://www.instagram.com/studioamendolla/',
+    'https://www.facebook.com/studioamendolla',
+  ],
+});
 
 // Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
@@ -137,6 +208,7 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       faq: pageData.faq ? generateFAQSchema(pageData.faq) : null,
       services: pageData.services ? generateServiceSchema(pageData.services) : null,
       images: pageData.images ? generateImageObjectSchema(pageData.images) : null,
+      business: pageData.business ? generateLocalBusinessSchema(pageData.business) : null,
     };
 
     // Adicionar schemas ao <head>
