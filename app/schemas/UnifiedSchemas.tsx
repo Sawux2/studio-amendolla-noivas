@@ -27,11 +27,13 @@ interface Breadcrumb {
   url: string;
 }
 
-interface ImageObjectProps {
+export interface ImageObjectProps {
   url: string;
   description: string;
   width: number;
   height: number;
+  name: string;
+  datePublished: string;
 }
 
 interface PageData {
@@ -99,15 +101,31 @@ export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
   })),
 });
 
-// Função para gerar múltiplos ImageObject
 export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
   images.map((imageData) => ({
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
     contentUrl: imageData.url,
-    description: imageData.description,
+    url: imageData.url, // Adicionando a URL também
     width: imageData.width,
     height: imageData.height,
+    name: imageData.name, // Usando o nome da imagem
+    description: imageData.description, // Descrição específica da imagem
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Amendolla Noivas', // Nome da organização
+    },
+    datePublished: imageData.datePublished, // Usando a data de publicação da imagem
+    inLanguage: 'pt-BR', // Definindo o idioma
+    license: 'https://creativecommons.org/licenses/by/4.0/', // Adicionando uma licença genérica
+    publisher: {
+      '@type': 'Organization',
+      name: 'Studio Amendolla Noivas', // Nome do publicador
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // Certifique-se de que o logo esteja no caminho correto
+      },
+    },
   }));
 
 // Componente que adiciona schemas ao head

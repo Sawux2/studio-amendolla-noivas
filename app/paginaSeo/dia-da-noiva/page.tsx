@@ -67,13 +67,27 @@ const DiaDaNoivaPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Dia da Noiva', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva' },
     ],
-    images: serviceImages.map((image) => ({
+    images: serviceImages.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image.src}`,
       description: image.alt,
       width: 600,
       height: 400,
+      name: `Imagem do Dia da Noiva ${index + 1}`, // Nome único para cada imagem
+      datePublished: '2024-10-07', // Data de publicação
+      author: 'Studio Amendolla', // Nome do autor
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Amendolla',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: 'pt-BR', // Idioma
+      license: 'https://creativecommons.org/licenses/by/4.0/', // Licença de uso
     })),
   };
+  
 
   return (
     <div className={styles.servicePage}>

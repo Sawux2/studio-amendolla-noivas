@@ -5,4 +5,8 @@ Disallow: /private/
 Disallow: /config/
 Allow: /
 
-Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
+# Bloquear parâmetros de busca (opcional, se você não quiser indexar URLs com parâmetros):
+Disallow: /*?*
+
+# Sitemap para facilitar o rastreamento do site
+Sitemap: https://www.studioamendollanoivas.com.br/sitemap.xml

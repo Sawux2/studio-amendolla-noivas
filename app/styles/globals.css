@@ -1,23 +1,183 @@
-/* app/globals.css */
+/* Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif; /* Ou outra fonte que preferir */
-    background-color: #f9f9f9; /* Cor de fundo suave */
-    color: #333; /* Cor do texto padrão */
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilo do Container Geral */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Carrossel */
+.carouselSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel img {
+  width: 400px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.carouselButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carouselButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carouselButton.prev {
+  left: -50px;
+}
+
+.carouselButton.next {
+  right: -50px;
+}
+
+/* Seção de FAQ */
+.faqSection {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+}
+
+.faqItem h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Seção de Cards */
+.cardsSection {
+  margin-bottom: 40px;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.formSection {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input,
+.form select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.form button:hover {
+  background-color: #218838;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cardsContainer {
+    flex-direction: column;
   }
-  
-  @font-face {
-    font-family: 'Great Vibes';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/GreatVibes-Regular.woff2') format('woff2');
-    font-display: swap;
+
+  .carousel img {
+    width: 100%;
   }
-  
-  @font-face {
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
-    font-display: swap;
+
+  .card {
+    width: 100%;
   }
+}

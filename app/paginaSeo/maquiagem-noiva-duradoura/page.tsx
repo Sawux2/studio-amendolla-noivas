@@ -71,13 +71,27 @@ const MaquiagemNoivaDuradouraPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Maquiagem Duradoura para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-duradoura-noiva' },
     ],
-    images: serviceData.images.map((image) => ({
+    images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
       description: `Maquiagem Duradoura para Noivas no Studio Amendolla - Beleza que Dura Todo o Dia`,
       width: 600,
       height: 400,
+      name: `Imagem ${index + 1} de Maquiagem Duradoura para Noivas`, // Nome da imagem
+      datePublished: '2024-10-10', // Data de publicação da imagem
+      author: 'Studio Amendolla', // Nome do autor da imagem
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Amendolla',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: 'pt-BR', // Idioma da imagem
+      license: 'https://creativecommons.org/licenses/by/4.0/', // Licença de uso
     })),
   };
+  
 
   return (
     <div className={styles.servicePage}>

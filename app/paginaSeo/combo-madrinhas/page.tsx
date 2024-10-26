@@ -1,4 +1,4 @@
-"use client"; // Indica que este é um Client Component
+"use client";
 
 import Image from 'next/image';
 import { useState } from 'react';
@@ -59,11 +59,15 @@ const CombosMadrinhasPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Combos para Madrinhas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/combos-para-madrinhas' },
     ],
-    images: serviceData.images.map((image) => ({
+    images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
       description: `Combos para madrinhas no Studio Amendolla - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,
+      name: `Imagem do combo ${index + 1}`, // Adicionando o nome da imagem
+      datePublished: '2024-10-07', // Adicionando uma data fixa ou dinâmica
+      author: 'Studio Amendolla', // Adicionando o autor da imagem
+      publisher: 'Studio Amendolla', // Adicionando o publisher
     })),
   };
 

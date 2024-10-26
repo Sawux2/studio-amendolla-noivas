@@ -68,14 +68,27 @@ const NossoEspacoPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Nosso Espaço', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/nosso-espaco' },
     ],
-    images: serviceData.images.map((image) => ({
+    images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: `Nosso espaço no Studio Amendolla - Imagem ${serviceData.images.indexOf(image) + 1}`,
+      description: `Nosso espaço no Studio Amendolla - Imagem ${index + 1}`,
       width: 600,
       height: 400,
+      name: `Imagem ${index + 1} de Nosso Espaço no Studio Amendolla`, // Nome único para cada imagem
+      datePublished: '2024-10-07', // Data de publicação
+      author: 'Studio Amendolla', // Autor da imagem
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Amendolla',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: 'pt-BR', // Idioma da imagem
+      license: 'https://creativecommons.org/licenses/by/4.0/', // Licença de uso
     })),
   };
-
+  
   return (
     <div className={styles.servicePage}>
       <h1>Nosso Espaço - Studio Amendolla Noivas</h1>

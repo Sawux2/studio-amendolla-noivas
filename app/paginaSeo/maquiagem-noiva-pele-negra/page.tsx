@@ -71,13 +71,27 @@ const MaquiagemNoivaPeleNegraPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Maquiagem para Noiva em Pele Negra', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-noiva-pele-negra' },
     ],
-    images: serviceData.images.map((image) => ({
+    images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
       description: `Maquiagem para Noiva em Pele Negra no Studio Amendolla - Especialistas em Pele Negra na Zona Norte de São Paulo`,
       width: 600,
       height: 400,
+      name: `Imagem ${index + 1} de Maquiagem para Noiva em Pele Negra`, // Nome único para cada imagem
+      datePublished: '2024-10-10', // Data de publicação
+      author: 'Studio Amendolla', // Nome do autor
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Amendolla',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: 'pt-BR', // Idioma da imagem
+      license: 'https://creativecommons.org/licenses/by/4.0/', // Licença de uso
     })),
   };
+  
 
   return (
     <div className={styles.servicePage}>

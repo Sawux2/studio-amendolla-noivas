@@ -5,7 +5,7 @@ import Image from "next/image"; // Importando o componente Image do Next.js
 import Link from "next/link"; // Importando o componente Link do Next.js
 import styles from "../styles/Services.module.css"; // Atualize o caminho da importação
 import UnifiedSchemas from "app/schemas/UnifiedSchemas"; // Componente unificado de schemas
-import CanonicalURL from 'app/components/CanonicalURL';
+import CanonicalURL from "app/components/CanonicalURL"; // Componente para URL canônica
 
 const servicesData = [
   {
@@ -54,31 +54,50 @@ const servicesData = [
 
 const Services = () => {
   const pageData = {
-    services: servicesData.map(service => ({
+    services: servicesData.map((service) => ({
       title: service.title,
       description: service.description,
       image: `https://www.studioamendollanoivas.com.br${service.image}`,
     })),
-    images: servicesData.map(service => ({
+    images: servicesData.map((service, index) => ({
       url: `https://www.studioamendollanoivas.com.br${service.image}`,
       description: service.description,
       width: 400,
       height: 300,
+      name: `Imagem ${index + 1} do serviço ${service.title}`, // Nome único para cada imagem
+      datePublished: "2024-10-17", // Ajuste conforme necessário
+      author: "Studio Amendolla", // Autor da imagem
+      publisher: {
+        "@type": "Organization",
+        name: "Studio Amendolla",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.studioamendollanoivas.com.br/images/logo.webp", // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: "pt-BR", // Idioma da imagem
+      license: "https://creativecommons.org/licenses/by/4.0/", // Licença de uso
     })),
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
+      { name: "Home", url: "https://www.studioamendollanoivas.com.br" },
+      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
     ],
   };
 
   return (
     <div className={styles.services}>
+      {/* Canonical URL */}
       <CanonicalURL />
+      {/* Unified Schema */}
       <UnifiedSchemas pageData={pageData} />
+
+      {/* Título e Descrição */}
       <h2 className={styles.servicesTitle}>Nossos Serviços</h2>
       <p className={styles.servicesDescription}>
         Descubra como podemos ajudar a tornar seu dia especial ainda mais perfeito.
       </p>
+
+      {/* Lista de Serviços */}
       <div className={styles.servicesList}>
         {servicesData.map((service, index) => (
           <Link key={index} href={service.link} passHref legacyBehavior>

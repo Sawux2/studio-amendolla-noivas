@@ -64,15 +64,42 @@ const MaquiagemSocialPage = () => {
         description: serviceData.description,
         width: 600,
         height: 400,
+        name: 'Imagem Principal de Maquiagem Social no Studio Amendolla',
+        datePublished: '2024-10-07',
+        author: 'Studio Amendolla',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Studio Amendolla',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
+          },
+        },
+        inLanguage: 'pt-BR',
+        license: 'https://creativecommons.org/licenses/by/4.0/',
       },
       ...serviceData.images.map((image, index) => ({
         url: `https://www.studioamendollanoivas.com.br${image}`,
         description: `Imagem ${index + 1} da Maquiagem Social no Studio Amendolla`,
         width: 600,
         height: 400,
+        name: `Imagem ${index + 1} de Maquiagem Social no Studio Amendolla`,
+        datePublished: '2024-10-07',
+        author: 'Studio Amendolla',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Studio Amendolla',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
+          },
+        },
+        inLanguage: 'pt-BR',
+        license: 'https://creativecommons.org/licenses/by/4.0/',
       })),
     ],
   };
+  
 
   return (
     <div className={styles.servicePage}>

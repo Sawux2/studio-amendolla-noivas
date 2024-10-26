@@ -60,13 +60,27 @@ const SalaoMaquiagemPage = () => {
       { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
       { name: 'Salão de Maquiagem para Noivas em São Paulo', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/salao-maquiagem-noivas-sao-paulo' },
     ],
-    images: serviceData.images.map((image) => ({
+    images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
       description: `Studio Amendolla - Maquiagem para noivas em São Paulo - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,
+      name: `Imagem ${index + 1} de Maquiagem para Noivas no Studio Amendolla`, // Nome único para cada imagem
+      datePublished: '2024-10-11', // Data de publicação
+      author: 'Studio Amendolla', // Autor da imagem
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Amendolla',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+        },
+      },
+      inLanguage: 'pt-BR', // Idioma da imagem
+      license: 'https://creativecommons.org/licenses/by/4.0/', // Licença de uso
     })),
   };
+  
 
   return (
     <div className={styles.servicePage}>
