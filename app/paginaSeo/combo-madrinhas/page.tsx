@@ -6,6 +6,7 @@ import OrcamentoForm from 'app/components/OrcamentoForm';
 import styles from 'app/styles/PaginaSeo.module.css';
 import CanonicalURL from 'app/components/CanonicalURL'; // Componente para URL canônica
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas'; // Componente unificado de schemas
+import FeaturesCards from 'app/components/FeaturesCards';
 
 const serviceData = {
   title: 'Combos para Madrinhas',
@@ -122,6 +123,7 @@ const CombosMadrinhasPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
     </div>
   );
 };

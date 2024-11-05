@@ -1,0 +1,159 @@
+/* styles/SobrePage.module.css */
+
+.sobre-container {
+  font-family: Arial, sans-serif;
+  color: #4a3628;
+}
+
+/* Introdução com Imagem à Esquerda */
+.intro-section {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #fdf9f6;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 250px;
+}
+
+.intro-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  flex: 2;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  color: #8a6f59;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.intro-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4a3628;
+}
+
+/* Diferenciais */
+.differentials-section {
+  padding: 3rem 1rem;
+  background-color: #f8f3ee;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #8a6f59;
+  margin-bottom: 1.5rem;
+}
+
+.differentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.differential-card {
+    position: relative;
+    padding: 2rem;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-blend-mode: overlay;
+    overflow: hidden; /* Garante que o overlay respeite o border-radius */
+  }
+  
+  .differential-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .differential-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece o fundo para melhor legibilidade */
+    border-radius: 8px;
+    z-index: 1;
+    transition: background-color 0.3s ease; /* Adiciona animação na sobreposição */
+  }
+  
+  .differential-card:hover::before {
+    background-color: rgba(0, 0, 0, 0.3); /* Suaviza a sobreposição ao passar o mouse */
+  }
+  
+  .differential-card h3,
+  .differential-card p {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .differential-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    margin-bottom: 0.5rem;
+  }
+  
+  .differential-card p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Sombra para destacar o texto */
+  }
+  
+
+.differential-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25); /* Overlay para melhorar legibilidade */
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Missão e Valores */
+.mission-section {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #f8f5f2;
+}
+
+.mission-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #4a3628;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
