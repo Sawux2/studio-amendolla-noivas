@@ -7,58 +7,43 @@ const OrcamentoForm = () => {
     email: '',
     phone: '',
     eventDate: '',
-    service: 'maquiagem-social',
+    service: '',
     message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage, setResponseMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setResponseMessage('');
 
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    const { name, email, phone, eventDate, service, message } = formData;
 
-      if (response.ok) {
-        setResponseMessage('Email enviado com sucesso!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          eventDate: '',
-          service: 'maquiagem-social',
-          message: '',
-        });
-      } else {
-        const data = await response.json();
-        setResponseMessage(data.error || 'Erro ao enviar email.');
-      }
-    } catch (error) {
-      console.error('Erro ao enviar:', error);
-      setResponseMessage('Erro ao enviar email. Tente novamente mais tarde.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    const whatsappMessage = `
+      Olá, meu nome é ${name}.
+      Gostaria de solicitar um orçamento para o seguinte serviço: ${service}.
+      Data do evento: ${eventDate}.
+      Mensagem adicional: ${message}.
+      Meu telefone: ${phone}.
+      Meu e-mail: ${email}.
+    `;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage.trim());
+    const whatsappURL = `https://wa.me/5511977670498?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+
+    setIsSubmitting(false);
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formGroup}>
-        <label htmlFor="name">Nome</label>
+        <label htmlFor="name">Nome:</label>
         <input
           type="text"
           id="name"
@@ -69,18 +54,17 @@ const OrcamentoForm = () => {
         />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">E-mail:</label>
         <input
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          required
         />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="phone">Telefone</label>
+        <label htmlFor="phone">Telefone:</label>
         <input
           type="tel"
           id="phone"
@@ -91,7 +75,7 @@ const OrcamentoForm = () => {
         />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="eventDate">Data do Evento</label>
+        <label htmlFor="eventDate">Data do Evento:</label>
         <input
           type="date"
           id="eventDate"
@@ -102,35 +86,34 @@ const OrcamentoForm = () => {
         />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="service">Serviço</label>
-        <select
+        <label htmlFor="service">Serviço:</label>
+        <input
+          type="text"
           id="service"
           name="service"
           value={formData.service}
           onChange={handleChange}
-          required
-        >
-          <option value="maquiagem-social">Maquiagem Social</option>
-          <option value="penteado-para-noivas">Penteado para Noivas</option>
-          <option value="massagem-relaxante">Massagem Relaxante</option>
-          <option value="dia-da-noiva">Dia da Noiva Completo</option>
-        </select>
+          placeholder="Digite o serviço desejado"
+        />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="message">Observações</label>
+        <label htmlFor="message">Mensagem Adicional:</label>
         <textarea
           id="message"
           name="message"
-          rows={4}
           value={formData.message}
           onChange={handleChange}
-          placeholder="Descreva detalhes do seu evento, número de participantes, etc."
+          rows={4}
+          placeholder="Digite uma mensagem adicional"
         />
       </div>
-      <button type="submit" className={styles.button} disabled={isSubmitting}>
-        {isSubmitting ? 'Enviando...' : 'Enviar'}
+      <button
+        type="submit"
+        className={`${styles.submitButton} ${isSubmitting ? styles.disabled : ''}`}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
       </button>
-      {responseMessage && <p className={styles.responseMessage}>{responseMessage}</p>}
     </form>
   );
 };
