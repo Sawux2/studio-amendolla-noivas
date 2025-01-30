@@ -1,5 +1,3 @@
-// components/FeaturesCards.tsx
-
 import React from 'react';
 import styles from 'app/styles/FeaturesCards.module.css';
 
@@ -34,6 +32,9 @@ const FeaturesCards: React.FC = () => {
         <h2 className={styles["features-title"]}>
           Por que escolher o <span>Studio Amendolla Noivas?</span>
         </h2>
+        <p className={styles["features-subtitle"]}>
+          Referência em São Paulo, especialmente na Zona Norte e Vila Gustavo, somos reconhecidos por transformar sonhos em realidade com maquiagem e penteados que destacam a beleza única de cada noiva. Nossa missão é proporcionar uma experiência completa, do primeiro contato ao grande dia.
+        </p>
 
         <div className={styles["features-grid"]}>
           {features.map((feature, index) => (

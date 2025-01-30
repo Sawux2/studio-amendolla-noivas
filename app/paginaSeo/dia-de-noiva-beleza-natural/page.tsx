@@ -6,6 +6,8 @@ import OrcamentoForm from 'app/components/OrcamentoForm';
 import styles from 'app/styles/PaginaSeo.module.css';
 import CanonicalURL from 'app/components/CanonicalURL';
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas';
+import ServiceSimulator from 'app/components/calculadora';
+import FeaturesCards from 'app/components/FeaturesCards';
 
 const serviceData = {
   title: 'Dia da Noiva com Beleza Natural - Studio Amendolla, Zona Norte SP',
@@ -143,6 +145,8 @@ const DiaDaNoivaBelezaNaturalPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator/>
     </div>
   );
 };

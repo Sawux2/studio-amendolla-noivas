@@ -6,6 +6,8 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import ServiceSimulator from "app/components/calculadora";
+import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
   title: "Maquiadora Perto de Mim - Priscila Helena",
@@ -146,6 +148,8 @@ const MaquiadoraPertoDeMimPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator/>
     </div>
   );
 };

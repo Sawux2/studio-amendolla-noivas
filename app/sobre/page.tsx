@@ -5,6 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from 'app/styles/SobrePage.module.css';
 import UnifiedSchemas, { ImageObjectProps } from 'app/schemas/UnifiedSchemas';
+import ServiceSimulator from 'app/components/calculadora';
 
 // Dados de SEO e schema
 const pageData = {
@@ -90,6 +91,7 @@ const SobrePage = () => {
           &quot;Realçar a beleza natural de cada noiva e proporcionar tranquilidade e confiança no seu grande dia.&quot;
         </p>
       </section>
+      <ServiceSimulator />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import React from 'react';
 import styles from 'app/styles/Contact.module.css';
 import { FaWhatsapp } from 'react-icons/fa'; // Ícone do WhatsApp
 import { MdLocationOn } from 'react-icons/md'; // Ícone de localização
+import ServiceSimulator from 'app/components/calculadora';
 
 const Contact: React.FC = () => {
   const googleMapsEmbedUrl =
@@ -65,6 +66,7 @@ const Contact: React.FC = () => {
           Traçar Rota
         </a>
       </div>
+      <ServiceSimulator />
     </div>
   );
 };

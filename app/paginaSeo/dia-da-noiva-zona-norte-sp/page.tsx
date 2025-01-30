@@ -6,6 +6,8 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import ServiceSimulator from "app/components/calculadora";
+import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
   title: "Dia da Noiva na Zona Norte de São Paulo - Transforme seu Grande Dia",
@@ -145,6 +147,8 @@ const DiaDaNoivaZonaNortePage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator/>
     </div>
   );
 };

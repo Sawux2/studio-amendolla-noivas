@@ -6,6 +6,8 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import ServiceSimulator from "app/components/calculadora";
+import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
   title: "Cabelo de Noiva - Studio Amendolla",
@@ -17,22 +19,13 @@ const serviceData = {
     1. **Escolha do Penteado**: 
        A escolha do penteado deve considerar o estilo do casamento, o formato do seu rosto, o tipo de cabelo e o vestido. Desde um coque elegante, até ondas suaves ou tranças detalhadas, o penteado deve complementar sua personalidade e o tema do casamento.
 
-    2. **Hidratação e Cuidados Capilares**: 
-       Para garantir um cabelo saudável e bonito no Dia da Noiva, é essencial cuidar do cabelo com antecedência. Comece a hidratar o cabelo alguns meses antes do casamento, usando máscaras nutritivas e shampoos adequados ao seu tipo de cabelo.
-
-    3. **Provas de Penteado**: 
+    2. **Provas de Penteado**: 
        Realize uma prova de cabelo para testar o penteado que você escolheu, garantindo que ele ficará perfeito no grande dia. Isso também ajuda a definir detalhes, como acessórios para o cabelo (tiaras, flores, véu, etc.), e a adaptar o estilo conforme necessário.
 
-    4. **Corte de Cabelo e Pontas**: 
-       Não deixe para cortar o cabelo na última hora. Realize um corte de cabelo algumas semanas antes do casamento, garantindo que as pontas estejam saudáveis e que o cabelo tenha o comprimento ideal para o penteado escolhido.
-
-    5. **Cabelos Cacheados e Lisos**: 
-       Se você tem cabelo cacheado, pode optar por definir seus cachos de forma natural ou até alisar o cabelo, se preferir. O mais importante é que o penteado escolhido respeite sua personalidade e estilo.
-
-    6. **Finalização do Penteado**: 
+    3. **Finalização do Penteado**: 
        No Dia da Noiva, o penteado é finalizado com todos os cuidados necessários, como fixação, brilho e ajuste dos detalhes para garantir que ele dure o dia todo. O profissional cuidará para que seu cabelo fique lindo, elegante e confortável.
 
-    7. **Acessórios de Cabelo**: 
+    4. **Acessórios de Cabelo**: 
        O uso de acessórios é uma excelente forma de adicionar charme e personalidade ao seu penteado. Flores, tiaras, pentes e véus são opções que podem ser usadas para complementar o look da noiva, criando uma harmonia com o vestido e maquiagem.
   `,
   image: "/images/cabelo-de-noiva.webp",
@@ -169,6 +162,8 @@ const CabeloDeNoivaPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator/>
     </div>
   );
 };

@@ -6,6 +6,8 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import FeaturesCards from "app/components/FeaturesCards";
+import ServiceSimulator from "app/components/calculadora";
 
 const serviceData = {
   title: "Maquiagem e Cabelo para Noivas - Studio Amendolla",
@@ -151,6 +153,8 @@ const MaquiagemCabeloNoivasPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator/>
     </div>
   );
 };
