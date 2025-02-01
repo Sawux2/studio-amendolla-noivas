@@ -8,6 +8,8 @@ import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 import ServiceSimulator from "app/components/calculadora";
+import GaleriaDeFotos from 'app/components/GaleriaDeFotos'; // Ajuste o caminho conforme a estrutura do seu projeto
+
 
 const serviceData = {
   title: "Maquiagem para Casamento de Dia - Priscila Helena",
@@ -151,6 +153,8 @@ const MaquiagemCasamentoDiaPage = () => {
       </div>
           <FeaturesCards />
           <ServiceSimulator/>
+          <GaleriaDeFotos/>
+          
     </div>
   );
 };

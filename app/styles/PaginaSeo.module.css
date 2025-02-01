@@ -147,4 +147,18 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .carouselButton {
+    width: 30px; /* Reduzir o tamanho dos botões */
+    height: 30px;
+    font-size: 0.9rem; /* Reduzir o tamanho da fonte dos botões */
+  }
+
+  .serviceImage {
+    width: 100%; /* Garantir que a imagem ocupe 100% da largura */
+    height: auto; /* Manter a proporção da imagem */
+  }
+}
+
 

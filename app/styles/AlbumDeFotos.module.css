@@ -1,0 +1,126 @@
+.container {
+    background-color: #f9fafb;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 0 16px;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 16px;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  
+  .section {
+    margin-bottom: 48px;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .sectionText {
+    font-size: 1.125rem;
+    color: #4b5563;
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 32px;
+  }
+  
+  .aboutSection {
+    background-color: #ffffff;
+    padding: 48px 16px;
+  }
+  
+  .aboutContent {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  
+  .testimonialsSection {
+    background-color: #f3f4f6;
+    padding: 48px 16px;
+  }
+  
+  .testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  
+  .testimonial {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonialText {
+    font-style: italic;
+    color: #4b5563;
+  }
+  
+  .testimonialAuthor {
+    margin-top: 16px;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  .ctaSection {
+  background: linear-gradient(to right, #a84141, #eea0a0); /* Tons de salmão e rosa mais claros */
+  padding: 48px 16px;
+}
+
+  .ctaContent {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .ctaTitle {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+  
+  .ctaText {
+    font-size: 1.125rem;
+    color: #ffffff;
+    margin-bottom: 32px;
+  }
+  
+  .ctaButton {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #95481c;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .ctaButton:hover {
+    background-color: #f3f4f6;
+  }

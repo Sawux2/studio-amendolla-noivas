@@ -7,6 +7,7 @@ import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import ServiceSimulator from "app/components/calculadora";
+import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
   title: "Maquiadora na Zona Norte - Studio Amendolla",
@@ -226,6 +227,8 @@ const MaquiadoraZonaNortePage = () => {
           Além da maquiagem, oferecemos serviços complementares de cuidados com a pele, cabelo e outros serviços para tornar o seu grande dia ainda mais especial.
         </p>
       </div>
+      
+      <FeaturesCards />
       <ServiceSimulator />
     </div>
   );

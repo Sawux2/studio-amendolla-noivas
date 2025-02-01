@@ -154,4 +154,5 @@ const MaquiadoraPertoDeMimPage = () => {
   );
 };
 
+
 export default MaquiadoraPertoDeMimPage;

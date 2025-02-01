@@ -1,0 +1,396 @@
+/* Estilos gerais */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.carouselFormContainer {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.formColumn {
+  flex: 1;
+  max-width: 50%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carouselColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.highlightImage {
+  margin: 0 20px;
+}
+
+.serviceImage {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos do Formulário */
+.formColumn form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formColumn label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.formColumn input,
+.formColumn textarea,
+.formColumn select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.formColumn textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formColumn button {
+  background: #f68787;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formColumn button:hover {
+  background: #f56b6b;
+}
+
+/* Seção de Serviços */
+.servicesSection {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.serviceCard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.serviceCard p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Galeria de Fotos */
+.gallerySection {
+  margin-bottom: 40px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.galleryItem {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Depoimentos */
+.testimonialsSection {
+  background: #f9fafb;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #666;
+}
+
+.testimonial footer {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #333;
+}
+/* FAQ Section */
+.faqSection {
+  margin-bottom: 60px; /* Aumentei a margem para dar mais espaço */
+  padding: 0 20px; /* Adicionei padding lateral para mobile */
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* Aumentei o gap para melhor espaçamento */
+  max-width: 1200px; /* Limitei a largura máxima para melhor leitura */
+  margin: 0 auto; /* Centralizei o grid na página */
+}
+
+.faqItem {
+  background: #fff;
+  padding: 24px; /* Aumentei o padding para mais respiro */
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionei transição para interatividade */
+}
+
+.faqItem:hover {
+  transform: translateY(-4px); /* Efeito de levantar ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra mais destacada no hover */
+}
+
+.faqItem h3 {
+  font-size: 1.25rem;
+  color: #222; /* Cor mais escura para melhor contraste */
+  margin-bottom: 16px;
+  font-weight: 600; /* Adicionei peso à fonte para destacar a pergunta */
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: #555; /* Cor um pouco mais escura para melhor legibilidade */
+  line-height: 1.6; /* Aumentei o line-height para melhor leitura */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .faqGrid {
+    grid-template-columns: 1fr; /* Uma coluna em dispositivos móveis */
+    gap: 16px; /* Espaçamento menor para mobile */
+  }
+
+  .faqItem {
+    padding: 20px; /* Padding menor para mobile */
+  }
+
+  .faqItem h3 {
+    font-size: 1.125rem; /* Tamanho de fonte menor para mobile */
+  }
+
+  .faqItem p {
+    font-size: 0.9375rem; /* Tamanho de fonte menor para mobile */
+  }
+}
+
+/* CTA */
+.ctaSection {
+  background: linear-gradient(to right, #f68787, #f8a5a5);
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.ctaButton {
+  background: #fff;
+  color: #f68787;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  background: #f3f4f6;
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .carouselFormContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .formColumn,
+  .carouselColumn {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .servicesGrid,
+  .testimonialsGrid,
+  .faqGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .ctaText {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .servicesGrid,
+  .testimonialsGrid,
+  .faqGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaText {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    padding: 8px 20px;
+  }
+}
+
+
+/* Botão do WhatsApp */
+.whatsappButton {
+  display: flex;
+  background-color: #25d366; /* Verde do WhatsApp */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 20px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsappButton:hover {
+  background-color: #128c7e; /* Tom mais escuro no hover */
+}
