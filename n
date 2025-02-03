@@ -1,0 +1,42 @@
+* [33m596700d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m paginas seo
+* [33m5901495[m paginas novas
+* [33m3af4f47[m 28 pagina seo
+* [33me4c85a6[m paginas seo novas
+* [33m2c6bce3[m Commit inicial
+* [33mbce5f30[m subindo sobre nos
+*   [33m64acaec[m Resolvendo conflitos de merge
+[32m|[m[33m\[m  
+[32m|[m * [33m33d3e2f[m tirando duplicidade service e breadcrumb
+[32m|[m * [33m7c122de[m tirando duplicidade service e breadcrumb
+* [33m|[m [33m8aa45db[m sobrenos e component sobre nos
+[33m|[m[33m/[m  
+* [33m9ff3970[m voltando imagem objectc
+* [33m55ef16b[m testando nossa estrutura
+* [33m5697edb[m testando imagem object nova
+* [33m378d131[m atualizacao title e description certa
+* [33m1ba8beb[m ajustes seo metatag
+* [33m2a34b75[m testando next-sitemap.com.js no comando
+* [33md69f852[m sitemap dinamico
+* [33maaa41c8[m paginas seo noivas
+* [33meefd395[m robots
+* [33m7033ed3[m atualização paginas e metatags
+* [33m448beb1[m widget
+* [33mef49b42[m schemas object imagem
+* [33m64a6b1e[m serviços paginas
+* [33m9c50503[m pagina serviços editada
+* [33me6ded43[m atualizacao home
+* [33m8cb3052[m atualizacao maquiagem social
+* [33m66c85c0[m pagina pacote noivas
+* [33m76e0fc0[m paginas seo
+* [33m5227a0e[m maquiagem-social
+* [33m902b5ab[m alguns testes de estrutura chema unificada
+* [33m8abf4fc[m atualizacao teste
+* [33me74ad92[m remocao do organization
+* [33mef1c9e2[m sobre
+* [33mf68dc6e[m edicoes
+* [33m021ea1c[m testando schema
+* [33m160cb8b[m Melhorias no Hero e Menu, incluindo bordas arredondadas e cores ajustadas
+* [33mbb3dc16[m Configuração inicial completa
+* [33me5ed762[m Configuração da pasta app e layout
+* [33m0050309[m Início do projeto Next.js para Studio Amendolla Noivas
+* [33m6185adf[m Initial commit from Create Next App
