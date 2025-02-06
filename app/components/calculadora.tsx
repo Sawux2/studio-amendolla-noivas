@@ -50,7 +50,7 @@ const CalculatorContainer = styled.div`
   }
 `;
 
-const CalculatorTitle = styled.h1`
+const CalculatorTitle = styled.h3`
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;

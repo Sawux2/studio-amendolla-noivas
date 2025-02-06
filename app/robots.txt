@@ -10,3 +10,5 @@ Disallow: /*?*
 
 # Sitemap para facilitar o rastreamento do site
 Sitemap: https://www.studioamendollanoivas.com.br/sitemap.xml
+
+Use-IndexNow: https://www.indexnow.org

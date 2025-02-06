@@ -7,3 +7,4 @@ Host: https://studioamendollanoivas.com.br
 
 # Sitemaps
 Sitemap: https://studioamendollanoivas.com.br/sitemap.xml
+Use-IndexNow: https://www.indexnow.org

@@ -1,125 +1,148 @@
 /* Definindo as fontes com @font-face */
 @font-face {
-  font-family: 'Great Vibes';
+  font-family: "Great Vibes";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/GreatVibes-Regular.woff2') format('woff2');
+  src: url("/fonts/GreatVibes-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  src: url("/fonts/PlayfairDisplay-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 /* Estilos do Hero */
 .hero {
   position: relative;
-  height: calc(100vh - 70px);
+  height: 600px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 15px;
+  position: static;
 }
 
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(240, 240, 240, 0.9);
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay escuro suave */
+  z-index: 2;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #333;
-  z-index: 2;
+  position: relative;
+  z-index: 3;
+  color: #fff;
   text-align: center;
+  max-width: 800px;
   padding: 0 20px;
 }
 
 .title {
   font-family: "Great Vibes", cursive;
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 0;
   font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.title span {
+  color: #ff6b6b; /* Dourado para contraste */
 }
 
 .subtitle {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
-  margin: 1rem 0;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  margin: 1.5rem 0;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 2s ease-out;
 }
 
 .button {
-  padding: 18px 40px;
+  padding: 16px 36px;
   border: none;
   border-radius: 8px;
-  background-color: #ffb3b3;
-  color: #333;
+  background-color: #ff6b6b; /* Rosa suave */
+  color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 2.5s ease-out;
 }
 
 .button:hover {
-  background-color: #ff7f7f;
+  background-color: #ff4c4c; /* Rosa mais escuro */
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.buttonLink {
-  text-decoration: none;
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .title {
-    font-size: 2.7rem;
+    font-size: 3.5rem;
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .button {
     font-size: 1rem;
     padding: 14px 28px;
   }
-
-  .hero {
-    height: 60vh;
-  }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .button {
     font-size: 0.9rem;
     padding: 12px 24px;
   }
-
-  .hero {
-    height: calc(100vh - 70px);
-  }
-
-  .content {
-    padding: 0 10px;
-  }
 }
+

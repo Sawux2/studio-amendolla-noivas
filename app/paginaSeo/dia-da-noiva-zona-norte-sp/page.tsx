@@ -40,7 +40,7 @@ const faqData = [
   {
     question: "Quanto custa o Dia da Noiva?",
     answer:
-      "Os valores variam dependendo dos serviços escolhidos, mas os pacotes na Zona Norte de São Paulo geralmente começam a partir de R$ 1.500."},
+      "Os valores variam dependendo dos serviços escolhidos, mas os pacotes na Zona Norte de São Paulo geralmente começam a partir de R$ 1.800."},
 ];
 
 const DiaDaNoivaZonaNortePage = () => {

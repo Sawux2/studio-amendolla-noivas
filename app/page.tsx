@@ -21,7 +21,7 @@ export default function HomePage() {
       image: 'https://www.studioamendollanoivas.com.br/images/hero-image.webp',
     },
     faq: [
-      { question: 'Qual o preço da maquiagem?', answer: 'A partir de R$150.' },
+      { question: 'Qual o preço da maquiagem?', answer: 'consulte nossos com uma base , em nossa calculadora.' },
       { question: 'Onde estamos localizados?', answer: 'Nosso salão fica na Avenida Julio Buono, 2386, São Paulo, Brasil.' },
     ],
   };

@@ -6,28 +6,35 @@ import styles from "../styles/Hero.module.css";
 const Hero = () => {
   return (
     <div className={styles.hero}>
-      <Image
-        src="/images/studio-amendolla-noivas.webp"
-        alt="Salão de Noivas"
-        fill
-        style={{ objectFit: "cover", borderRadius: "15px" }}
-        quality={75}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
-        priority
-        placeholder="blur"
-        blurDataURL="data:image/webp;base64,...suaImagemEmBase64..."
-      />
+      {/* Imagem de fundo */}
+      <div className={styles.imageWrapper}>
+        <Image
+          src="/images/studio-amendolla-noivas.webp"
+          alt="Salão de Noivas"
+          fill
+          className={styles.image}
+          quality={75}
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,...suaImagemEmBase64..."
+        />
+      </div>
+
+      {/* Overlay suave */}
       <div className={styles.overlay} />
+
+      {/* Conteúdo principal */}
       <div className={styles.content}>
-        <h1 className={styles.title}>Bem-vinda ao Studio Amendolla Noivas</h1>
+        <h2 className={styles.title}>
+          Bem-vinda ao <span>Studio Amendolla Noivas</span>
+        </h2>
         <p className={styles.subtitle}>
-          Transforme seu sonho em realidade com nossos serviços exclusivos.
+          Transforme seu sonho em realidade com nossos serviços exclusivos de
+          maquiagem e penteados.
         </p>
-        <button className={styles.button}>
-          <Link href="/sobre" className={styles.buttonLink}>
-            Saiba Mais
-          </Link>
-        </button>
+        <Link href="/sobre" className={styles.button}>
+          Saiba Mais
+        </Link>
       </div>
     </div>
   );

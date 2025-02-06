@@ -28,7 +28,7 @@ const Menu = () => {
           <Image src={logo} alt="Logo do Studio Amendolla" width={100} height={50} />
         </Link>
       </div>
-      <div className={styles.menuToggle} onClick={toggleMenu}>
+      <div className={styles.menuToggle} onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen}>
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>

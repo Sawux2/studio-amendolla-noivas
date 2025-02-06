@@ -204,64 +204,79 @@
 }
 /* FAQ Section */
 .faqSection {
-  margin-bottom: 60px; /* Aumentei a margem para dar mais espaço */
-  padding: 0 20px; /* Adicionei padding lateral para mobile */
+  margin-bottom: 80px; /* Mais espaço abaixo da seção */
+  padding: 0 20px; /* Padding lateral para mobile */
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea); /* Fundo gradiente sutil */
+  padding: 40px 20px; /* Padding interno para destacar a seção */
+  border-radius: 16px; /* Bordas arredondadas para a seção */
 }
 
 .faqGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px; /* Aumentei o gap para melhor espaçamento */
-  max-width: 1200px; /* Limitei a largura máxima para melhor leitura */
-  margin: 0 auto; /* Centralizei o grid na página */
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 32px; /* Espaçamento maior entre os itens */
+  max-width: 1200px; /* Largura máxima para melhor leitura */
+  margin: 0 auto; /* Centralizar o grid na página */
 }
 
 .faqItem {
   background: #fff;
-  padding: 24px; /* Aumentei o padding para mais respiro */
-  border-radius: 12px; /* Bordas mais arredondadas */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionei transição para interatividade */
+  padding: 28px; /* Mais padding para respiro */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+  border: 1px solid #e0e0e0; /* Borda sutil para mais definição */
 }
 
 .faqItem:hover {
-  transform: translateY(-4px); /* Efeito de levantar ao passar o mouse */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra mais destacada no hover */
+  transform: translateY(-6px); /* Efeito de levantar mais pronunciado */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
 }
 
 .faqItem h3 {
-  font-size: 1.25rem;
-  color: #222; /* Cor mais escura para melhor contraste */
+  font-size: 1.375rem; /* Tamanho maior para a pergunta */
+  color: #1a1a1a; /* Cor escura para melhor contraste */
   margin-bottom: 16px;
-  font-weight: 600; /* Adicionei peso à fonte para destacar a pergunta */
+  font-weight: 700; /* Fonte mais grossa para destaque */
+  position: relative; /* Para adicionar um ícone ou decoração */
+}
+
+.faqItem h3::before {
+  content: "❓"; /* Ícone de interrogação */
+  margin-right: 12px; /* Espaçamento entre o ícone e o texto */
+  color: #ff6b6b; /* Cor vibrante para o ícone */
 }
 
 .faqItem p {
-  font-size: 1rem;
-  color: #555; /* Cor um pouco mais escura para melhor legibilidade */
-  line-height: 1.6; /* Aumentei o line-height para melhor leitura */
+  font-size: 1.0625rem; /* Tamanho de fonte um pouco maior */
+  color: #444; /* Cor mais escura para melhor legibilidade */
+  line-height: 1.7; /* Espaçamento maior entre linhas */
+  margin-bottom: 0; /* Remover margem inferior */
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
+  .faqSection {
+    padding: 30px 15px; /* Padding menor para mobile */
+  }
+
   .faqGrid {
     grid-template-columns: 1fr; /* Uma coluna em dispositivos móveis */
-    gap: 16px; /* Espaçamento menor para mobile */
+    gap: 20px; /* Espaçamento menor para mobile */
   }
 
   .faqItem {
-    padding: 20px; /* Padding menor para mobile */
+    padding: 24px; /* Padding menor para mobile */
   }
 
   .faqItem h3 {
-    font-size: 1.125rem; /* Tamanho de fonte menor para mobile */
+    font-size: 1.25rem; /* Tamanho de fonte menor para mobile */
   }
 
   .faqItem p {
-    font-size: 0.9375rem; /* Tamanho de fonte menor para mobile */
+    font-size: 1rem; /* Tamanho de fonte menor para mobile */
   }
 }
-
 /* CTA */
 .ctaSection {
   background: linear-gradient(to right, #f68787, #f8a5a5);

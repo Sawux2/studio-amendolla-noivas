@@ -7,6 +7,7 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Script from 'next/script';
 import Footer from './components/Footer';
 import ContactWidget from './components/ContactWidget';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 interface SEOProps {
   title?: string;
@@ -76,6 +77,7 @@ export default function RootLayout({ children, pageData }: LayoutProps) {
         {children}
         <Footer />
         <VercelAnalytics />
+        <SpeedInsights/>
       </body>
     </html>
   );

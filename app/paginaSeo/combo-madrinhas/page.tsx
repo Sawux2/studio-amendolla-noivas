@@ -24,7 +24,7 @@ const serviceData = {
 
 const faqData = [
   { question: 'O que está incluído nos combos para madrinhas?', answer: 'Os combos incluem maquiagem profissional e penteado personalizado para cada madrinha.' },
-  { question: 'Qual o valor dos combos para madrinhas?', answer: 'Os valores variam conforme o pacote escolhido, com preços a partir de R$170 por madrinha.' },
+  { question: 'Qual o valor dos combos para madrinhas?', answer: 'Os valores variam conforme o pacote escolhido para madrinhas.' },
   { question: 'Vocês fazem atendimento a domicílio?', answer: 'Sim, realizamos atendimento a domicílio para maior comodidade das madrinhas, com valores adicionais sob consulta.' },
   { question: 'Como agendar um horário para as madrinhas?', answer: 'Entre em contato pelo WhatsApp ou telefone para verificar a disponibilidade e realizar seu agendamento.' },
 ];

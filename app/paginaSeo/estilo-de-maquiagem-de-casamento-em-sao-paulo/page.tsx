@@ -24,6 +24,60 @@ const pageData = {
       image: "/images/maquiagem-casamento-sao-paulo.webp",
     },
   ],
+  faq: [
+    {
+      question: "Quais estilos de maquiagem de casamento são oferecidos?",
+      answer: "Oferecemos uma variedade de estilos, incluindo maquiagem clássica, natural e moderna, para atender a diferentes gostos e preferências da noiva.",
+    },
+    {
+      question: "Como escolher o estilo de maquiagem para o casamento?",
+      answer: "Durante uma consulta, nossa equipe ajudará a identificar o estilo de maquiagem que melhor combina com seu visual e tema de casamento.",
+    },
+    {
+      question: "É possível fazer um teste de maquiagem?",
+      answer: "Sim, oferecemos a opção de agendar um teste para que você possa experimentar o estilo de maquiagem antes do grande dia e garantir que fique perfeito.",
+    },
+  ],
+  images: [
+    {
+      url: "/images/maquiagem-casamento-sao-paulo.webp",
+      description: "Maquiagem de casamento em São Paulo",
+      width: 800,
+      height: 600,
+      name: "Maquiagem de Casamento",
+      datePublished: "2025-02-01",
+    },
+  ],
+  breadcrumb: [
+    {
+      name: "Home",
+      url: "https://www.studioamendollanoivas.com.br",
+    },
+    {
+      name: "Serviços",
+      url: "https://www.studioamendollanoivas.com.br/servicos",
+    },
+    {
+      name: "Maquiagem de Casamento",
+      url: "https://www.studioamendollanoivas.com.br/servicos/maquiagem-casamento",
+    },
+  ],
+  localBusiness: {
+    name: "Studio Amendolla Noivas",
+    address: {
+      streetAddress: "Rua Exemplo, 123",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "01234-567",
+      addressCountry: "BR",
+    },
+    telephone: "+5511999999999",
+    email: "contato@studioamendollanoivas.com.br",
+    url: "https://www.studioamendollanoivas.com.br",
+    openingHours: "Mo-Fr 09:00-18:00",
+    image: "/images/logo.webp",
+    priceRange: "$$$",
+  },
 };
 
 const EstiloDeMaquiagemDeCasamentoSPPage = () => {
@@ -68,10 +122,7 @@ const EstiloDeMaquiagemDeCasamentoSPPage = () => {
             </p>
           </div>
         </div>
-        
       </section>
-
-      {/* Galeria de Estilos de Maquiagem */}
 
       {/* FAQ */}
       <section className={styles.faqSection}>
@@ -97,7 +148,7 @@ const EstiloDeMaquiagemDeCasamentoSPPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Outros Componentes */}
       <ServiceSimulator />
       <FeaturesCards />
