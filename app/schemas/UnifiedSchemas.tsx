@@ -56,7 +56,6 @@ export const generateArticleSchema = (articleData: ArticleProps) => ({
   },
   datePublished: articleData.datePublished,
   image: articleData.image,
-  
 });
 
 export const generateFAQSchema = (faqItems: FAQItem[]) => ({
@@ -75,7 +74,9 @@ export const generateFAQSchema = (faqItems: FAQItem[]) => ({
 export const generateServiceSchema = (services: ServiceItem[]) => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: services.map(service => service.title).join(', '),
+  serviceType: services.length > 1 
+    ? services.map(service => service.title).join(", ") 
+    : services[0].title,
   provider: {
     "@type": "Organization",
     "name": "Studio Amendolla Noivas",
@@ -103,7 +104,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
 });
 
 export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
-  images.map((imageData) => ({
+  images.map(imageData => ({
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
     contentUrl: imageData.url,
@@ -124,29 +125,35 @@ export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
       name: 'Studio Amendolla Noivas',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
+        url: 'http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.92451a70.png&w=128&q=75',
       },
     },
-    // Adicionando campos opcionais:
     creditText: 'Fotografia por Studio Amendolla Noivas',
     copyrightNotice: '© Studio Amendolla Noivas 2024',
-    acquireLicensePage: 'https://www.studioamendollanoivas.com.br/licensing', // Ajuste conforme necessário
+    acquireLicensePage: 'https://www.studioamendollanoivas.com.br',
     creator: {
       '@type': 'Organization',
       name: 'Studio Amendolla Noivas',
     },
   }));
 
-
 // Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
   useEffect(() => {
+    // Filtrando palavras comuns para keywords
+    const stopWords = ['de', 'para', 'com', 'em', 'a', 'o', 'na', 'no']; // Exemplo de palavras comuns
+    const keywordsContent = pageData.article?.headline
+      .replace(/,|\./g, '')
+      .split(' ')
+      .filter(word => !stopWords.includes(word.toLowerCase()))
+      .join(', ') || '';
+
     const schemaData = {
-      article: pageData.article ? generateArticleSchema(pageData.article) : null,
-      breadcrumb: pageData.breadcrumb ? generateBreadcrumbSchema(pageData.breadcrumb) : null,
-      faq: pageData.faq ? generateFAQSchema(pageData.faq) : null,
-      services: pageData.services ? generateServiceSchema(pageData.services) : null,
-      images: pageData.images ? generateImageObjectSchema(pageData.images) : null,
+      article: pageData.article && generateArticleSchema(pageData.article),
+      breadcrumb: pageData.breadcrumb && generateBreadcrumbSchema(pageData.breadcrumb),
+      faq: pageData.faq && generateFAQSchema(pageData.faq),
+      services: pageData.services && generateServiceSchema(pageData.services),
+      images: pageData.images && generateImageObjectSchema(pageData.images),
     };
 
     // Adicionar schemas ao <head>
@@ -165,22 +172,24 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       document.title = pageData.article.headline;
       const metaDescription = document.querySelector('meta[name="description"]');
       const metaKeywords = document.querySelector('meta[name="keywords"]');
+      
+      const descriptionContent = pageData.article.description;
 
       if (metaDescription) {
-        metaDescription.setAttribute('content', pageData.article.description);
+        metaDescription.setAttribute('content', descriptionContent);
       } else {
         const newMetaDescription = document.createElement('meta');
         newMetaDescription.name = 'description';
-        newMetaDescription.content = pageData.article.description;
+        newMetaDescription.content = descriptionContent;
         document.head.appendChild(newMetaDescription);
       }
 
       if (metaKeywords) {
-        metaKeywords.setAttribute('content', pageData.article.headline.replace(/,|\./g, '').split(' ').join(', '));
+        metaKeywords.setAttribute('content', keywordsContent);
       } else {
         const newMetaKeywords = document.createElement('meta');
         newMetaKeywords.name = 'keywords';
-        newMetaKeywords.content = pageData.article.headline.replace(/,|\./g, '').split(' ').join(', ');
+        newMetaKeywords.content = keywordsContent;
         document.head.appendChild(newMetaKeywords);
       }
     }

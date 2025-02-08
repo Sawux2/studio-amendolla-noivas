@@ -10,9 +10,9 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem de Formatura em São Paulo | Penteado e Beleza Studio Amendolla",
+    headline: "Transforme seu Visual para a Formatura em São Paulo | Studio Amendolla",
     description:
-      "Transforme sua aparência com a maquiagem de formatura em São Paulo oferecida pelo Studio Amendolla. Nossos serviços de beleza incluem maquiagem e penteado personalizados para garantir que você brilhe na sua noite especial.",
+      "Descubra como a maquiagem de formatura em São Paulo pode realçar sua beleza e confiança. No Studio Amendolla, cuidamos de cada detalhe do seu penteado e maquiagem para que você se sinta única na sua celebração.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/beleza-para-formatura-sao-paulo.webp",
@@ -43,10 +43,10 @@ const BelezaParaFormaturaSPPage = () => {
 
         <div className={styles.textContent}>
           <h2 className={styles.title}>
-            Beleza Exclusiva para Sua Formatura
+            Realce sua Beleza para a Formatura com o Studio Amendolla
           </h2>
           <p className={styles.description}>
-            No Studio Amendolla, oferecemos maquiagem de formatura em São Paulo, com serviços personalizados para cada formanda. Nossa equipe especializada em maquiagem e penteado trabalha para criar o visual perfeito para você. Seja para um look sofisticado, glamouroso ou moderno, temos as melhores opções para destacar sua beleza. Garantimos que sua maquiagem e penteado de formatura sejam impecáveis, para que você se sinta deslumbrante no seu grande dia. Além disso, realizamos testes de maquiagem e penteado para que tudo esteja perfeito.
+            O Studio Amendolla é especialista em maquiagem de formatura em São Paulo, oferecendo serviços personalizados para cada formanda. Criamos looks únicos para que você se sinta radiante e confiante no seu grande dia. Nossa equipe de profissionais é altamente qualificada e preparada para atender suas expectativas, seja com um estilo clássico ou algo mais moderno e ousado. Além disso, proporcionamos sessões de teste para garantir que sua maquiagem e penteado fiquem perfeitos no dia da formatura.
           </p>
         </div>
       </div>
@@ -60,43 +60,43 @@ const BelezaParaFormaturaSPPage = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende sua Beleza para Formatura no WhatsApp
+        Agende sua Maquiagem de Formatura pelo WhatsApp
       </a>
 
       {/* Seção de Serviços */}
       <section className={styles.servicesSection}>
-        <h2 className={styles.sectionTitle}>Maquiagem e Penteado Personalizados para Formatura em São Paulo</h2>
+        <h2 className={styles.sectionTitle}>Maquiagem e Penteado Exclusivos para sua Formatura</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Maquiagem Sofisticada</h3>
-            <p>Realce sua beleza com uma maquiagem sofisticada, ideal para formandas que desejam um look marcante e elegante para a cerimônia.</p>
+            <h3>Maquiagem Elegante</h3>
+            <p>Deixe sua beleza ainda mais radiante com uma maquiagem que destaca seus traços e harmoniza com seu estilo para a formatura.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteado Glamouroso</h3>
-            <p>Crie um penteado deslumbrante que combine com o seu estilo, seja um coque elegante, ondas soltas ou um look mais moderno e ousado.</p>
+            <h3>Penteado Personalizado</h3>
+            <p>Seja um coque sofisticado ou cachos soltos, nosso objetivo é criar o penteado que combine perfeitamente com o seu look e personalidade.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Look Completo de Beleza</h3>
-            <p>Oferecemos pacotes completos de beleza, combinando maquiagem e penteado para garantir que você tenha o visual perfeito para sua formatura.</p>
+            <h3>Pacote Completo de Beleza</h3>
+            <p>Conte com nossos pacotes completos para maquiagem e penteado, garantindo que todos os detalhes de beleza estejam impecáveis para sua festa.</p>
           </div>
         </div>
       </section>
 
       {/* FAQ com Accordion */}
       <section className={styles.faqSection}>
-        <h2 className={styles.sectionTitle}>Perguntas Frequentes sobre Beleza para Formatura</h2>
+        <h2 className={styles.sectionTitle}>Dúvidas Frequentes sobre Maquiagem e Penteado para Formatura</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais estilos de maquiagem e penteado estão disponíveis para formatura?</summary>
-            <p>Trabalhamos com diversos estilos, incluindo maquiagens sofisticadas e penteados glamourosos. Tudo é personalizado conforme seu gosto e tema da festa.</p>
+            <summary>Quais são os tipos de maquiagem e penteado disponíveis?</summary>
+            <p>Oferecemos diversas opções de maquiagem e penteado, desde looks sofisticados até opções mais despojadas, sempre personalizados para seu gosto.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Como funciona o teste de maquiagem e penteado?</summary>
-            <p>Recomendamos agendar uma sessão de teste para garantir que o look escolhido seja exatamente o que você deseja para sua formatura.</p>
+            <summary>Como funciona o agendamento de testes?</summary>
+            <p>É recomendável fazer um teste de maquiagem e penteado para garantir que o visual escolhido esteja perfeito para a sua formatura. O agendamento pode ser feito via WhatsApp ou diretamente no nosso site.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Posso agendar os serviços de beleza para formatura diretamente?</summary>
-            <p>Sim, você pode agendar a maquiagem e o penteado diretamente pelo WhatsApp ou preenchendo o formulário de contato em nosso site.</p>
+            <summary>Posso agendar minha maquiagem e penteado para o dia da formatura?</summary>
+            <p>Sim! Para agendar, basta entrar em contato pelo WhatsApp ou preencher o formulário em nosso site para definir todos os detalhes.</p>
           </details>
         </div>
       </section>

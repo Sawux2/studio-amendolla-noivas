@@ -6,6 +6,8 @@ import OrcamentoForm from 'app/components/OrcamentoForm';
 import styles from 'app/styles/PaginaSeo.module.css';
 import CanonicalURL from 'app/components/CanonicalURL';
 import UnifiedSchemas from 'app/schemas/UnifiedSchemas';
+import ServiceSimulator from 'app/components/calculadora';
+import FeaturesCards from 'app/components/FeaturesCards';
 
 const serviceData = {
   title: 'Maquiagem para Evento Formal - Studio Amendolla',
@@ -37,6 +39,7 @@ const faqData = [
     answer: 'Sim, a maquiagem para evento formal pode ser adaptada para todos os tipos de pele. Usamos produtos específicos para cada tipo de pele, seja seca, oleosa ou mista, garantindo que o visual se mantenha impecável durante todo o evento.',
   },
 ];
+
 
 const MaquiagemParaEventoFormalPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -71,8 +74,8 @@ const MaquiagemParaEventoFormalPage = () => {
       { name: 'Maquiagem para Evento Formal', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-para-evento-formal' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: 'Maquiagem para Evento Formal - Studio Amendolla',
+      url: image,
+      description: `Maquiagem para Evento Formal - Studio Amendolla - Foto ${index + 1}`,
       width: 600,
       height: 400,
       name: `Imagem ${index + 1} - Maquiagem para Evento Formal`,
@@ -87,9 +90,10 @@ const MaquiagemParaEventoFormalPage = () => {
         },
       },
       inLanguage: 'pt-BR',
-      license: 'https://creativecommons.org/licenses/by/4.0/',
+      license: 'https://creativecommons.org/licenses/by/4.0/'
     })),
   };
+  
 
   return (
     <div className={styles.servicePage}>
@@ -103,15 +107,15 @@ const MaquiagemParaEventoFormalPage = () => {
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
-              <Image
-                src={serviceData.images[currentImage]}
-                alt={`Maquiagem para Evento Formal - ${currentImage + 1}`}
-                width={400}
-                height={300}
-                className={styles.serviceImage}
-                quality={80}
-                priority={currentImage === 0}
-              />
+           <Image
+            src={serviceData.images[currentImage]}
+            alt={`Maquiagem para Evento Formal no Studio Amendolla - Foto ${currentImage + 1}`}
+            width={600}
+            height={400}
+            className={styles.serviceImage}
+            quality={85}
+            priority={currentImage === 0}
+          />
             </div>
             <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
           </div>
@@ -142,7 +146,10 @@ const MaquiagemParaEventoFormalPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+      <FeaturesCards />
+      <ServiceSimulator />
     </div>
+    
   );
 };
 

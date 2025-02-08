@@ -17,6 +17,119 @@
   margin-bottom: 16px;
 }
 
+.contentContainer {
+  display: flex;
+  align-items: center; /* Alinha o conteúdo verticalmente */
+  justify-content: center; /* Centraliza o contêiner da imagem e do texto */
+  text-align: center; /* Alinha o texto ao centro */
+  margin-top: 40px; /* Ajuste de espaçamento superior */
+  padding: 10px;
+  animation: fadeIn 1s ease-in-out; /* Adiciona a animação de fade-in */
+  border-radius: 10px;
+  
+  /* Gradiente de rosa e salmão */
+  background-image: linear-gradient(135deg, #000000, #aa3105); /* Rosa e salmão */
+  background-size: cover; /* Garante que o gradiente ocupe toda a área do contêiner */
+  background-position: center; /* Centraliza o gradiente */
+  
+  /* Garante um contraste forte */
+  color: #ffffff; /* Texto branco para um contraste mais forte */
+}
+
+.cardContainer {
+  background-color: rgba(255, 255, 255, 0.9); /* Card com fundo branco semitransparente para garantir contraste */
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.cardContainer {
+  background-color: #ffffff; /* Fundo branco para o card */
+  border-radius: 16px; /* Bordas arredondadas para o card */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Sombra suave ao redor do card */
+  padding: 30px; /* Espaçamento interno do card */
+  width: 90%; /* Faz com que o card ocupe 90% da largura do contêiner */
+  max-width: 1200px; /* Limita a largura máxima */
+  overflow: hidden;
+}
+
+.imageContainer {
+  flex: 0 0 15%; /* A imagem ocupará 15% da largura do contêiner pai */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor da imagem */
+  overflow: hidden; /* Garante que a borda arredondada seja aplicada corretamente */
+  position: relative; /* Permite ajustar o posicionamento dentro do contêiner */
+  margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+.image {
+  width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+}
+
+.textContent {
+  flex: 1; /* O texto ocupará o restante do espaço */
+  padding-left: 0; /* Remove o espaçamento à esquerda */
+  text-align: center; /* Centraliza o texto */
+  width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+  margin-top: 20px; /* Ajusta o espaçamento superior */
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column; /* Altera o layout para coluna em telas menores */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .imageContainer {
+    margin-top: 40px;
+    flex: 0 0 80%; /* A imagem ocupará 80% da largura na tela pequena */
+    margin-bottom: 20px; /* Espaço entre a imagem e o texto */
+    width: 80%; /* A imagem ocupa 80% do contêiner */
+  }
+
+  .image {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+  }
+
+  .textContent {
+    text-align: center; /* Centraliza o texto */
+  }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.textContent h2 {
+  font-size: 24px; /* Tamanho da fonte do título */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+  color: #fff;
+}
+
+.textContent p {
+  font-size: 16px; /* Tamanho da fonte da descrição */
+  color: #ffffff; /* Cor do texto */
+}
+
+
 .description {
   font-size: 1.2rem;
   color: #666;
@@ -202,6 +315,7 @@
   font-weight: bold;
   color: #333;
 }
+
 /* FAQ Section */
 .faqSection {
   margin-bottom: 80px; /* Mais espaço abaixo da seção */
@@ -392,7 +506,7 @@
 /* Botão do WhatsApp */
 .whatsappButton {
   display: flex;
-  background-color: #25d366; /* Verde do WhatsApp */
+  background-color: #007029; /* Verde do WhatsApp */
   color: #fff;
   font-size: 14px;
   font-weight: 500;
