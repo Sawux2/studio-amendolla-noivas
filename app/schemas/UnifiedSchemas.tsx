@@ -74,8 +74,8 @@ export const generateFAQSchema = (faqItems: FAQItem[]) => ({
 export const generateServiceSchema = (services: ServiceItem[]) => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: services.length > 1 
-    ? services.map(service => service.title).join(", ") 
+  serviceType: services.length > 1
+    ? services.map(service => service.title).join(", ")
     : services[0].title,
   provider: {
     "@type": "Organization",
@@ -85,13 +85,12 @@ export const generateServiceSchema = (services: ServiceItem[]) => ({
   offers: services.map(service => ({
     "@type": "Offer",
     "description": service.description,
-    "image": service.image,
+    "image": service.image || "https://www.studioamendollanoivas.com.br/images/dia-da-noiva-1.webp", // Imagem padrão se não houver
     "priceCurrency": "BRL",
     "price": "Consultar",
     "url": "https://www.studioamendollanoivas.com.br/servicos"
   })),
 });
-
 export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
