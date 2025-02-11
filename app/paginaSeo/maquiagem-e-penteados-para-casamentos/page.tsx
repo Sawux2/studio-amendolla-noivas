@@ -34,19 +34,19 @@ const pageData = {
   services: [
     {
       title: "Maquiagem de Noiva",
-      description: "Realce sua beleza com uma maquiagem de noiva que combina com seu estilo e personalidade, garantindo um visual deslumbrante no seu grande dia.",
-      image: "",//repetir imagem padrão ja tem no schema
+      description: "Maquiagem personalizada para noivas, garantindo um visual impecável que combine com seu estilo e personalidade no grande dia.",
+      image: "/images/maquiagem-noiva.webp",
     },
     {
-      title: "Penteado Elegante",
-      description: "Crie um penteado elegante que complemente seu vestido e estilo, seja um coque clássico ou ondas soltas.",
-      image: "", //repetir imagem padrão ja tem no schema
+      title: "Penteado de Noiva",
+      description: "Penteados exclusivos para noivas, desde coques sofisticados até penteados soltos e modernos, sempre alinhados ao seu estilo.",
+      image: "/images/penteado-noiva.webp",
     },
     {
-      title: "Pacote Completo de Beleza",
-      description: "Oferecemos pacotes completos de beleza, combinando maquiagem e penteado para garantir que você tenha o visual perfeito para o seu casamento.",
-      image: "", //repetir imagem padrão ja tem no schema
-     }
+      title: "Pacote Completo para Noivas",
+      description: "Oferecemos pacotes completos de beleza para noivas, que incluem maquiagem e penteado para garantir que tudo esteja perfeito no dia do casamento.",
+      image: "/images/pacote-completo.webp",
+    },
   ],
   breadcrumb: [
     { name: "Home", url: "/" },
@@ -63,12 +63,6 @@ const pageData = {
     }
   ]
 };
-
-interface ServiceItem {
-  title: string;
-  description: string;
-  image: string;
-}
 
 const BelezaParaCasamentosPage = () => {
   return (
