@@ -29,6 +29,7 @@ const faqData = [
         "Oferecemos maquiagem profissional, penteados elegantes, tratamentos de pele e massagens relaxantes, tudo personalizado para o seu dia especial.",
     },
     {
+      
       question: "Como agendar um horário para maquiagem de noiva?",
       answer:
         "Entre em contato conosco via WhatsApp ou preencha o formulário de orçamento em nosso site para agendar seu horário.",
