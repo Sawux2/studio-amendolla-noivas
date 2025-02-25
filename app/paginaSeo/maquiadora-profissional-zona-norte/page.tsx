@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -9,12 +10,16 @@ import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Maquiadora Perto de Mim - Priscila Helena",
+  title: "Maquiadora Profissional - Zona Norte",
   description:
-    "Encontre a maquiadora perfeita para o seu evento, próxima a você. Priscila Helena oferece maquiagens sofisticadas e naturais para noivas e eventos especiais.",
+    "Encontre a maquiadora profissional ideal para o seu evento na Zona Norte. Priscila Helena cria looks sofisticados e naturais para realçar sua beleza.",
   detailedDescription: `
-    Se você está procurando uma maquiadora próxima para o seu evento, Priscila Helena é a escolha certa. Com anos de experiência em casamentos e outros eventos especiais, ela oferece serviços de maquiagem personalizados, garantindo um visual deslumbrante que realça a beleza natural de cada cliente. Priscila Helena utiliza técnicas modernas e produtos de alta qualidade, criando looks que duram o dia inteiro e são perfeitos para qualquer ocasião. Seja para um casamento, festa ou evento corporativo, a maquiagem será feita para combinar com seu estilo e personalidade.`,
-  image: "/images/maquiadora-perto-de-mim-priscila.webp",
+    Se você busca uma maquiadora de confiança na Zona Norte, Priscila Helena é a escolha certa. 
+    Com ampla experiência em casamentos, festas e eventos corporativos, ela oferece serviços de maquiagem personalizados que realçam a beleza única de cada cliente. 
+    Utilizando técnicas modernas e produtos de alta qualidade, Priscila Helena cria looks duradouros, perfeitos para qualquer ocasião.
+    Descubra o melhor da maquiagem profissional e transforme seu visual com um atendimento exclusivo e dedicado.
+  `,
+  image: "/images/maquiadora-perto-de-mim-priscila-1.webp",
   images: [
     "/images/maquiadora-perto-de-mim-priscila-1.webp",
   ],
@@ -22,28 +27,28 @@ const serviceData = {
 
 const faqData = [
   {
-    question: "Onde posso encontrar uma maquiadora profissional perto de mim?",
+    question: "Onde posso encontrar uma maquiadora profissional na Zona Norte?",
     answer:
-      "Priscila Helena oferece serviços de maquiagem em diversas regiões, atendendo noivas, noivos e clientes para eventos em sua área. Consulte a disponibilidade para saber se ela atende a sua localidade.",
+      "Priscila Helena atende diversas regiões da Zona Norte, garantindo um serviço de maquiagem personalizado para cada evento. Consulte a disponibilidade para a sua localidade.",
   },
   {
-    question: "Qual é o diferencial de contratar uma maquiadora local?",
+    question: "Quais os benefícios de contratar uma maquiadora profissional local?",
     answer:
-      "Contratar uma maquiadora local como Priscila Helena garante praticidade, facilidade de comunicação e agilidade no atendimento, além de um conhecimento profundo sobre o estilo e cultura local.",
+      "Contratar uma maquiadora local, como Priscila Helena, garante praticidade, comunicação facilitada e um atendimento ágil e adaptado à cultura e estilo da região.",
   },
   {
-    question: "Como posso agendar uma maquiagem para meu evento?",
+    question: "Como agendar uma sessão de maquiagem para meu evento?",
     answer:
-      "Você pode entrar em contato diretamente com Priscila Helena para agendar uma sessão de maquiagem. Ela está disponível para consultas e agendamentos online ou por telefone.",
+      "Você pode entrar em contato diretamente com Priscila Helena para agendar uma sessão. Os agendamentos podem ser realizados online ou por telefone.",
   },
   {
-    question: "Quais são os tipos de maquiagem oferecidos por Priscila Helena?",
+    question: "Quais os tipos de maquiagem oferecidos?",
     answer:
-      "Priscila Helena oferece uma gama de serviços, incluindo maquiagem para noivas, festas, eventos corporativos e maquiagens para fotos e vídeos, sempre com um olhar personalizado para cada ocasião.",
+      "Priscila Helena oferece uma gama completa de serviços, incluindo maquiagem para noivas, festas, eventos corporativos, e sessões para fotos e vídeos, sempre com um toque personalizado.",
   },
 ];
 
-const MaquiadoraPertoDeMimPage = () => {
+const MaquiadoraProfissionalZonaNortePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -73,14 +78,14 @@ const MaquiadoraPertoDeMimPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiadora Perto de Mim", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiadora-perto-de-mim" },
+      { name: "Maquiadora Profissional - Zona Norte", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiadora-profissional-zona-norte" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Maquiadora Perto de Mim - Priscila Helena",
+      description: "Maquiadora Profissional - Zona Norte",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Maquiadora Perto de Mim`,
+      name: `Imagem ${index + 1} - Maquiadora Profissional - Zona Norte`,
       datePublished: "2025-01-18",
       author: "Priscila Helena",
       publisher: {
@@ -110,7 +115,7 @@ const MaquiadoraPertoDeMimPage = () => {
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Maquiadora Perto de Mim - ${currentImage + 1}`}
+                alt={`Maquiadora Profissional - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,7 +136,7 @@ const MaquiadoraPertoDeMimPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Maquiadora Perto de Mim</h2>
+            <h2>Perguntas Frequentes sobre Maquiadora Profissional</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,11 +152,10 @@ const MaquiadoraPertoDeMimPage = () => {
           <OrcamentoForm />
         </div>
       </div>
+
       <FeaturesCards />
-     
     </div>
   );
 };
 
-
-export default MaquiadoraPertoDeMimPage;
+export default MaquiadoraProfissionalZonaNortePage;

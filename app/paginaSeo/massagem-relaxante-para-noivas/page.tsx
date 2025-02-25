@@ -9,45 +9,45 @@ import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Cabelo de Noiva - Cortes e Penteados",
+  title: "Massagem Relaxante para Noivas - Studio Amendolla",
   description:
-    "Descubra os cortes e penteados ideais para realçar a beleza do seu cabelo no grande dia. Técnicas modernas e personalizadas para um look deslumbrante.",
+    "Acalme sua mente e prepare-se para o grande dia com uma massagem relaxante exclusiva para noivas. Experiência única para reduzir o estresse e renovar as energias.",
   detailedDescription: `
-    Se você busca um visual sofisticado e moderno para o seu cabelo de noiva, nossa equipe de especialistas está pronta para transformar seu look.
-    Com anos de experiência, oferecemos serviços que vão do corte ao penteado, sempre utilizando técnicas avançadas e produtos de alta qualidade.
-    Seja para um estilo clássico, romântico ou ousado, garantimos um atendimento personalizado, garantindo que cada detalhe esteja perfeito para o seu dia especial.
+    Nossa massagem relaxante é ideal para noivas que desejam aliviar a tensão antes do casamento.
+    Usamos técnicas terapêuticas suaves para reduzir o estresse, aliviar dores musculares e promover um bem-estar completo.
+    Oferecemos pacotes personalizados, permitindo que você aproveite este momento especial de autocuidado antes do grande dia.
   `,
-  image: "/images/cabelo-de-noiva.webp",
+  image: "/images/massagem-relaxante-1.webp",
   images: [
-    "/images/cabelo-de-noiva-1.webp",
-    "/images/cabelo-de-noiva-2.webp",
+    "/images/massagem-relaxante-2.webp",
+    "/images/massagem-relaxante-1.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "Quais estilos de cabelo para noiva você oferece?",
+    question: "Quais os benefícios da massagem relaxante para noivas?",
     answer:
-      "Oferecemos uma variedade de estilos, desde cortes modernos até penteados clássicos e elegantes, adaptando cada look ao formato do rosto e ao estilo do casamento.",
+      "A massagem ajuda a reduzir o estresse, melhorar a circulação sanguínea e proporcionar um relaxamento profundo antes do casamento.",
   },
   {
-    question: "Como posso agendar uma avaliação para meu cabelo?",
+    question: "Preciso agendar com antecedência?",
     answer:
-      "Entre em contato conosco para agendar uma consulta. Nossa equipe fará uma avaliação completa para sugerir o melhor estilo para o seu grande dia.",
+      "Sim, recomendamos o agendamento com pelo menos uma semana de antecedência para garantir disponibilidade, ou pode ser feita no mesmo dia garantindo que esteja tranquila e relaxada para o grande momento",
   },
   {
-    question: "É possível realizar testes de cabelo antes do evento?",
+    question: "O serviço pode ser feito no local do evento?",
     answer:
-      "Sim, recomendamos agendar um teste de cabelo e penteado para garantir que o visual atenda suas expectativas e se harmonize perfeitamente com o seu estilo.",
+      "Sim! Oferecemos atendimento tanto no studio quanto no local desejado para maior conforto da noiva.",
   },
   {
-    question: "Quais produtos são utilizados nos serviços de cabelo para noivas?",
+    question: "Quais técnicas são utilizadas na massagem?",
     answer:
-      "Utilizamos somente produtos de alta qualidade e de marcas renomadas, garantindo não só a beleza, mas também a saúde e a durabilidade do seu cabelo.",
+      "Usamos técnicas de relaxamento profundo, incluindo aromaterapia, pedras quentes e massagem sueca, adaptando ao perfil da cliente.",
   },
 ];
 
-const CabeloDeNoivaPage = () => {
+const MassagemRelaxantePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -62,8 +62,8 @@ const CabeloDeNoivaPage = () => {
     article: {
       headline: serviceData.title,
       description: serviceData.description,
-      author: "Equipe Studio Amendolla",
-      datePublished: "2025-01-25",
+      author: "Studio Amendolla",
+      datePublished: "2025-02-24",
       image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
     },
     services: [
@@ -77,26 +77,16 @@ const CabeloDeNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Cabelo de Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/cabelo-de-noiva" },
+      { name: "Massagem Relaxante", url: "https://www.studioamendollanoivas.com.br/paginaSeo/massagem-relaxante" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Cabelo de Noiva - Cortes e Penteados",
+      description: "Massagem Relaxante para Noivas",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Cabelo de Noiva`,
-      datePublished: "2025-01-25",
-      author: "Equipe Studio Amendolla",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
+      name: `Imagem ${index + 1} - Massagem Relaxante para Noivas`,
+      datePublished: "2025-02-24",
+      author: "Studio Amendolla",
     })),
   };
 
@@ -107,14 +97,13 @@ const CabeloDeNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Cabelo de Noiva - ${currentImage + 1}`}
+                alt={`Massagem Relaxante para Noivas - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -129,13 +118,12 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Cabelo de Noiva</h2>
+            <h2>Perguntas Frequentes sobre Massagem Relaxante</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -145,9 +133,8 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Cabelo de Noiva</h2>
+          <h2>Solicite um Orçamento</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -157,4 +144,4 @@ const CabeloDeNoivaPage = () => {
   );
 };
 
-export default CabeloDeNoivaPage;
+export default MassagemRelaxantePage;

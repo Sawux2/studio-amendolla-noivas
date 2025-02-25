@@ -9,45 +9,46 @@ import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Cabelo de Noiva - Cortes e Penteados",
+  title: "Maquiagem para Pele Negra - Studio Amendolla",
   description:
-    "Descubra os cortes e penteados ideais para realçar a beleza do seu cabelo no grande dia. Técnicas modernas e personalizadas para um look deslumbrante.",
+    "Realce sua beleza natural com maquiagens profissionais para pele negra. Produtos de alta qualidade e técnicas especializadas para um acabamento impecável.",
   detailedDescription: `
-    Se você busca um visual sofisticado e moderno para o seu cabelo de noiva, nossa equipe de especialistas está pronta para transformar seu look.
-    Com anos de experiência, oferecemos serviços que vão do corte ao penteado, sempre utilizando técnicas avançadas e produtos de alta qualidade.
-    Seja para um estilo clássico, romântico ou ousado, garantimos um atendimento personalizado, garantindo que cada detalhe esteja perfeito para o seu dia especial.
+    Nossa equipe é especializada em realçar a beleza da pele negra com técnicas avançadas e produtos específicos para tons quentes e frios.
+    Criamos looks que vão do natural ao sofisticado, garantindo que sua maquiagem esteja impecável para qualquer ocasião.
+    Oferecemos atendimento personalizado, analisando seu tom e subtom de pele para um resultado perfeito e duradouro.
   `,
-  image: "/images/cabelo-de-noiva.webp",
+  image: "/images/maquiagem-pele-negra-1.webp",
   images: [
-    "/images/cabelo-de-noiva-1.webp",
-    "/images/cabelo-de-noiva-2.webp",
+    "/images/maquiagem-pele-negra-2.webp",
+    "/images/maquiagem-pele-negra-1.webp",
+  
   ],
 };
 
 const faqData = [
   {
-    question: "Quais estilos de cabelo para noiva você oferece?",
+    question: "Quais produtos são usados para pele negra?",
     answer:
-      "Oferecemos uma variedade de estilos, desde cortes modernos até penteados clássicos e elegantes, adaptando cada look ao formato do rosto e ao estilo do casamento.",
+      "Utilizamos bases, corretivos e pós específicos para pele negra, garantindo um acabamento natural e sem efeito acinzentado.",
   },
   {
-    question: "Como posso agendar uma avaliação para meu cabelo?",
+    question: "Posso escolher um estilo específico de maquiagem?",
     answer:
-      "Entre em contato conosco para agendar uma consulta. Nossa equipe fará uma avaliação completa para sugerir o melhor estilo para o seu grande dia.",
+      "Sim! Criamos maquiagens naturais, glamourosas e ousadas, de acordo com sua preferência e ocasião.",
   },
   {
-    question: "É possível realizar testes de cabelo antes do evento?",
+    question: "A maquiagem dura por quanto tempo?",
     answer:
-      "Sim, recomendamos agendar um teste de cabelo e penteado para garantir que o visual atenda suas expectativas e se harmonize perfeitamente com o seu estilo.",
+      "Utilizamos técnicas de fixação e produtos de longa duração para garantir que sua maquiagem permaneça impecável por horas.",
   },
   {
-    question: "Quais produtos são utilizados nos serviços de cabelo para noivas?",
+    question: "O serviço pode ser feito a domicílio?",
     answer:
-      "Utilizamos somente produtos de alta qualidade e de marcas renomadas, garantindo não só a beleza, mas também a saúde e a durabilidade do seu cabelo.",
+      "Sim, atendemos tanto no nosso studio quanto no local do evento, para maior comodidade.",
   },
 ];
 
-const CabeloDeNoivaPage = () => {
+const MaquiagemPeleNegraPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -62,8 +63,8 @@ const CabeloDeNoivaPage = () => {
     article: {
       headline: serviceData.title,
       description: serviceData.description,
-      author: "Equipe Studio Amendolla",
-      datePublished: "2025-01-25",
+      author: "Studio Amendolla",
+      datePublished: "2025-02-24",
       image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
     },
     services: [
@@ -77,26 +78,16 @@ const CabeloDeNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Cabelo de Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/cabelo-de-noiva" },
+      { name: "Maquiagem para Pele Negra", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-pele-negra" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Cabelo de Noiva - Cortes e Penteados",
+      description: "Maquiagem Profissional para Pele Negra",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Cabelo de Noiva`,
-      datePublished: "2025-01-25",
-      author: "Equipe Studio Amendolla",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
+      name: `Imagem ${index + 1} - Maquiagem para Pele Negra`,
+      datePublished: "2025-02-24",
+      author: "Studio Amendolla",
     })),
   };
 
@@ -107,14 +98,13 @@ const CabeloDeNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Cabelo de Noiva - ${currentImage + 1}`}
+                alt={`Maquiagem para Pele Negra - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -129,13 +119,12 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Cabelo de Noiva</h2>
+            <h2>Perguntas Frequentes sobre Maquiagem para Pele Negra</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -145,9 +134,8 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Cabelo de Noiva</h2>
+          <h2>Solicite um Orçamento</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -157,4 +145,4 @@ const CabeloDeNoivaPage = () => {
   );
 };
 
-export default CabeloDeNoivaPage;
+export default MaquiagemPeleNegraPage;

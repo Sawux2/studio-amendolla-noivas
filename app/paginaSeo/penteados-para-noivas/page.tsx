@@ -9,45 +9,46 @@ import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Cabelo de Noiva - Cortes e Penteados",
+  title: "Penteados para Noivas - Studio Amendolla",
   description:
-    "Descubra os cortes e penteados ideais para realçar a beleza do seu cabelo no grande dia. Técnicas modernas e personalizadas para um look deslumbrante.",
+    "Descubra penteados elegantes e sofisticados para noivas. Criamos looks exclusivos para realçar sua beleza no grande dia.",
   detailedDescription: `
-    Se você busca um visual sofisticado e moderno para o seu cabelo de noiva, nossa equipe de especialistas está pronta para transformar seu look.
-    Com anos de experiência, oferecemos serviços que vão do corte ao penteado, sempre utilizando técnicas avançadas e produtos de alta qualidade.
-    Seja para um estilo clássico, romântico ou ousado, garantimos um atendimento personalizado, garantindo que cada detalhe esteja perfeito para o seu dia especial.
+    Nossa equipe especializada oferece serviços personalizados para noivas que desejam um penteado impecável e duradouro.
+    Trabalhamos com diversos estilos, desde clássicos até modernos, garantindo um visual deslumbrante para seu casamento.
+    Agende uma consulta e descubra o penteado ideal para você!
   `,
-  image: "/images/cabelo-de-noiva.webp",
+  image: "/images/penteado-noiva-1.webp",
   images: [
-    "/images/cabelo-de-noiva-1.webp",
-    "/images/cabelo-de-noiva-2.webp",
+    "/images/penteado-noiva-2.webp",
+    "/images/penteado-noiva-1.webp",
+    
   ],
 };
 
 const faqData = [
   {
-    question: "Quais estilos de cabelo para noiva você oferece?",
+    question: "Quais estilos de penteados vocês oferecem?",
     answer:
-      "Oferecemos uma variedade de estilos, desde cortes modernos até penteados clássicos e elegantes, adaptando cada look ao formato do rosto e ao estilo do casamento.",
+      "Trabalhamos com coques, tranças, cabelos soltos e semi-presos, sempre adaptando ao estilo da noiva e do evento.",
   },
   {
-    question: "Como posso agendar uma avaliação para meu cabelo?",
+    question: "O penteado é testado antes do casamento?",
     answer:
-      "Entre em contato conosco para agendar uma consulta. Nossa equipe fará uma avaliação completa para sugerir o melhor estilo para o seu grande dia.",
+      "Sim! Recomendamos um teste prévio para que você possa escolher o melhor visual para o grande dia.",
   },
   {
-    question: "É possível realizar testes de cabelo antes do evento?",
+    question: "Vocês atendem no local do evento?",
     answer:
-      "Sim, recomendamos agendar um teste de cabelo e penteado para garantir que o visual atenda suas expectativas e se harmonize perfeitamente com o seu estilo.",
+      "Sim, oferecemos atendimento no studio ou no local do evento para maior comodidade da noiva.",
   },
   {
-    question: "Quais produtos são utilizados nos serviços de cabelo para noivas?",
+    question: "Quanto tempo antes devo agendar?",
     answer:
-      "Utilizamos somente produtos de alta qualidade e de marcas renomadas, garantindo não só a beleza, mas também a saúde e a durabilidade do seu cabelo.",
+      "Recomendamos que o agendamento seja feito com pelo menos 3 meses de antecedência para garantir disponibilidade.",
   },
 ];
 
-const CabeloDeNoivaPage = () => {
+const PenteadosNoivaPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -62,8 +63,8 @@ const CabeloDeNoivaPage = () => {
     article: {
       headline: serviceData.title,
       description: serviceData.description,
-      author: "Equipe Studio Amendolla",
-      datePublished: "2025-01-25",
+      author: "Studio Amendolla",
+      datePublished: "2025-02-24",
       image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
     },
     services: [
@@ -77,26 +78,16 @@ const CabeloDeNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Cabelo de Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/cabelo-de-noiva" },
+      { name: "Penteados para Noivas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/penteados-para-noivas" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Cabelo de Noiva - Cortes e Penteados",
+      description: "Penteados para Noivas",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Cabelo de Noiva`,
-      datePublished: "2025-01-25",
-      author: "Equipe Studio Amendolla",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
+      name: `Imagem ${index + 1} - Penteado para Noivas`,
+      datePublished: "2025-02-24",
+      author: "Studio Amendolla",
     })),
   };
 
@@ -107,14 +98,13 @@ const CabeloDeNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Cabelo de Noiva - ${currentImage + 1}`}
+                alt={`Penteado para Noivas - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -129,13 +119,12 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Cabelo de Noiva</h2>
+            <h2>Perguntas Frequentes sobre Penteados para Noivas</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -145,9 +134,8 @@ const CabeloDeNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Cabelo de Noiva</h2>
+          <h2>Solicite um Orçamento para Penteados</h2>
           <OrcamentoForm />
         </div>
       </div>
@@ -157,4 +145,4 @@ const CabeloDeNoivaPage = () => {
   );
 };
 
-export default CabeloDeNoivaPage;
+export default PenteadosNoivaPage;

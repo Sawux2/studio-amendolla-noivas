@@ -6,41 +6,47 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
   title: "Maquiagem para Formatura - Studio Amendolla",
   description:
-    "A maquiagem para formatura realça a beleza da formanda, garantindo um visual deslumbrante para esse momento especial. Técnicas e produtos de longa duração para que sua maquiagem dure a noite toda.",
+    "Maquiagem profissional para formatura que realça sua beleza natural. Looks personalizados e duradouros para seu momento especial.",
   detailedDescription: `
-    A maquiagem para formatura é pensada para proporcionar à formanda um visual que seja ao mesmo tempo elegante e marcante. No Studio Amendolla, utilizamos técnicas de contorno e iluminação para valorizar os traços do rosto e garantir um acabamento perfeito. A escolha de produtos de alta durabilidade é essencial, já que a maquiagem precisa se manter impecável durante toda a cerimônia e festa. Para a maquiagem de formatura, trabalhamos com tons sofisticados, desde o mais suave até o mais ousado, para que você se sinta confiante e radiante no grande dia.
+    Celebre sua conquista com uma maquiagem deslumbrante feita por profissionais especializados. 
+    No Studio Amendolla, criamos looks personalizados que combinam com seu estilo e personalidade, 
+    garantindo uma maquiagem duradoura e à prova de fotos. Nossa equipe utiliza produtos premium 
+    e técnicas avançadas para realçar sua beleza natural, deixando você ainda mais confiante 
+    neste momento tão importante.
   `,
   image: "/images/maquiagem-formatura.webp",
   images: [
     "/images/maquiagem-formatura-1.webp",
     "/images/maquiagem-formatura-2.webp",
+    "/images/maquiagem-formatura-3.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "Quais produtos são ideais para maquiagem de formatura?",
+    question: "Quanto tempo antes devo agendar a maquiagem para formatura?",
     answer:
-      "Para garantir uma maquiagem duradoura e impecável durante a noite, utilizamos produtos de alta cobertura e longa duração, como bases e corretivos de alta resistência e iluminadores que proporcionam um acabamento perfeito e radiante.",
+      "Recomendamos agendar com pelo menos 2 meses de antecedência para garantir disponibilidade na data desejada e realizar o teste de maquiagem.",
   },
   {
-    question: "A maquiagem de formatura pode ser mais ousada?",
+    question: "É possível fazer um teste antes da formatura?",
     answer:
-      "Sim! A maquiagem de formatura é uma oportunidade de ousar mais nos olhos, no contorno ou no batom. Podemos criar um look sofisticado e glamouroso com olhos esfumados ou até mesmo um delineado dramático, sem perder a elegância.",
+      "Sim! Oferecemos teste de maquiagem para você aprovar o look antes do grande dia, garantindo que tudo fique exatamente como deseja.",
   },
   {
-    question: "Como garantir que a maquiagem dure durante a festa de formatura?",
+    question: "Quais produtos são utilizados na maquiagem?",
     answer:
-      "A chave para uma maquiagem de longa duração é a preparação adequada da pele com hidratação e o uso de primers específicos. Além disso, trabalhamos com produtos de longa duração para garantir que sua maquiagem permaneça impecável durante toda a festa.",
+      "Trabalhamos apenas com produtos de alta qualidade e marcas renomadas, garantindo durabilidade e acabamento impecável para suas fotos e celebração.",
   },
   {
-    question: "Posso escolher um look mais natural ou mais glamouroso para minha formatura?",
+    question: "Vocês atendem no local do evento?",
     answer:
-      "Você pode escolher o estilo que melhor combina com sua personalidade. Podemos criar desde um look mais leve e natural até um visual mais marcante, com foco nos olhos ou nos lábios, tudo para que você se sinta única e especial na sua formatura.",
+      "Sim, oferecemos serviço de maquiagem a domicílio ou no local do evento para sua maior comodidade. Consulte disponibilidade e valores.",
   },
 ];
 
@@ -59,8 +65,8 @@ const MaquiagemFormaturaPage = () => {
     article: {
       headline: serviceData.title,
       description: serviceData.description,
-      author: "Priscila Amendolla",
-      datePublished: "2025-01-18",
+      author: "Studio Amendolla",
+      datePublished: "2025-01-28",
       image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
     },
     services: [
@@ -78,11 +84,11 @@ const MaquiagemFormaturaPage = () => {
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Maquiagem para Formatura - Studio Amendolla",
+      description: "Maquiagem Profissional para Formatura",
       width: 600,
       height: 400,
       name: `Imagem ${index + 1} - Maquiagem para Formatura`,
-      datePublished: "2025-01-18",
+      datePublished: "2025-01-28",
       author: "Studio Amendolla",
       publisher: {
         "@type": "Organization",
@@ -104,7 +110,6 @@ const MaquiagemFormaturaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
@@ -126,7 +131,6 @@ const MaquiagemFormaturaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
@@ -142,12 +146,13 @@ const MaquiagemFormaturaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Maquiagem para Formatura</h2>
+          <h2>Solicite um Orçamento para sua Formatura</h2>
           <OrcamentoForm />
         </div>
       </div>
+
+      <FeaturesCards />
     </div>
   );
 };

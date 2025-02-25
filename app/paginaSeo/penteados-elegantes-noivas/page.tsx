@@ -9,41 +9,45 @@ import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Maquiadora Perto de Mim - Priscila Helena",
+  title: "Penteados Elegantes para Noivas",
   description:
-    "Encontre a maquiadora perfeita para o seu evento, próxima a você. Priscila Helena oferece maquiagens sofisticadas e naturais para noivas e eventos especiais.",
+    "Descubra os penteados elegantes que realçam a beleza de cada noiva. Personalize seu visual para o grande dia com profissionais que entendem seu estilo.",
   detailedDescription: `
-    Se você está procurando uma maquiadora próxima para o seu evento, Priscila Helena é a escolha certa. Com anos de experiência em casamentos e outros eventos especiais, ela oferece serviços de maquiagem personalizados, garantindo um visual deslumbrante que realça a beleza natural de cada cliente. Priscila Helena utiliza técnicas modernas e produtos de alta qualidade, criando looks que duram o dia inteiro e são perfeitos para qualquer ocasião. Seja para um casamento, festa ou evento corporativo, a maquiagem será feita para combinar com seu estilo e personalidade.`,
-  image: "/images/maquiadora-perto-de-mim-priscila.webp",
+    Se você procura um penteado elegante para completar o seu look de noiva, nossa equipe de especialistas está pronta para transformar sua imagem. 
+    Utilizando técnicas modernas e produtos de alta qualidade, asseguramos que cada fio esteja no lugar, harmonizando o clássico e o contemporâneo.
+    Seja para um visual romântico, sofisticado ou ousado, nossos penteados são criados pensando em cada detalhe para tornar seu dia ainda mais especial.
+  `,
+  image: "/images/penteados-elegantes-noivas.webp",
   images: [
-    "/images/maquiadora-perto-de-mim-priscila-1.webp",
+    "/images/penteados-elegantes-noivas-1.webp",
+    "/images/penteados-elegantes-noivas-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "Onde posso encontrar uma maquiadora profissional perto de mim?",
+    question: "Quais tipos de penteados elegantes são oferecidos para noivas?",
     answer:
-      "Priscila Helena oferece serviços de maquiagem em diversas regiões, atendendo noivas, noivos e clientes para eventos em sua área. Consulte a disponibilidade para saber se ela atende a sua localidade.",
+      "Oferecemos desde penteados clássicos até os mais modernos, adaptando cada estilo ao seu rosto e vestido, sempre com acabamento impecável.",
   },
   {
-    question: "Qual é o diferencial de contratar uma maquiadora local?",
+    question: "Como posso agendar uma avaliação para o penteado?",
     answer:
-      "Contratar uma maquiadora local como Priscila Helena garante praticidade, facilidade de comunicação e agilidade no atendimento, além de um conhecimento profundo sobre o estilo e cultura local.",
+      "Entre em contato conosco para agendar uma consulta personalizada. Nossos profissionais estarão à disposição para discutir o melhor penteado para o seu dia especial.",
   },
   {
-    question: "Como posso agendar uma maquiagem para meu evento?",
+    question: "É possível realizar testes de penteado antes do evento?",
     answer:
-      "Você pode entrar em contato diretamente com Priscila Helena para agendar uma sessão de maquiagem. Ela está disponível para consultas e agendamentos online ou por telefone.",
+      "Sim, recomendamos agendar um teste de penteado para garantir que o estilo atenda suas expectativas e se ajuste perfeitamente ao seu visual.",
   },
   {
-    question: "Quais são os tipos de maquiagem oferecidos por Priscila Helena?",
+    question: "Qual a diferença de contratar um serviço especializado para penteados noivas?",
     answer:
-      "Priscila Helena oferece uma gama de serviços, incluindo maquiagem para noivas, festas, eventos corporativos e maquiagens para fotos e vídeos, sempre com um olhar personalizado para cada ocasião.",
+      "Com um serviço especializado, você conta com um atendimento exclusivo, produtos de alta qualidade e profissionais experientes que entendem as necessidades específicas de um casamento.",
   },
 ];
 
-const MaquiadoraPertoDeMimPage = () => {
+const PenteadosElegantesNoivasPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -58,8 +62,8 @@ const MaquiadoraPertoDeMimPage = () => {
     article: {
       headline: serviceData.title,
       description: serviceData.description,
-      author: "Priscila Helena",
-      datePublished: "2025-01-18",
+      author: "Equipe Studio Amendolla",
+      datePublished: "2025-01-20",
       image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
     },
     services: [
@@ -73,16 +77,16 @@ const MaquiadoraPertoDeMimPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiadora Perto de Mim", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiadora-perto-de-mim" },
+      { name: "Penteados Elegantes para Noivas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/penteados-elegantes-noivas" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Maquiadora Perto de Mim - Priscila Helena",
+      description: "Penteados Elegantes para Noivas",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Maquiadora Perto de Mim`,
-      datePublished: "2025-01-18",
-      author: "Priscila Helena",
+      name: `Imagem ${index + 1} - Penteados Elegantes para Noivas`,
+      datePublished: "2025-01-20",
+      author: "Equipe Studio Amendolla",
       publisher: {
         "@type": "Organization",
         name: "Studio Amendolla",
@@ -110,7 +114,7 @@ const MaquiadoraPertoDeMimPage = () => {
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Maquiadora Perto de Mim - ${currentImage + 1}`}
+                alt={`Penteados Elegantes para Noivas - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,7 +135,7 @@ const MaquiadoraPertoDeMimPage = () => {
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Maquiadora Perto de Mim</h2>
+            <h2>Perguntas Frequentes sobre Penteados Elegantes</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -143,15 +147,14 @@ const MaquiadoraPertoDeMimPage = () => {
 
         {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Maquiagem Profissional</h2>
+          <h2>Solicite um Orçamento para Penteados Elegantes</h2>
           <OrcamentoForm />
         </div>
       </div>
+
       <FeaturesCards />
-     
     </div>
   );
 };
 
-
-export default MaquiadoraPertoDeMimPage;
+export default PenteadosElegantesNoivasPage;
