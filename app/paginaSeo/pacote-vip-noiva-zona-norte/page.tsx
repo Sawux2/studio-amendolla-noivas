@@ -6,50 +6,59 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Dia da Noiva - Studio Amendolla",
-  description:
-    "No Studio Amendolla, proporcionamos uma experiência completa para o Dia da Noiva, com serviços exclusivos de maquiagem, penteado e cuidados especiais para que você esteja radiante no seu grande dia.",
+  title: "Pacote VIP para Noivas na Zona Norte SP - Studio Amendolla",
+  description: 
+    "Experiência exclusiva e luxuosa para noivas na Zona Norte de São Paulo. Ambiente privativo, serviços premium e atendimento personalizado para tornar seu dia ainda mais especial.",
   detailedDescription: `
-    O Dia da Noiva no Studio Amendolla é uma experiência única e personalizada. Nossa equipe se dedica a transformar o seu grande dia em um momento ainda mais especial, oferecendo serviços de maquiagem e penteado sob medida, que combinam perfeitamente com o seu estilo e o tema do casamento.
+    O Pacote VIP do Studio Amendolla oferece uma experiência única e sofisticada:
 
-    Além disso, oferecemos cuidados exclusivos para garantir que você se sinta relaxada e radiante. Desde tratamentos de pele até cuidados com o cabelo e as unhas, nosso objetivo é proporcionar uma experiência de beleza completa e sem preocupações, para que você possa se concentrar em aproveitar cada momento.
+    EXPERIÊNCIA PREMIUM:
+    - Ambiente exclusivo e privativo
+    - Welcome drink com champagne
+    - Café da manhã gourmet   - 
+    - Sessão de fotos profissional
+    
+    SERVIÇOS EXCLUSIVOS:
+    - Maquiagem com produtos importados de luxo
+    - Penteado com técnicas exclusivas
+    - Tratamentos de beleza preparatórios
+    - Assistente pessoal dedicada
+    - Transfer para local do evento (opcional)
 
-    Todos os nossos serviços são realizados em um ambiente confortável e acolhedor, para garantir que o Dia da Noiva seja não só sobre beleza, mas também sobre relaxamento e prazer.`,
-  image: "/images/dia-da-noiva-1.webp",
+    BENEFÍCIOS ADICIONAIS:
+    - Horário exclusivo no studio
+    - Suporte pós-evento
+    - Álbum digital da produção`,
+  image: "/images/pacote-vip-zona-norte-1.webp",
   images: [
-    "/images/dia-da-noiva-1.webp",
-    "/images/dia-da-noiva-2.webp",
+    "/images/pacote-vip-zona-norte-1.webp",
+    "/images/pacote-vip-zona-norte-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "O que está incluído no pacote para o Dia da Noiva?",
-    answer:
-      "O pacote inclui maquiagem, penteado, cuidados com a pele, cabelo e unhas. Também podemos incluir serviços adicionais como massagem relaxante e outros tratamentos personalizados.",
+    question: "Quais as vantagens do Pacote VIP?",
+    answer: "O Pacote VIP oferece exclusividade total, produtos premium, ambiente privativo, assistente pessoal, serviços extras de beleza e uma experiência luxuosa completa.",
   },
   {
-    question: "Como posso agendar o Dia da Noiva no Studio Amendolla?",
-    answer:
-      "Basta entrar em contato conosco com antecedência para agendar o Dia da Noiva. Nossa equipe ajudará a personalizar todos os detalhes e garantir que o dia seja perfeito.",
+    question: "Quantos acompanhantes posso levar?",
+    answer: "O Pacote VIP permite até 4 acompanhantes, que poderão desfrutar do ambiente exclusivo e serviços de buffet junto com a noiva.",
   },
   {
-    question: "O Studio Amendolla oferece serviços para madrinhas e convidadas?",
-    answer:
-      "Sim! Temos pacotes especiais para madrinhas, mães da noiva e outras convidadas, para garantir que todas estejam deslumbrantes e em sintonia com o tema do casamento.",
+    question: "Como funciona o serviço de transfer?",
+    answer: "Oferecemos transfer opcional em carro executivo para a noiva e acompanhantes, do studio até o local do evento, com todo conforto e segurança.",
   },
   {
-    question: "É possível fazer uma prova de maquiagem e penteado antes do casamento?",
-    answer:
-      "Sim! Recomendamos a prova de maquiagem e penteado antes do grande dia, para garantir que você esteja 100% satisfeita com o visual escolhido.",
+    question: "Quais tratamentos preparatórios estão inclusos?",
+    answer: "Incluímos tratamentos faciais, cuidados com o cabelo e outros serviços de beleza nas semanas que antecedem o casamento, personalizados para cada noiva.",
   },
 ];
 
-const DiaDaNoivaPage = () => {
+const PacoteVIPNoivaZonaNortePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -79,14 +88,14 @@ const DiaDaNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Dia da Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva" },
+      { name: "Pacote VIP Zona Norte", url: "https://www.studioamendollanoivas.com.br/paginaSeo/pacote-vip-noiva-zona-norte" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Dia da Noiva - Studio Amendolla",
+      description: "Pacote VIP para Noivas Zona Norte SP - Studio Amendolla",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Dia da Noiva`,
+      name: `Imagem ${index + 1} - Pacote VIP Noiva Zona Norte`,
       datePublished: "2025-01-18",
       author: "Studio Amendolla",
       publisher: {
@@ -109,14 +118,13 @@ const DiaDaNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Dia da Noiva - ${currentImage + 1}`}
+                alt={`Pacote VIP Noiva Zona Norte - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,13 +139,12 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
+            <h2>Perguntas Frequentes sobre o Pacote VIP</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,16 +154,14 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
+          <h2>Solicite um Orçamento para seu Pacote VIP</h2>
           <OrcamentoForm />
         </div>
       </div>
       <FeaturesCards />
-    
     </div>
   );
 };
 
-export default DiaDaNoivaPage;
+export default PacoteVIPNoivaZonaNortePage;

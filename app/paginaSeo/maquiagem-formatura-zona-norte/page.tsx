@@ -6,50 +6,58 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Dia da Noiva - Studio Amendolla",
-  description:
-    "No Studio Amendolla, proporcionamos uma experiência completa para o Dia da Noiva, com serviços exclusivos de maquiagem, penteado e cuidados especiais para que você esteja radiante no seu grande dia.",
+  title: "Maquiagem para Formatura na Zona Norte SP - Studio Amendolla",
+  description: 
+    "Maquiagem profissional para formatura na Zona Norte de São Paulo. Realce sua beleza com produtos premium e técnicas exclusivas para fotos e vídeos perfeitos na sua formatura.",
   detailedDescription: `
-    O Dia da Noiva no Studio Amendolla é uma experiência única e personalizada. Nossa equipe se dedica a transformar o seu grande dia em um momento ainda mais especial, oferecendo serviços de maquiagem e penteado sob medida, que combinam perfeitamente com o seu estilo e o tema do casamento.
+    O Studio Amendolla é especialista em maquiagem para formaturas, oferecendo:
 
-    Além disso, oferecemos cuidados exclusivos para garantir que você se sinta relaxada e radiante. Desde tratamentos de pele até cuidados com o cabelo e as unhas, nosso objetivo é proporcionar uma experiência de beleza completa e sem preocupações, para que você possa se concentrar em aproveitar cada momento.
+    SERVIÇOS ESPECIAIS PARA FORMANDAS:
+    - Maquiagem de alta durabilidade
+    - Produtos específicos para fotos e vídeos
+    - Técnicas anti-brilho para cerimônia
+    - Cílios postiços inclusos
+    - Teste de maquiagem opcional
+    - Produtos à prova d'água
+    
+    BENEFÍCIOS EXCLUSIVOS:
+    - Localização privilegiada na Zona Norte
+    - Estacionamento próprio
+    - Iluminação profissional
+    - Atendimento nos horários da formatura
+    - Dicas de cuidados com a pele
 
-    Todos os nossos serviços são realizados em um ambiente confortável e acolhedor, para garantir que o Dia da Noiva seja não só sobre beleza, mas também sobre relaxamento e prazer.`,
-  image: "/images/dia-da-noiva-1.webp",
+    Pacotes especiais para grupos de formandas com condições diferenciadas.`,
+  image: "/images/maquiagem-formatura-1.webp",
   images: [
-    "/images/dia-da-noiva-1.webp",
-    "/images/dia-da-noiva-2.webp",
+    "/images/maquiagem-formatura-1.webp",
+    "/images/maquiagem-formatura-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "O que está incluído no pacote para o Dia da Noiva?",
-    answer:
-      "O pacote inclui maquiagem, penteado, cuidados com a pele, cabelo e unhas. Também podemos incluir serviços adicionais como massagem relaxante e outros tratamentos personalizados.",
+    question: "Quanto tempo antes da formatura devo fazer a maquiagem?",
+    answer: "Recomendamos iniciar a produção com 4-5 horas de antecedência do horário da cerimônia, garantindo tempo para fotos e deslocamento.",
   },
   {
-    question: "Como posso agendar o Dia da Noiva no Studio Amendolla?",
-    answer:
-      "Basta entrar em contato conosco com antecedência para agendar o Dia da Noiva. Nossa equipe ajudará a personalizar todos os detalhes e garantir que o dia seja perfeito.",
+    question: "Oferecem pacotes para grupos de formandas?",
+    answer: "Sim! Temos condições especiais para grupos, com descontos progressivos e horários coordenados para todas as formandas.",
   },
   {
-    question: "O Studio Amendolla oferece serviços para madrinhas e convidadas?",
-    answer:
-      "Sim! Temos pacotes especiais para madrinhas, mães da noiva e outras convidadas, para garantir que todas estejam deslumbrantes e em sintonia com o tema do casamento.",
+    question: "A maquiagem dura toda a festa?",
+    answer: "Sim! Utilizamos produtos de alta durabilidade e técnicas específicas para garantir que sua maquiagem permaneça perfeita durante toda a cerimônia e festa.",
   },
   {
-    question: "É possível fazer uma prova de maquiagem e penteado antes do casamento?",
-    answer:
-      "Sim! Recomendamos a prova de maquiagem e penteado antes do grande dia, para garantir que você esteja 100% satisfeita com o visual escolhido.",
+    question: "Preciso levar algum produto?",
+    answer: "Não é necessário! Trabalhamos com produtos profissionais completos. Apenas sugerimos trazer seu batom preferido para retoques.",
   },
 ];
 
-const DiaDaNoivaPage = () => {
+const MaquiagemFormaturaPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -79,14 +87,14 @@ const DiaDaNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Dia da Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva" },
+      { name: "Maquiagem Formatura", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-formatura-zona-norte" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Dia da Noiva - Studio Amendolla",
+      description: "Maquiagem para Formatura Zona Norte SP - Studio Amendolla",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Dia da Noiva`,
+      name: `Imagem ${index + 1} - Maquiagem Formatura`,
       datePublished: "2025-01-18",
       author: "Studio Amendolla",
       publisher: {
@@ -109,14 +117,13 @@ const DiaDaNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Dia da Noiva - ${currentImage + 1}`}
+                alt={`Maquiagem Formatura - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,13 +138,12 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
+            <h2>Perguntas Frequentes sobre Maquiagem para Formatura</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,16 +153,14 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
+          <h2>Solicite um Orçamento para sua Formatura</h2>
           <OrcamentoForm />
         </div>
       </div>
       <FeaturesCards />
-    
     </div>
   );
 };
 
-export default DiaDaNoivaPage;
+export default MaquiagemFormaturaPage;

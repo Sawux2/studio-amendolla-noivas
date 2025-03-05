@@ -6,50 +6,58 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Dia da Noiva - Studio Amendolla",
-  description:
-    "No Studio Amendolla, proporcionamos uma experiência completa para o Dia da Noiva, com serviços exclusivos de maquiagem, penteado e cuidados especiais para que você esteja radiante no seu grande dia.",
+  title: "Maquiagem para Madrinhas de Casamento - Studio Amendolla",
+  description: 
+    "Maquiagem profissional para madrinhas na Zona Norte de SP. Looks harmoniosos e elegantes que combinam com o estilo do casamento e valorizam a beleza natural.",
   detailedDescription: `
-    O Dia da Noiva no Studio Amendolla é uma experiência única e personalizada. Nossa equipe se dedica a transformar o seu grande dia em um momento ainda mais especial, oferecendo serviços de maquiagem e penteado sob medida, que combinam perfeitamente com o seu estilo e o tema do casamento.
+    O Studio Amendolla oferece serviços especializados para madrinhas:
 
-    Além disso, oferecemos cuidados exclusivos para garantir que você se sinta relaxada e radiante. Desde tratamentos de pele até cuidados com o cabelo e as unhas, nosso objetivo é proporcionar uma experiência de beleza completa e sem preocupações, para que você possa se concentrar em aproveitar cada momento.
+    SERVIÇOS EXCLUSIVOS:
+    - Maquiagem personalizada para cada madrinha
+    - Harmonização com o tema do casamento
+    - Produtos de alta durabilidade
+    - Cílios postiços inclusos
+    - Preparação especial da pele
+    - Técnicas fotogênicas
+    
+    DIFERENCIAIS:
+    - Atendimento em grupo
+    - Horários coordenados
+    - Dicas de cuidados com a pele
+    - Suporte durante o evento
+    - Kit retoque personalizado
 
-    Todos os nossos serviços são realizados em um ambiente confortável e acolhedor, para garantir que o Dia da Noiva seja não só sobre beleza, mas também sobre relaxamento e prazer.`,
-  image: "/images/dia-da-noiva-1.webp",
+    Pacotes especiais para grupos de madrinhas com condições diferenciadas.`,
+  image: "/images/maquiagem-madrinhas-1.webp",
   images: [
-    "/images/dia-da-noiva-1.webp",
-    "/images/dia-da-noiva-2.webp",
+    "/images/maquiagem-madrinhas-1.webp",
+    "/images/maquiagem-madrinhas-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "O que está incluído no pacote para o Dia da Noiva?",
-    answer:
-      "O pacote inclui maquiagem, penteado, cuidados com a pele, cabelo e unhas. Também podemos incluir serviços adicionais como massagem relaxante e outros tratamentos personalizados.",
+    question: "Quantas madrinhas podem ser atendidas simultaneamente?",
+    answer: "Nosso espaço comporta até 4 madrinhas simultaneamente, com profissionais dedicados para cada uma.",
   },
   {
-    question: "Como posso agendar o Dia da Noiva no Studio Amendolla?",
-    answer:
-      "Basta entrar em contato conosco com antecedência para agendar o Dia da Noiva. Nossa equipe ajudará a personalizar todos os detalhes e garantir que o dia seja perfeito.",
+    question: "Oferecem pacotes para o grupo completo de madrinhas?",
+    answer: "Sim! Temos pacotes especiais que incluem todas as madrinhas, com descontos progressivos conforme o número de pessoas.",
   },
   {
-    question: "O Studio Amendolla oferece serviços para madrinhas e convidadas?",
-    answer:
-      "Sim! Temos pacotes especiais para madrinhas, mães da noiva e outras convidadas, para garantir que todas estejam deslumbrantes e em sintonia com o tema do casamento.",
+    question: "É possível fazer um teste antes do casamento?",
+    answer: "Sim! Recomendamos o teste prévio para garantir que o resultado atenda às expectativas de todas.",
   },
   {
-    question: "É possível fazer uma prova de maquiagem e penteado antes do casamento?",
-    answer:
-      "Sim! Recomendamos a prova de maquiagem e penteado antes do grande dia, para garantir que você esteja 100% satisfeita com o visual escolhido.",
+    question: "A maquiagem é coordenada com o estilo da noiva?",
+    answer: "Sim! Trabalhamos em harmonia com o visual da noiva e o tema do casamento, criando uma produção coesa para as fotos.",
   },
 ];
 
-const DiaDaNoivaPage = () => {
+const MaquiagemMadrinhasPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -79,14 +87,14 @@ const DiaDaNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Dia da Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva" },
+      { name: "Maquiagem Madrinhas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-madrinhas-casamento" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Dia da Noiva - Studio Amendolla",
+      description: "Maquiagem para Madrinhas de Casamento - Studio Amendolla",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Dia da Noiva`,
+      name: `Imagem ${index + 1} - Maquiagem Madrinhas`,
       datePublished: "2025-01-18",
       author: "Studio Amendolla",
       publisher: {
@@ -109,14 +117,13 @@ const DiaDaNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Dia da Noiva - ${currentImage + 1}`}
+                alt={`Maquiagem Madrinhas - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,13 +138,12 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
+            <h2>Perguntas Frequentes sobre Maquiagem para Madrinhas</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,16 +153,14 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
+          <h2>Solicite um Orçamento para Madrinhas</h2>
           <OrcamentoForm />
         </div>
       </div>
       <FeaturesCards />
-    
     </div>
   );
 };
 
-export default DiaDaNoivaPage;
+export default MaquiagemMadrinhasPage;

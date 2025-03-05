@@ -6,50 +6,50 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Dia da Noiva - Studio Amendolla",
-  description:
-    "No Studio Amendolla, proporcionamos uma experiência completa para o Dia da Noiva, com serviços exclusivos de maquiagem, penteado e cuidados especiais para que você esteja radiante no seu grande dia.",
+  title: "Pacote Completo para Noivas Negras - Studio Amendolla",
+  description: 
+    "Experiência exclusiva de beleza para noivas negras no Studio Amendolla. Pacote completo com maquiagem, penteado e cuidados especiais, desenvolvido por profissionais especializados em realçar sua beleza única.",
   detailedDescription: `
-    O Dia da Noiva no Studio Amendolla é uma experiência única e personalizada. Nossa equipe se dedica a transformar o seu grande dia em um momento ainda mais especial, oferecendo serviços de maquiagem e penteado sob medida, que combinam perfeitamente com o seu estilo e o tema do casamento.
+    O Pacote Completo para Noivas Negras do Studio Amendolla foi cuidadosamente elaborado para proporcionar uma experiência única e personalizada. Reunimos os melhores serviços e produtos específicos para valorizar sua beleza natural.
 
-    Além disso, oferecemos cuidados exclusivos para garantir que você se sinta relaxada e radiante. Desde tratamentos de pele até cuidados com o cabelo e as unhas, nosso objetivo é proporcionar uma experiência de beleza completa e sem preocupações, para que você possa se concentrar em aproveitar cada momento.
-
-    Todos os nossos serviços são realizados em um ambiente confortável e acolhedor, para garantir que o Dia da Noiva seja não só sobre beleza, mas também sobre relaxamento e prazer.`,
-  image: "/images/dia-da-noiva-1.webp",
+    Nossa equipe especializada oferece:
+    - Maquiagem profissional com produtos de alta performance para pele negra
+    - Penteados exclusivos para todos os tipos de cabelos afro
+    - Tratamentos preparatórios para pele e cabelo
+    - Teste completo de make e hair
+    - Assistência durante todo o dia do casamento
+    
+    Cada detalhe é pensado para garantir que você se sinta confiante e deslumbrante, com um visual que permanece impecável durante toda a celebração.`,
+  image: "/images/pacote-noiva-negra-1.webp",
   images: [
-    "/images/dia-da-noiva-1.webp",
-    "/images/dia-da-noiva-2.webp",
+    "/images/pacote-noiva-negra-1.webp",
+    "/images/pacote-noiva-negra-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "O que está incluído no pacote para o Dia da Noiva?",
-    answer:
-      "O pacote inclui maquiagem, penteado, cuidados com a pele, cabelo e unhas. Também podemos incluir serviços adicionais como massagem relaxante e outros tratamentos personalizados.",
+    question: "O que está incluso no Pacote Completo para Noivas Negras?",
+    answer: "O pacote inclui teste e produção completa no dia do casamento com maquiagem especializada, penteado personalizado, tratamentos preparatórios, produtos premium específicos e acompanhamento durante todo o evento.",
   },
   {
-    question: "Como posso agendar o Dia da Noiva no Studio Amendolla?",
-    answer:
-      "Basta entrar em contato conosco com antecedência para agendar o Dia da Noiva. Nossa equipe ajudará a personalizar todos os detalhes e garantir que o dia seja perfeito.",
+    question: "Com quanto tempo de antecedência devo contratar o pacote?",
+    answer: "Recomendamos a contratação com 6 meses de antecedência para garantirmos a data e realizarmos todo o planejamento dos testes e tratamentos preparatórios.",
   },
   {
-    question: "O Studio Amendolla oferece serviços para madrinhas e convidadas?",
-    answer:
-      "Sim! Temos pacotes especiais para madrinhas, mães da noiva e outras convidadas, para garantir que todas estejam deslumbrantes e em sintonia com o tema do casamento.",
+    question: "O pacote pode ser personalizado?",
+    answer: "Sim! Podemos adaptar o pacote de acordo com suas necessidades específicas, incluindo serviços adicionais como extensões, unhas, cílios e tratamentos especiais.",
   },
   {
-    question: "É possível fazer uma prova de maquiagem e penteado antes do casamento?",
-    answer:
-      "Sim! Recomendamos a prova de maquiagem e penteado antes do grande dia, para garantir que você esteja 100% satisfeita com o visual escolhido.",
+    question: "Vocês oferecem serviços para o cortejo também?",
+    answer: "Sim! Temos pacotes especiais para madrinhas e mães que podem ser combinados com seu pacote de noiva, mantendo a mesma qualidade e atenção aos detalhes.",
   },
 ];
 
-const DiaDaNoivaPage = () => {
+const PacoteNoivaNegraPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -79,14 +79,14 @@ const DiaDaNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Dia da Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva" },
+      { name: "Pacote Noiva Negra", url: "https://www.studioamendollanoivas.com.br/paginaSeo/pacote-noiva-negra" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Dia da Noiva - Studio Amendolla",
+      description: "Pacote Completo para Noivas Negras - Studio Amendolla",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Dia da Noiva`,
+      name: `Imagem ${index + 1} - Pacote Noiva Negra`,
       datePublished: "2025-01-18",
       author: "Studio Amendolla",
       publisher: {
@@ -109,14 +109,13 @@ const DiaDaNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Dia da Noiva - ${currentImage + 1}`}
+                alt={`Pacote Noiva Negra - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,13 +130,12 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
+            <h2>Perguntas Frequentes sobre o Pacote Completo</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,16 +145,14 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
+          <h2>Solicite um Orçamento para seu Pacote Completo</h2>
           <OrcamentoForm />
         </div>
       </div>
       <FeaturesCards />
-    
     </div>
   );
 };
 
-export default DiaDaNoivaPage;
+export default PacoteNoivaNegraPage;

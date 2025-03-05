@@ -6,50 +6,45 @@ import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-
 import FeaturesCards from "app/components/FeaturesCards";
 
 const serviceData = {
-  title: "Dia da Noiva - Studio Amendolla",
-  description:
-    "No Studio Amendolla, proporcionamos uma experiência completa para o Dia da Noiva, com serviços exclusivos de maquiagem, penteado e cuidados especiais para que você esteja radiante no seu grande dia.",
+  title: "Penteados para Noivas Negras - Studio Amendolla",
+  description: 
+    "Penteados exclusivos que celebram a beleza e versatilidade dos cabelos afro. Nossa equipe especializada cria looks únicos que valorizam sua textura natural e estilo pessoal para o dia do seu casamento.",
   detailedDescription: `
-    O Dia da Noiva no Studio Amendolla é uma experiência única e personalizada. Nossa equipe se dedica a transformar o seu grande dia em um momento ainda mais especial, oferecendo serviços de maquiagem e penteado sob medida, que combinam perfeitamente com o seu estilo e o tema do casamento.
+    No Studio Amendolla, somos especialistas em criar penteados deslumbrantes que valorizam a riqueza e versatilidade dos cabelos afro. Nossa equipe domina técnicas específicas para todos os tipos de cabelos crespos e cacheados, desde 4A até 4C.
 
-    Além disso, oferecemos cuidados exclusivos para garantir que você se sinta relaxada e radiante. Desde tratamentos de pele até cuidados com o cabelo e as unhas, nosso objetivo é proporcionar uma experiência de beleza completa e sem preocupações, para que você possa se concentrar em aproveitar cada momento.
+    Trabalhamos com as mais diversas possibilidades: desde penteados que exaltam a beleza natural do seu cabelo até elaboradas tranças, twists, e updos sofisticados. Utilizamos produtos especializados que garantem hidratação, definição e durabilidade ao seu penteado durante todo o evento.
 
-    Todos os nossos serviços são realizados em um ambiente confortável e acolhedor, para garantir que o Dia da Noiva seja não só sobre beleza, mas também sobre relaxamento e prazer.`,
-  image: "/images/dia-da-noiva-1.webp",
+    Entendemos que cada noiva é única, e por isso oferecemos uma consulta personalizada para criar um penteado que combine perfeitamente com seu estilo pessoal, vestido e tema do casamento, garantindo que você se sinta verdadeiramente radiante no seu grande dia.`,
+  image: "/images/penteado-noiva-negra-1.webp",
   images: [
-    "/images/dia-da-noiva-1.webp",
-    "/images/dia-da-noiva-2.webp",
+    "/images/penteado-noiva-negra-1.webp",
+    "/images/penteado-noiva-negra-2.webp",
   ],
 };
 
 const faqData = [
   {
-    question: "O que está incluído no pacote para o Dia da Noiva?",
-    answer:
-      "O pacote inclui maquiagem, penteado, cuidados com a pele, cabelo e unhas. Também podemos incluir serviços adicionais como massagem relaxante e outros tratamentos personalizados.",
+    question: "Quais tipos de penteados vocês oferecem para noivas negras?",
+    answer: "Oferecemos uma ampla variedade de estilos, incluindo penteados naturais, tranças elaboradas, twists, updos elegantes, e muito mais. Adaptamos cada penteado ao tipo de cabelo e preferências da noiva.",
   },
   {
-    question: "Como posso agendar o Dia da Noiva no Studio Amendolla?",
-    answer:
-      "Basta entrar em contato conosco com antecedência para agendar o Dia da Noiva. Nossa equipe ajudará a personalizar todos os detalhes e garantir que o dia seja perfeito.",
+    question: "É necessário fazer teste do penteado antes do casamento?",
+    answer: "Sim! Recomendamos fortemente o teste do penteado para ajustarmos todos os detalhes, avaliar a durabilidade e garantir que o resultado final atenda completamente suas expectativas.",
   },
   {
-    question: "O Studio Amendolla oferece serviços para madrinhas e convidadas?",
-    answer:
-      "Sim! Temos pacotes especiais para madrinhas, mães da noiva e outras convidadas, para garantir que todas estejam deslumbrantes e em sintonia com o tema do casamento.",
+    question: "Quanto tempo antes do casamento devo agendar o teste?",
+    answer: "Sugerimos agendar o teste com 1 a 2 meses de antecedência. Isso nos dá tempo suficiente para fazer ajustes se necessário e planejar o cronograma do dia do casamento.",
   },
   {
-    question: "É possível fazer uma prova de maquiagem e penteado antes do casamento?",
-    answer:
-      "Sim! Recomendamos a prova de maquiagem e penteado antes do grande dia, para garantir que você esteja 100% satisfeita com o visual escolhido.",
+    question: "Vocês trabalham com apliques e extensões?",
+    answer: "Sim! Trabalhamos com diversos tipos de apliques e extensões de alta qualidade, que podem ser incorporados ao penteado de forma natural e segura.",
   },
 ];
 
-const DiaDaNoivaPage = () => {
+const PenteadoNoivaNegraPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleNextImage = () => {
@@ -79,14 +74,14 @@ const DiaDaNoivaPage = () => {
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Dia da Noiva", url: "https://www.studioamendollanoivas.com.br/paginaSeo/dia-da-noiva" },
+      { name: "Penteado Noiva Negra", url: "https://www.studioamendollanoivas.com.br/paginaSeo/penteado-noiva-negra" },
     ],
     images: serviceData.images.map((image, index) => ({
       url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Dia da Noiva - Studio Amendolla",
+      description: "Penteados para Noivas Negras - Studio Amendolla",
       width: 600,
       height: 400,
-      name: `Imagem ${index + 1} - Dia da Noiva`,
+      name: `Imagem ${index + 1} - Penteado Noiva Negra`,
       datePublished: "2025-01-18",
       author: "Studio Amendolla",
       publisher: {
@@ -109,14 +104,13 @@ const DiaDaNoivaPage = () => {
       <UnifiedSchemas pageData={pageData} />
 
       <div className={styles.gridContainer}>
-        {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
           <div className={styles.carousel}>
             <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
             <div className={styles.highlightImage}>
               <Image
                 src={serviceData.images[currentImage]}
-                alt={`Dia da Noiva - ${currentImage + 1}`}
+                alt={`Penteado Noiva Negra - ${currentImage + 1}`}
                 width={400}
                 height={300}
                 className={styles.serviceImage}
@@ -131,13 +125,12 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Segunda Coluna: Conteúdo e FAQ */}
         <div className={styles.contentColumn}>
           <div className={styles.descriptionSection}>
             <p>{serviceData.description}</p>
           </div>
           <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
+            <h2>Perguntas Frequentes sobre Penteados para Noivas Negras</h2>
             {faqData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
                 <h4>{faq.question}</h4>
@@ -147,16 +140,14 @@ const DiaDaNoivaPage = () => {
           </div>
         </div>
 
-        {/* Terceira Coluna: Formulário de Orçamento */}
         <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para o Dia da Noiva</h2>
+          <h2>Solicite um Orçamento para seu Penteado</h2>
           <OrcamentoForm />
         </div>
       </div>
       <FeaturesCards />
-    
     </div>
   );
 };
 
-export default DiaDaNoivaPage;
+export default PenteadoNoivaNegraPage;
