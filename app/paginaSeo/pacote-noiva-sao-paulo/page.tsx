@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from 'next';
 import React from "react";
 import Image from "next/image";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
@@ -7,18 +6,73 @@ import styles from "app/styles/BelezaNoivasSP.module.css";
 import FeaturesCards from "app/components/FeaturesCards";
 import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
+export const metadata: Metadata = {
+  title: 'Pacote Noiva São Paulo | Studio Amendolla',
+  description: 'Transforme seu dia especial em um momento inesquecível com nosso pacote noiva exclusivo. Maquiagem e penteado profissional com técnicas avançadas.',
+  keywords: 'pacote noiva são paulo, maquiagem noiva sp, penteado noiva sp, dia da noiva zona norte'
+};
+
 const pageData = {
   article: {
     headline: "Pacote Noiva São Paulo | Studio Amendolla",
-    description: 
-      "Transforme seu dia especial em um momento inesquecível com nosso pacote noiva exclusivo. Maquiagem e penteado profissional com técnicas avançadas e produtos premium.",
+    description: "Transforme seu dia especial em um momento inesquecível com nosso pacote noiva exclusivo. Maquiagem e penteado profissional com técnicas avançadas.",
     author: "Priscila Helena",
-    datePublished: "2025-02-01",
+    datePublished: "2024-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
+  faq: [
+    {
+      question: "O que inclui o pacote noiva?",
+      answer: "Teste completo, make e penteado no dia, produtos premium e atendimento exclusivo."
+    },
+    {
+      question: "Qual a duração do atendimento?",
+      answer: "Dedicamos o tempo necessário para alcançar a perfeição, geralmente 3 horas."
+    },
+    {
+      question: "Oferecem pacotes para madrinhas?",
+      answer: "Sim, com condições especiais quando agendado junto com a noiva."
+    },
+    {
+      question: "Como garantir a data?",
+      answer: "Reserva mediante contrato e sinal, garantindo exclusividade no seu dia."
+    }
+  ],
+  services: [
+    {
+      title: "Maquiagem Profissional para Noivas",
+      description: "Make duradoura com técnicas exclusivas e produtos importados",
+      image: "/images/make-noiva-1.webp"
+    },
+    {
+      title: "Penteado para Noivas",
+      description: "Penteados exclusivos que valorizam seu estilo",
+      image: "/images/penteado-noiva-1.webp"
+    }
+  ],
+  breadcrumb: [
+    {
+      name: "Home",
+      url: "https://studioamendollanoivas.com.br"
+    },
+    {
+      name: "Pacote Noiva",
+      url: "https://studioamendollanoivas.com.br/pacote-noiva-sao-paulo"
+    }
+  ],
+  images: [
+    {
+      url: "/images/pacote-noiva-sp.webp",
+      description: "Pacote Noiva São Paulo - Studio Amendolla",
+      width: 1200,
+      height: 800,
+      name: "Pacote Noiva SP",
+      datePublished: "2024-02-01"
+    }
+  ]
 };
 
-const PacoteNoivaSPPage = () => {
+export default function PacoteNoivaSPPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -103,6 +157,4 @@ const PacoteNoivaSPPage = () => {
       <UnifiedSchemas pageData={pageData} />
     </div>
   );
-};
-
-export default PacoteNoivaSPPage;
+}
