@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem Social Zona Norte SP | Studio Amendolla",
+    headline: "Penteados Profissionais Jardim São Paulo | Studio Amendolla",
     description: 
-      "Serviços de maquiagem social na Zona Norte de São Paulo. Atendimento em domicílio e no studio para festas, eventos e ocasiões especiais.",
+      "Penteados profissionais para Jardim São Paulo no Studio Amendolla. Localizado na Vila Nivi, com fácil acesso do Jardim São Paulo.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const MaquiagemSocialZonaNortePage = () => {
+const PenteadoJardimSaoPauloPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const MaquiagemSocialZonaNortePage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Maquiagem Social na Zona Norte"
+            alt="Penteados Profissionais Jardim São Paulo"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const MaquiagemSocialZonaNortePage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Referência em Beleza na Zona Norte</h2>
+          <h2>Penteados para Jardim São Paulo</h2>
           <p>
-            Studio localizado na Vila Gustavo, com fácil acesso e atendimento 
-            personalizado. Também realizamos atendimento em domicílio em toda região.
+            Em nosso studio na Avenida Julio Buono, 2386 - Vila Nivi, oferecemos serviços premium 
+            de penteados com fácil acesso para clientes do Jardim São Paulo.
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ const MaquiagemSocialZonaNortePage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20social%20na%20Zona%20Norte."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20um%20penteado%20(Jardim%20São%20Paulo)."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -62,38 +62,38 @@ const MaquiagemSocialZonaNortePage = () => {
         <h2>Nossos Serviços</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Make no Studio</h3>
-            <p>Ambiente aconchegante e bem localizado.</p>
+            <h3>Penteados para Noivas</h3>
+            <p>Especialidade em casamentos.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Make em Casa</h3>
-            <p>Atendimento em domicílio na Zona Norte.</p>
+            <h3>Penteados para Festas</h3>
+            <p>Looks para eventos especiais.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Pacotes Especiais</h3>
-            <p>Descontos para grupos e eventos.</p>
+            <h3>Penteados Sociais</h3>
+            <p>Para todas as ocasiões.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Informações Importantes</h2>
+        <h2>Informações do Studio</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais regiões atendem?</summary>
-            <p>Toda Zona Norte e bairros próximos.</p>
+            <summary>Localização do studio?</summary>
+            <p>Avenida Julio Buono, 2386 - Vila Nivi, próximo ao Jardim São Paulo.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso agendar antes?</summary>
-            <p>Sim, recomendamos agendamento prévio.</p>
+            <summary>Como chegar do Jardim São Paulo?</summary>
+            <p>Acesso rápido, apenas alguns minutos do Jardim São Paulo.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Tem estacionamento?</summary>
-            <p>Sim, estacionamento fácil na região.</p>
+            <summary>Fazem teste de penteado?</summary>
+            <p>Sim, disponível mediante agendamento.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Qual o tempo de atendimento?</summary>
-            <p>Aproximadamente 1 hora por pessoa.</p>
+            <summary>Atendem em domicílio?</summary>
+            <p>Sim, disponível para Jardim São Paulo e região.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const MaquiagemSocialZonaNortePage = () => {
   );
 };
 
-export default MaquiagemSocialZonaNortePage;
+export default PenteadoJardimSaoPauloPage;

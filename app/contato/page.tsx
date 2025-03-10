@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
             <MdLocationOn /> Nossa Localização
           </h2>
           <p>
-            Estamos localizados na Avenida Julio Buono, 2386. Venha nos visitar!
+            Estamos localizados na Avenida Julio Buono, 2386, 2386. Venha nos visitar!
           </p>
           <p>
             Telefone: <a href="tel:+5511977670498">(11) 97767-0498</a>

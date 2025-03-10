@@ -51,7 +51,7 @@ const Footer = () => {
               priscilaamendola.sa@hotmail.com
             </a>
           </p>
-          <p>Avenida Julio Buono, 2386</p>
+          <p>Avenida Julio Buono, 2386, 2386</p>
         </div>
 
         {/* Coluna de Redes Sociais */}

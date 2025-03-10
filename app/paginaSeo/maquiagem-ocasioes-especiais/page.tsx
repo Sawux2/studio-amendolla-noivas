@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem Social Zona Norte SP | Studio Amendolla",
+    headline: "Maquiagem para Ocasiões Especiais | Studio Amendolla",
     description: 
-      "Serviços de maquiagem social na Zona Norte de São Paulo. Atendimento em domicílio e no studio para festas, eventos e ocasiões especiais.",
+      "Maquiagem profissional para momentos únicos em São Paulo. Looks personalizados para jantares, encontros, eventos sociais e celebrações importantes.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const MaquiagemSocialZonaNortePage = () => {
+const MaquiagemOcasoesEspeciaisPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const MaquiagemSocialZonaNortePage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Maquiagem Social na Zona Norte"
+            alt="Maquiagem para Ocasiões Especiais"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const MaquiagemSocialZonaNortePage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Referência em Beleza na Zona Norte</h2>
+          <h2>Beleza para Cada Momento</h2>
           <p>
-            Studio localizado na Vila Gustavo, com fácil acesso e atendimento 
-            personalizado. Também realizamos atendimento em domicílio em toda região.
+            Do jantar romântico ao evento social, criamos looks exclusivos 
+            que combinam com sua personalidade e a ocasião.
           </p>
         </div>
       </div>
@@ -50,50 +50,50 @@ const MaquiagemSocialZonaNortePage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20social%20na%20Zona%20Norte."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20para%20ocasião%20especial."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Horário
+        Reserve seu Horário
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Nossos Serviços</h2>
+        <h2>Tipos de Ocasiões</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Make no Studio</h3>
-            <p>Ambiente aconchegante e bem localizado.</p>
+            <h3>Jantares Especiais</h3>
+            <p>Make sofisticada para noites memoráveis.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Make em Casa</h3>
-            <p>Atendimento em domicílio na Zona Norte.</p>
+            <h3>Eventos Sociais</h3>
+            <p>Looks elegantes para qualquer celebração.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Pacotes Especiais</h3>
-            <p>Descontos para grupos e eventos.</p>
+            <h3>Encontros</h3>
+            <p>Maquiagem natural e marcante.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Informações Importantes</h2>
+        <h2>Dúvidas Frequentes</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais regiões atendem?</summary>
-            <p>Toda Zona Norte e bairros próximos.</p>
+            <summary>Posso escolher o estilo?</summary>
+            <p>Sim, a make é totalmente personalizada.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso agendar antes?</summary>
-            <p>Sim, recomendamos agendamento prévio.</p>
+            <summary>Quanto tempo de duração?</summary>
+            <p>Em média 8-10 horas de durabilidade.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Tem estacionamento?</summary>
-            <p>Sim, estacionamento fácil na região.</p>
+            <summary>Preciso levar referências?</summary>
+            <p>Opcional, mas ajuda na comunicação.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Qual o tempo de atendimento?</summary>
-            <p>Aproximadamente 1 hora por pessoa.</p>
+            <summary>Horários flexíveis?</summary>
+            <p>Sim, inclusive atendimento noturno.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const MaquiagemSocialZonaNortePage = () => {
   );
 };
 
-export default MaquiagemSocialZonaNortePage;
+export default MaquiagemOcasoesEspeciaisPage;

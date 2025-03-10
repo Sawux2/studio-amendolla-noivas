@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem Social Zona Norte SP | Studio Amendolla",
+    headline: "Maquiagem Profissional proximo a Parada Inglesa | Studio Amendolla",
     description: 
-      "Serviços de maquiagem social na Zona Norte de São Paulo. Atendimento em domicílio e no studio para festas, eventos e ocasiões especiais.",
+      "Serviços de maquiagem profissional na proximo a Parada Inglesa, São Paulo. Atendimento especializado para eventos e produções na Zona Norte.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const MaquiagemSocialZonaNortePage = () => {
+const MaquiagemParadaInglesaPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const MaquiagemSocialZonaNortePage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Maquiagem Social na Zona Norte"
+            alt="Maquiagem Profissional proximo a Parada Inglesa"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const MaquiagemSocialZonaNortePage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Referência em Beleza na Zona Norte</h2>
+          <h2>Excelência na proximo a Parada Inglesa</h2>
           <p>
-            Studio localizado na Vila Gustavo, com fácil acesso e atendimento 
-            personalizado. Também realizamos atendimento em domicílio em toda região.
+            Atendimento premium. Studio completo 
+            com profissionais experientes e produtos de primeira linha.
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ const MaquiagemSocialZonaNortePage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20social%20na%20Zona%20Norte."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20na%20Parada%20Inglesa."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -62,38 +62,38 @@ const MaquiagemSocialZonaNortePage = () => {
         <h2>Nossos Serviços</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Make no Studio</h3>
-            <p>Ambiente aconchegante e bem localizado.</p>
+            <h3>Make Social</h3>
+            <p>Para eventos e ocasiões especiais.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Make em Casa</h3>
-            <p>Atendimento em domicílio na Zona Norte.</p>
+            <h3>Make Noivas</h3>
+            <p>Especialidade em casamentos.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Pacotes Especiais</h3>
-            <p>Descontos para grupos e eventos.</p>
+            <h3>Make Festas</h3>
+            <p>Produções para celebrações.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Informações Importantes</h2>
+        <h2>Informações Úteis</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais regiões atendem?</summary>
-            <p>Toda Zona Norte e bairros próximos.</p>
+            <summary>Localização do studio?</summary>
+            <p>Próximo ao metrô proximo a Parada Inglesa aqui no Tucuruvi.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso agendar antes?</summary>
-            <p>Sim, recomendamos agendamento prévio.</p>
+            <summary>Atende outras regiões?</summary>
+            <p>Sim, toda Zona Norte de SP.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Tem estacionamento?</summary>
-            <p>Sim, estacionamento fácil na região.</p>
+            <summary>Horários disponíveis?</summary>
+            <p>Atendimento flexível todos os dias.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Qual o tempo de atendimento?</summary>
-            <p>Aproximadamente 1 hora por pessoa.</p>
+            <summary>Faz make em domicílio?</summary>
+            <p>Sim, disponível para toda região.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const MaquiagemSocialZonaNortePage = () => {
   );
 };
 
-export default MaquiagemSocialZonaNortePage;
+export default MaquiagemParadaInglesaPage;

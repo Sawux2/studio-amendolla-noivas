@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem Social Zona Norte SP | Studio Amendolla",
+    headline: "Maquiagem Profissional Parque Edu Chaves | Studio Amendolla",
     description: 
-      "Serviços de maquiagem social na Zona Norte de São Paulo. Atendimento em domicílio e no studio para festas, eventos e ocasiões especiais.",
+      "Serviços de maquiagem profissional para Parque Edu Chaves no Studio Amendolla. Localizado na Vila Nivi, com fácil acesso ao Parque Edu Chaves.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
-  },
+},
 };
 
-const MaquiagemSocialZonaNortePage = () => {
+const MaquiagemParqueEduChavesPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const MaquiagemSocialZonaNortePage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Maquiagem Social na Zona Norte"
+            alt="Maquiagem Profissional Parque Edu Chaves"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const MaquiagemSocialZonaNortePage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Referência em Beleza na Zona Norte</h2>
+          <h2>Beleza para Parque Edu Chaves</h2>
           <p>
-            Studio localizado na Vila Gustavo, com fácil acesso e atendimento 
-            personalizado. Também realizamos atendimento em domicílio em toda região.
+            Em nosso studio na Avenida Julio Buono, 2386, Vila Nivi, oferecemos serviços premium 
+            de maquiagem com fácil acesso para clientes do Parque Edu Chaves.
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ const MaquiagemSocialZonaNortePage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20social%20na%20Zona%20Norte."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20(Parque%20Edu%20Chaves)."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -59,41 +59,41 @@ const MaquiagemSocialZonaNortePage = () => {
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Nossos Serviços</h2>
+        <h2>Serviços Disponíveis</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Make no Studio</h3>
-            <p>Ambiente aconchegante e bem localizado.</p>
+            <h3>Make Eventos</h3>
+            <p>Looks para ocasiões especiais.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Make em Casa</h3>
-            <p>Atendimento em domicílio na Zona Norte.</p>
+            <h3>Make Noivas</h3>
+            <p>Especialidade em casamentos.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Pacotes Especiais</h3>
-            <p>Descontos para grupos e eventos.</p>
+            <h3>Make Social</h3>
+            <p>Para festas e comemorações.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Informações Importantes</h2>
+        <h2>Informações Úteis</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais regiões atendem?</summary>
-            <p>Toda Zona Norte e bairros próximos.</p>
+            <summary>Onde fica o studio?</summary>
+            <p>Avenida Julio Buono, 2386 - Vila Nivi, próximo ao Parque Edu Chaves.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso agendar antes?</summary>
-            <p>Sim, recomendamos agendamento prévio.</p>
+            <summary>Como chegar do Parque Edu Chaves?</summary>
+            <p>Acesso rápido e fácil, poucos minutos de distância.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Tem estacionamento?</summary>
-            <p>Sim, estacionamento fácil na região.</p>
+            <summary>Atendimento em domicílio?</summary>
+            <p>Sim, disponível para Parque Edu Chaves e região.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Qual o tempo de atendimento?</summary>
-            <p>Aproximadamente 1 hora por pessoa.</p>
+            <summary>Horários disponíveis?</summary>
+            <p>Atendimento flexível todos os dias da semana.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const MaquiagemSocialZonaNortePage = () => {
   );
 };
 
-export default MaquiagemSocialZonaNortePage;
+export default MaquiagemParqueEduChavesPage;

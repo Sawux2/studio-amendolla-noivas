@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Maquiagem Social Zona Norte SP | Studio Amendolla",
+    headline: "Pacote Noiva São Paulo | Studio Amendolla",
     description: 
-      "Serviços de maquiagem social na Zona Norte de São Paulo. Atendimento em domicílio e no studio para festas, eventos e ocasiões especiais.",
+      "Transforme seu dia especial em um momento inesquecível com nosso pacote noiva exclusivo. Maquiagem e penteado profissional com técnicas avançadas e produtos premium.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const MaquiagemSocialZonaNortePage = () => {
+const PacoteNoivaSPPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const MaquiagemSocialZonaNortePage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Maquiagem Social na Zona Norte"
+            alt="Pacote Noiva São Paulo"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,11 @@ const MaquiagemSocialZonaNortePage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Referência em Beleza na Zona Norte</h2>
+          <h2>Experiência Exclusiva para Noivas</h2>
           <p>
-            Studio localizado na Vila Gustavo, com fácil acesso e atendimento 
-            personalizado. Também realizamos atendimento em domicílio em toda região.
+            No Studio Amendolla, cada noiva recebe um atendimento personalizado e exclusivo. 
+            Nossa equipe especializada na Avenida Julio Buono, 2386 - Vila Nivi, 
+            garante uma produção impecável com técnicas inovadoras e produtos de alta performance.
           </p>
         </div>
       </div>
@@ -50,50 +51,50 @@ const MaquiagemSocialZonaNortePage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20agendar%20uma%20maquiagem%20social%20na%20Zona%20Norte."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20conhecer%20o%20pacote%20noiva%20completo."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Horário
+        Agende uma Consultoria Gratuita
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Nossos Serviços</h2>
+        <h2>Pacote Completo para Noivas</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Make no Studio</h3>
-            <p>Ambiente aconchegante e bem localizado.</p>
+            <h3>Maquiagem Profissional</h3>
+            <p>Make duradoura com técnicas exclusivas e produtos importados para garantir perfeição em todas as fotos.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Make em Casa</h3>
-            <p>Atendimento em domicílio na Zona Norte.</p>
+            <h3>Penteado Personalizado</h3>
+            <p>Criações únicas que valorizam seus traços e combinam perfeitamente com seu vestido e estilo.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Pacotes Especiais</h3>
-            <p>Descontos para grupos e eventos.</p>
+            <h3>Teste Completo</h3>
+            <p>Sessão prévia para definir o look perfeito, incluindo teste de produtos e registro fotográfico.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Informações Importantes</h2>
+        <h2>Perguntas Frequentes</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Quais regiões atendem?</summary>
-            <p>Toda Zona Norte e bairros próximos.</p>
+            <summary>O que inclui o pacote noiva?</summary>
+            <p>Teste completo, make e penteado no dia, produtos premium e atendimento exclusivo.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso agendar antes?</summary>
-            <p>Sim, recomendamos agendamento prévio.</p>
+            <summary>Qual a duração do atendimento?</summary>
+            <p>Dedicamos o tempo necessário para alcançar a perfeição, geralmente 3 horas.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Tem estacionamento?</summary>
-            <p>Sim, estacionamento fácil na região.</p>
+            <summary>Oferecem pacotes para madrinhas?</summary>
+            <p>Sim, com condições especiais quando agendado junto com a noiva.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Qual o tempo de atendimento?</summary>
-            <p>Aproximadamente 1 hora por pessoa.</p>
+            <summary>Como garantir a data?</summary>
+            <p>Reserva mediante contrato e sinal, garantindo exclusividade no seu dia.</p>
           </details>
         </div>
       </section>
@@ -104,4 +105,4 @@ const MaquiagemSocialZonaNortePage = () => {
   );
 };
 
-export default MaquiagemSocialZonaNortePage;
+export default PacoteNoivaSPPage;
