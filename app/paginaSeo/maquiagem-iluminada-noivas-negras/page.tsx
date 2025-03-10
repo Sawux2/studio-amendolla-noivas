@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Maquiagem Iluminada para Noivas Negras | Studio Amendolla SP",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Técnicas exclusivas de iluminação para noivas negras. Realce seus traços naturais com um glow sofisticado que valoriza a beleza da pele negra.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const MaquiagemIluminadaNoivasNegrasPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Maquiagem Iluminada para Noivas Negras"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Arte em Iluminação</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Dominamos as técnicas mais avançadas de iluminação facial para pele negra, 
+            criando um efeito radiante e sofisticado que realça sua beleza natural.
           </p>
         </div>
       </div>
@@ -50,50 +50,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20maquiagem%20iluminada%20para%20noivas."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Agende seu Glow
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Técnicas de Iluminação</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Glow Personalizado</h3>
+            <p>Iluminação adaptada ao seu subtom de pele.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Strobing Profissional</h3>
+            <p>Técnica avançada de iluminação facial.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Bronzeamento Natural</h3>
+            <p>Efeito sun-kissed para pele negra.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Dúvidas sobre Iluminação</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>O iluminador fica natural?</summary>
+            <p>Sim, usamos produtos específicos para pele negra.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Funciona em fotos?</summary>
+            <p>Sim, a iluminação é pensada para fotogenia.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Qual tipo de brilho?</summary>
+            <p>Personalizado conforme seu estilo e tom de pele.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Dura o dia todo?</summary>
+            <p>Sim, utilizamos técnicas de fixação especiais.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default MaquiagemIluminadaNoivasNegrasPage;

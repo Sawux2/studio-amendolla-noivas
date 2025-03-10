@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import styles from "app/styles/BelezaNoivasSP.module.css"; // CSS reutilizado
-import ServiceSimulator from "app/components/calculadora";
 import FeaturesCards from "app/components/FeaturesCards";
 import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
@@ -100,8 +99,7 @@ const AtendimentoDomicilioMaquiagemPage = () => {
       </section>
 
       {/* Outros Componentes */}
-      <ServiceSimulator />
-      <FeaturesCards />
+           <FeaturesCards />
 
       {/* Schemas */}
       <UnifiedSchemas pageData={pageData} />

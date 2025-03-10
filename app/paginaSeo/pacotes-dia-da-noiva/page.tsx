@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Pacotes Dia da Noiva | Studio Amendolla São Paulo",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Pacotes exclusivos para o dia da noiva em São Paulo. Experiência completa de beleza com maquiagem, penteado e cuidados especiais para seu grande dia.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
-    image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
+    image: "/images/maquiagem-casamento-dia-priscila-1.webp",
   },
 };
 
-const PenteadosNoivasPage = () => {
+const PacotesDiaNoivaPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Pacotes Dia da Noiva"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,11 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Experiência Exclusiva para Noivas</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Viva momentos únicos e inesquecíveis com nossos pacotes especialmente 
+            desenvolvidos para noivas. Oferecemos um ambiente acolhedor e serviços 
+            premium para tornar seu dia ainda mais especial.
           </p>
         </div>
       </div>
@@ -50,50 +51,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20conhecer%20os%20pacotes%20dia%20da%20noiva."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Conheça Nossos Pacotes
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Nossos Pacotes</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Pacote Premium</h3>
+            <p>Teste + Dia da noiva completo com serviços exclusivos.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Pacote Clássico</h3>
+            <p>Maquiagem, penteado e teste prévio.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Pacote Personalizado</h3>
+            <p>Monte seu pacote de acordo com suas necessidades.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Dúvidas sobre o Dia da Noiva</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>O que inclui no pacote completo?</summary>
+            <p>Maquiagem, penteado, teste prévio e atendimento VIP.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Com quanto tempo devo agendar?</summary>
+            <p>Recomendamos agendamento com 6 meses de antecedência.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Posso incluir madrinhas no pacote?</summary>
+            <p>Sim, temos opções especiais para incluir madrinhas.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Fazem atendimento em domicílio?</summary>
+            <p>Sim, podemos realizar o serviço onde você preferir.</p>
           </details>
         </div>
       </section>
@@ -104,4 +105,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default PacotesDiaNoivaPage;

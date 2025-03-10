@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
-    description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+    headline: "Dia da Noiva Completo | Studio Amendolla",
+    description:
+      "Viva um dia da noiva completo e inesquecível com o Studio Amendolla. Maquiagem, penteado, e muito mais para você brilhar.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const DiaDaNoivaCompletoPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Dia da Noiva Completo"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,9 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Dia da Noiva Inolvidável</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            No Studio Amendolla, oferecemos um pacote completo para o seu dia especial, incluindo maquiagem, penteado, e outros serviços para que você se sinta a noiva mais linda do mundo.
           </p>
         </div>
       </div>
@@ -50,50 +49,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20pacote%20Dia%20da%20Noiva."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Agende seu Dia da Noiva no WhatsApp
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>O que inclui o Dia da Noiva?</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Maquiagem Profissional</h3>
+            <p>Maquiagem personalizada para realçar sua beleza natural.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Penteado Elegante</h3>
+            <p>Penteado que combina com seu estilo e vestido.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Tratamentos Especiais</h3>
+            <p>Opções de tratamentos para pele e cabelo.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Perguntas Frequentes sobre o Dia da Noiva</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Onde o Dia da Noiva pode ser realizado?</summary>
+            <p>Oferecemos o serviço no nosso estúdio ou em domicílio.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Quanto tempo dura o Dia da Noiva?</summary>
+            <p>Em média, de 4 a 6 horas, dependendo dos serviços escolhidos.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Posso personalizar o meu pacote de Dia da Noiva?</summary>
+            <p>Sim, montamos pacotes personalizados de acordo com suas necessidades.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Com quanto tempo de antecedência devo agendar o meu Dia da Noiva?</summary>
+            <p>Recomendamos agendar com pelo menos 3 meses de antecedência.</p>
           </details>
         </div>
       </section>
@@ -104,4 +103,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default DiaDaNoivaCompletoPage;

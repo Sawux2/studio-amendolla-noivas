@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Penteados para Eventos | Studio Amendolla São Paulo",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Penteados profissionais para todos os tipos de eventos em São Paulo. Criações exclusivas que valorizam seu estilo e permanecem impecáveis durante toda a celebração.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const PenteadosEventosPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Penteados Profissionais para Eventos"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,11 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Penteados Exclusivos para Cada Ocasião</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Criamos penteados personalizados que combinam com seu estilo e a ocasião. 
+            Nossa equipe especializada utiliza técnicas modernas e produtos de alta qualidade 
+            para garantir que seu penteado permaneça perfeito durante todo o evento.
           </p>
         </div>
       </div>
@@ -50,7 +51,7 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20um%20orçamento%20para%20penteado."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -59,41 +60,41 @@ const PenteadosNoivasPage = () => {
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Nossos Serviços de Penteado</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Penteados para Casamento</h3>
+            <p>Criações sofisticadas para noivas, madrinhas e convidadas.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Penteados para Formatura</h3>
+            <p>Estilos modernos e elegantes para sua colação de grau.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Penteados para Festas</h3>
+            <p>Looks versáteis para festas e eventos sociais.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Perguntas Frequentes sobre Penteados</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Quanto tempo antes devo lavar o cabelo?</summary>
+            <p>Recomendamos lavar o cabelo no dia anterior ao penteado.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Preciso levar referências?</summary>
+            <p>Sim, é ótimo trazer fotos de referência para melhor entendermos seu estilo desejado.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Fazem teste de penteado?</summary>
+            <p>Sim, oferecemos teste de penteado para eventos especiais.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Qual a duração do penteado?</summary>
+            <p>Nossos penteados são feitos para durar todo o evento, em média 12 horas.</p>
           </details>
         </div>
       </section>
@@ -104,4 +105,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default PenteadosEventosPage;

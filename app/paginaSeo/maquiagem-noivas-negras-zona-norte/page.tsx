@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Maquiagem para Noivas Negras Zona Norte SP | Studio Amendolla",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Especialistas em maquiagem para noivas negras na Zona Norte de São Paulo. Realçamos sua beleza natural com técnicas exclusivas e produtos específicos para pele negra.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const MaquiagemNoivasNegrasZonaNortePage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Maquiagem para Noivas Negras na Zona Norte"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Referência em Beleza Negra na Zona Norte</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Studio localizado na Zona Norte de São Paulo, com fácil acesso e estrutura 
+            completa. Equipe especializada em valorizar a beleza única de cada noiva negra.
           </p>
         </div>
       </div>
@@ -50,50 +50,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20maquiagem%20para%20noivas%20negras%20na%20Zona%20Norte."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Agende seu Horário
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Nossos Diferenciais</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Expertise em Pele Negra</h3>
+            <p>Profissionais especializados em diferentes tons de pele negra.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Localização Privilegiada</h3>
+            <p>Fácil acesso na Zona Norte de São Paulo.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Atendimento Personalizado</h3>
+            <p>Consultoria completa para seu grande dia.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Dúvidas Frequentes</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Onde fica o studio?</summary>
+            <p>Estamos localizados na Vila Gustavo, Zona Norte de SP.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Fazem teste de maquiagem?</summary>
+            <p>Sim, o teste é fundamental para garantir o resultado perfeito.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Atendem em domicílio?</summary>
+            <p>Sim, atendemos em toda região da Zona Norte.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Quais produtos usam?</summary>
+            <p>Utilizamos marcas premium especializadas em pele negra.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default MaquiagemNoivasNegrasZonaNortePage;

@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Maquiagem de Longa Duração para Noivas Negras | Studio Amendolla",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Técnicas avançadas de maquiagem de longa duração para noivas negras em São Paulo. Produtos específicos e métodos exclusivos para uma make à prova de festa.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const MaquiagemLongaDuracaoNoivasNegrasPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Maquiagem Longa Duração para Noivas Negras"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,10 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Tecnologia em Maquiagem</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Combinamos produtos de última geração com técnicas avançadas para garantir 
+            uma maquiagem impecável que dura todo o evento, resistente ao calor e emoção.
           </p>
         </div>
       </div>
@@ -50,50 +50,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20maquiagem%20de%20longa%20duração."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Agende sua Make
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Técnicas Exclusivas</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Preparação Especial</h3>
+            <p>Skincare específico para maior durabilidade.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Produtos Waterproof</h3>
+            <p>Maquiagem à prova d´água e suor.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Fixação Profissional</h3>
+            <p>Técnicas avançadas de fixação para pele negra.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Dúvidas sobre Durabilidade</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Quanto tempo dura a make?</summary>
+            <p>Em média 12-16 horas com a preparação adequada.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Resiste ao calor?</summary>
+            <p>Sim, utilizamos produtos específicos para alta temperatura.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>É à prova d´água?</summary>
+            <p>Sim, resistente a lágrimas e umidade.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Precisa de retoques?</summary>
+            <p>Geralmente não, mas fornecemos kit para emergências.</p>
           </details>
         </div>
       </section>
@@ -104,4 +104,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default MaquiagemLongaDuracaoNoivasNegrasPage;

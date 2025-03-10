@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
+    headline: "Maquiagem e Beleza para Noivas SP | Studio Amendolla",
     description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+      "Serviços premium de maquiagem e beleza para noivas em São Paulo. Especialistas em realçar a beleza natural da noiva com técnicas exclusivas e produtos de alta qualidade.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
-  },
+},
 };
 
-const PenteadosNoivasPage = () => {
+const BelezaNoivasSPPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Maquiagem e Beleza para Noivas SP"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,11 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Excelência em Beleza para Noivas</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Referência em São Paulo, o Studio Amendolla oferece serviços exclusivos 
+            de beleza para noivas. Nossa equipe especializada cria looks personalizados 
+            que realçam sua beleza natural e garantem uma produção duradoura.
           </p>
         </div>
       </div>
@@ -50,50 +51,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20maquiagem%20e%20beleza%20para%20noivas."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Agende sua Consulta
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Serviços Especializados</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Dia da Noiva Completo</h3>
+            <p>Experiência exclusiva com todos os cuidados para seu grande dia.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Maquiagem Profissional</h3>
+            <p>Técnicas avançadas e produtos premium para uma make duradoura.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Penteados Exclusivos</h3>
+            <p>Criações únicas que valorizam seu estilo e personalidade.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Informações para Noivas</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Quais regiões de SP atendem?</summary>
+            <p>Atendemos toda São Paulo capital e região metropolitana.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Quando fazer o teste?</summary>
+            <p>Recomendamos o teste 30 dias antes do casamento.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Trabalham com produtos hipoalergênicos?</summary>
+            <p>Sim, utilizamos produtos específicos para peles sensíveis.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Oferecem pacote para noiva e madrinhas?</summary>
+            <p>Sim, temos pacotes especiais para o grupo completo.</p>
           </details>
         </div>
       </section>
@@ -104,4 +105,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default BelezaNoivasSPPage;

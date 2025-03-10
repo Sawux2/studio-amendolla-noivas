@@ -1,166 +1,108 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import { useState } from "react";
-import OrcamentoForm from "app/components/OrcamentoForm";
-import styles from "app/styles/PaginaSeo.module.css";
-import CanonicalURL from "app/components/CanonicalURL";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import styles from "app/styles/BelezaNoivasSP.module.css";
 import FeaturesCards from "app/components/FeaturesCards";
+import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
-const serviceData = {
-  title: "Maquiagem para Madrinhas de Casamento - Studio Amendolla",
-  description: 
-    "Maquiagem profissional para madrinhas na Zona Norte de SP. Looks harmoniosos e elegantes que combinam com o estilo do casamento e valorizam a beleza natural.",
-  detailedDescription: `
-    O Studio Amendolla oferece serviços especializados para madrinhas:
-
-    SERVIÇOS EXCLUSIVOS:
-    - Maquiagem personalizada para cada madrinha
-    - Harmonização com o tema do casamento
-    - Produtos de alta durabilidade
-    - Cílios postiços inclusos
-    - Preparação especial da pele
-    - Técnicas fotogênicas
-    
-    DIFERENCIAIS:
-    - Atendimento em grupo
-    - Horários coordenados
-    - Dicas de cuidados com a pele
-    - Suporte durante o evento
-    - Kit retoque personalizado
-
-    Pacotes especiais para grupos de madrinhas com condições diferenciadas.`,
-  image: "/images/maquiagem-madrinhas-1.webp",
-  images: [
-    "/images/maquiagem-madrinhas-1.webp",
-    "/images/maquiagem-madrinhas-2.webp",
-  ],
+const pageData = {
+  article: {
+    headline: "Maquiagem para Madrinhas de Casamento | Studio Amendolla",
+    description: 
+      "Maquiagem profissional exclusiva para madrinhas em São Paulo. Looks sofisticados e duradouros para complementar a beleza do casamento.",
+    author: "Priscila Helena",
+    datePublished: "2025-02-01",
+  
+    image: "/images/maquiagem-casamento-dia-priscila-1.webp", },
 };
 
-const faqData = [
-  {
-    question: "Quantas madrinhas podem ser atendidas simultaneamente?",
-    answer: "Nosso espaço comporta até 4 madrinhas simultaneamente, com profissionais dedicados para cada uma.",
-  },
-  {
-    question: "Oferecem pacotes para o grupo completo de madrinhas?",
-    answer: "Sim! Temos pacotes especiais que incluem todas as madrinhas, com descontos progressivos conforme o número de pessoas.",
-  },
-  {
-    question: "É possível fazer um teste antes do casamento?",
-    answer: "Sim! Recomendamos o teste prévio para garantir que o resultado atenda às expectativas de todas.",
-  },
-  {
-    question: "A maquiagem é coordenada com o estilo da noiva?",
-    answer: "Sim! Trabalhamos em harmonia com o visual da noiva e o tema do casamento, criando uma produção coesa para as fotos.",
-  },
-];
-
-const MaquiagemMadrinhasPage = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const handleNextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
-  };
-
-  const handlePrevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
-  };
-
-  const pageData = {
-    article: {
-      headline: serviceData.title,
-      description: serviceData.description,
-      author: "Studio Amendolla",
-      datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
-    },
-    services: [
-      {
-        title: serviceData.title,
-        description: serviceData.description,
-        image: serviceData.image,
-      },
-    ],
-    faq: faqData,
-    breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiagem Madrinhas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-madrinhas-casamento" },
-    ],
-    images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Maquiagem para Madrinhas de Casamento - Studio Amendolla",
-      width: 600,
-      height: 400,
-      name: `Imagem ${index + 1} - Maquiagem Madrinhas`,
-      datePublished: "2025-01-18",
-      author: "Studio Amendolla",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
-    })),
-  };
-
+const MaquiagemMadrinhasCasamentoPage = () => {
   return (
-    <div className={styles.servicePage}>
-      <h1>{serviceData.title}</h1>
-      <CanonicalURL />
-      <UnifiedSchemas pageData={pageData} />
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>{pageData.article.headline}</h1>
+        <p className={styles.description}>{pageData.article.description}</p>
+      </header>
 
-      <div className={styles.gridContainer}>
-        <div className={styles.photosColumn}>
-          <div className={styles.carousel}>
-            <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
-            <div className={styles.highlightImage}>
-              <Image
-                src={serviceData.images[currentImage]}
-                alt={`Maquiagem Madrinhas - ${currentImage + 1}`}
-                width={400}
-                height={300}
-                className={styles.serviceImage}
-                quality={80}
-                priority={currentImage === 0}
-              />
-            </div>
-            <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
-          </div>
-          <div className={styles.detailedDescription}>
-            <p>{serviceData.detailedDescription}</p>
-          </div>
+      <div className={styles.contentContainer}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={pageData.article.image}
+            alt="Maquiagem para Madrinhas de Casamento"
+            width={500}
+            height={333}
+            loading="lazy"
+            className={styles.image}
+          />
         </div>
 
-        <div className={styles.contentColumn}>
-          <div className={styles.descriptionSection}>
-            <p>{serviceData.description}</p>
-          </div>
-          <div className={styles.faqSection}>
-            <h2>Perguntas Frequentes sobre Maquiagem para Madrinhas</h2>
-            {faqData.map((faq, index) => (
-              <div key={index} className={styles.faqItem}>
-                <h4>{faq.question}</h4>
-                <p>{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.formColumn}>
-          <h2>Solicite um Orçamento para Madrinhas</h2>
-          <OrcamentoForm />
+        <div className={styles.textContent}>
+          <h2>Beleza Especial para Madrinhas</h2>
+          <p>
+            Criamos looks elegantes que harmonizam com o estilo do casamento. 
+            Nossas técnicas garantem uma maquiagem duradoura e fotogênica para 
+            todas as madrinhas.
+          </p>
         </div>
       </div>
+
+      <GaleriaDeFotos />
+
+      <a
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20maquiagem%20para%20madrinhas."
+        className={styles.whatsappButton}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Solicite um Orçamento
+      </a>
+
+      <section className={styles.servicesSection}>
+        <h2>Pacotes para Madrinhas</h2>
+        <div className={styles.servicesGrid}>
+          <div className={styles.serviceCard}>
+            <h3>Pacote Essencial</h3>
+            <p>Maquiagem profissional com produtos premium.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <h3>Pacote Completo</h3>
+            <p>Maquiagem + penteado com atendimento VIP.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <h3>Pacote Grupo</h3>
+            <p>Condições especiais para grupos de madrinhas.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.faqSection}>
+        <h2>Informações para Madrinhas</h2>
+        <div className={styles.faqGrid}>
+          <details className={styles.faqItem}>
+            <summary>Qual o tempo de duração do serviço?</summary>
+            <p>Em média 1 hora para maquiagem e 1 hora para penteado.</p>
+          </details>
+          <details className={styles.faqItem}>
+            <summary>Fazem teste prévio?</summary>
+            <p>Sim, oferecemos teste opcional para madrinhas.</p>
+          </details>
+          <details className={styles.faqItem}>
+            <summary>Atendem várias madrinhas juntas?</summary>
+            <p>Sim, temos equipe para atender grupos simultaneamente.</p>
+          </details>
+          <details className={styles.faqItem}>
+            <summary>Tem desconto para grupos?</summary>
+            <p>Sim, oferecemos condições especiais para grupos.</p>
+          </details>
+        </div>
+      </section>
+
       <FeaturesCards />
+      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };
 
-export default MaquiagemMadrinhasPage;
+export default MaquiagemMadrinhasCasamentoPage;

@@ -9,16 +9,16 @@ import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
 const pageData = {
   article: {
-    headline: "Penteados para Noivas | Studio Amendolla São Paulo",
-    description: 
-      "Penteados exclusivos para noivas em São Paulo. Criações sofisticadas que combinam com seu estilo e permanecem perfeitas durante toda a celebração.",
+    headline: "Maquiagem Profissional para Eventos | Studio Amendolla",
+    description:
+      "Maquiagem profissional para eventos especiais no Studio Amendolla. Destaque-se em casamentos, formaturas, festas e muito mais.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
   },
 };
 
-const PenteadosNoivasPage = () => {
+const MaquiagemProfissionalEventosPage = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -30,7 +30,7 @@ const PenteadosNoivasPage = () => {
         <div className={styles.imageContainer}>
           <Image
             src={pageData.article.image}
-            alt="Penteados Exclusivos para Noivas"
+            alt="Maquiagem Profissional para Eventos"
             width={500}
             height={333}
             loading="lazy"
@@ -39,10 +39,9 @@ const PenteadosNoivasPage = () => {
         </div>
 
         <div className={styles.textContent}>
-          <h2>Arte em Penteados para Noivas</h2>
+          <h2>Maquiagem Impecável para Todos os Eventos</h2>
           <p>
-            Criamos penteados únicos que valorizam seus traços e complementam seu vestido. 
-            Nossa expertise garante um visual deslumbrante e duradouro para seu grande dia.
+            Realce sua beleza em qualquer evento com nossa maquiagem profissional.  De casamentos a festas, criamos o look perfeito para você brilhar.
           </p>
         </div>
       </div>
@@ -50,50 +49,50 @@ const PenteadosNoivasPage = () => {
       <GaleriaDeFotos />
 
       <a
-        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20informações%20sobre%20penteados%20para%20noivas."
+        href="https://wa.me/5511977670498?text=Olá%2C%20gostaria%20de%20um%20orçamento%20para%20maquiagem%20para%20um%20evento."
         className={styles.whatsappButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agende seu Penteado
+        Solicite um Orçamento pelo WhatsApp
       </a>
 
       <section className={styles.servicesSection}>
-        <h2>Estilos de Penteados</h2>
+        <h2>Tipos de Maquiagem para Eventos</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <h3>Penteados Clássicos</h3>
-            <p>Elegância atemporal para noivas tradicionais.</p>
+            <h3>Maquiagem para Casamento</h3>
+            <p>Looks sofisticados e elegantes para noivas, madrinhas e convidadas.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Modernos</h3>
-            <p>Criações contemporâneas e despojadas.</p>
+            <h3>Maquiagem para Formatura</h3>
+            <p>Maquiagem glamorosa para você arrasar na sua formatura.</p>
           </div>
           <div className={styles.serviceCard}>
-            <h3>Penteados Românticos</h3>
-            <p>Looks delicados com trançados e ondulações.</p>
+            <h3>Maquiagem para Festas</h3>
+            <p>Maquiagem para festas de aniversário, eventos corporativos e outras ocasiões.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.faqSection}>
-        <h2>Dúvidas sobre Penteados</h2>
+        <h2>Perguntas Frequentes sobre Maquiagem para Eventos</h2>
         <div className={styles.faqGrid}>
           <details className={styles.faqItem}>
-            <summary>Como escolher o penteado ideal?</summary>
-            <p>Consideramos seu vestido, tipo de cabelo e estilo pessoal.</p>
+            <summary>Vocês fazem maquiagem em domicílio?</summary>
+            <p>Sim, oferecemos o serviço de maquiagem em domicílio.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Preciso fazer escova antes?</summary>
-            <p>Recomendamos lavar o cabelo no dia anterior.</p>
+            <summary>Quanto tempo dura a maquiagem?</summary>
+            <p>A maquiagem é de longa duração, feita para resistir à festa inteira.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>Trabalham com apliques?</summary>
-            <p>Sim, oferecemos opções de alongamento e apliques.</p>
+            <summary>Preciso levar meus próprios produtos?</summary>
+            <p>Não, fornecemos todos os produtos necessários.</p>
           </details>
           <details className={styles.faqItem}>
-            <summary>O véu pode danificar o penteado?</summary>
-            <p>Não, desenvolvemos técnicas especiais para uso com véu.</p>
+            <summary>Como faço para agendar o serviço?</summary>
+            <p>Entre em contato pelo WhatsApp ou pelo formulário do site.</p>
           </details>
         </div>
       </section>
@@ -104,4 +103,4 @@ const PenteadosNoivasPage = () => {
   );
 };
 
-export default PenteadosNoivasPage;
+export default MaquiagemProfissionalEventosPage;
