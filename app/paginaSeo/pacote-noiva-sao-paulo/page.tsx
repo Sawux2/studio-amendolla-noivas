@@ -42,12 +42,12 @@ const pageData = {
     {
       title: "Maquiagem Profissional para Noivas",
       description: "Make duradoura com técnicas exclusivas e produtos importados",
-      image: "/images/make-noiva-1.webp"
+      image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
     },
     {
       title: "Penteado para Noivas",
       description: "Penteados exclusivos que valorizam seu estilo",
-      image: "/images/penteado-noiva-1.webp"
+      image: "/images/maquiagem-casamento-dia-priscila-1.webp", 
     }
   ],
   breadcrumb: [
