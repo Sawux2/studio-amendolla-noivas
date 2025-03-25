@@ -6,6 +6,7 @@ import Services from './components/Services';
 import CanonicalURL from './components/CanonicalURL';
 import UnifiedSchemas from './schemas/UnifiedSchemas';
 import { Suspense } from 'react';
+import GaleriaDeFotos from './components/GaleriaDeFotos';
 
 export default function HomePage() {
   const pageTitle = 'Studio Amendolla - Serviços de Maquiagem e Penteados';
@@ -39,6 +40,7 @@ export default function HomePage() {
       <UnifiedSchemas pageData={pageData} />
       <Hero />
       <Services />
+      <GaleriaDeFotos />
     </>
   );
 }
