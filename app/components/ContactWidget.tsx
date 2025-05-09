@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram />,
-    link: "https://www.instagram.com/studioamendolla/",
+    link: "https://www.instagram.com/studioamendola_/",
     label: "Instagram",
     backgroundColor: "#E1306C",
   },

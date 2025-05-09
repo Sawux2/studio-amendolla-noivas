@@ -79,7 +79,7 @@ const SobrePage = () => {
             style={{ backgroundImage: "url('/images/experiencia-expertise.webp')" }}
           >
             <h3>Experiência e Expertise</h3>
-            <p>Mais de 10 anos de experiência em penteados e maquiagem para noivas, com um histórico de clientes satisfeitos.</p>
+            <p>Mais de 5 anos de experiência em penteados e maquiagem para noivas, com um histórico de clientes satisfeitos.</p>
           </div>
         </div>
       </section>

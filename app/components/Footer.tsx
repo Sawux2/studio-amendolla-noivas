@@ -59,7 +59,7 @@ const Footer = () => {
           <h4>Redes Sociais</h4>
           <div className={styles.socialIcons}>
             <a
-              href="https://www.instagram.com/studioamendolla/"
+              href="https://www.instagram.com/studioamendola_/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Siga-nos no Instagram"
