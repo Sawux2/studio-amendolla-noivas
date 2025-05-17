@@ -15,6 +15,7 @@ const servicesData = [
     alt: "Serviço de Maquiagem Social",
     link: "/maquiagem-social",
   },
+  
   {
     title: "Pacotes para Noivas",
     description: "Maquiagem e Penteados para Noivas.",

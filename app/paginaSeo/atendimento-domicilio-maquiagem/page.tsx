@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import styles from "app/styles/BelezaNoivasSP.module.css"; // CSS reutilizado
+import styles from "app/styles/BelezaNoivasSP.module.css";
 import FeaturesCards from "app/components/FeaturesCards";
 import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 
@@ -21,6 +21,8 @@ const pageData = {
 const AtendimentoDomicilioMaquiagemPage = () => {
   return (
     <div className={styles.container}>
+      <UnifiedSchemas pageData={pageData} /> {/* Corrigido: agora no topo */}
+
       {/* Cabeçalho */}
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
@@ -31,10 +33,10 @@ const AtendimentoDomicilioMaquiagemPage = () => {
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src={pageData.article.image} // URL da imagem
+            src={pageData.article.image}
             alt="Atendimento Domicílio Maquiagem"
-            width={500} // Tamanho reduzido da imagem
-            height={333} // Proporção ajustada
+            width={500}
+            height={333}
             loading="lazy"
             className={styles.image}
           />
@@ -98,11 +100,7 @@ const AtendimentoDomicilioMaquiagemPage = () => {
         </div>
       </section>
 
-      {/* Outros Componentes */}
-           <FeaturesCards />
-
-      {/* Schemas */}
-      <UnifiedSchemas pageData={pageData} />
+      <FeaturesCards />
     </div>
   );
 };

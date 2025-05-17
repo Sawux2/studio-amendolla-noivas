@@ -78,13 +78,13 @@ const AtendimentoMaquiagemDomicilioPage = () => {
       description: serviceData.description,
       author: "Studio Amendolla",
       datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `/images/maquiagem-domicilio.webp`,
     },
     services: [
       {
         title: serviceData.title,
         description: serviceData.description,
-        image: serviceData.image,
+        image: `/images/maquiagem-domicilio.webp`,
       },
     ],
     faq: faqData,
@@ -116,29 +116,30 @@ const AtendimentoMaquiagemDomicilioPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <h1>{serviceData.title}</h1>
       <CanonicalURL />
       <UnifiedSchemas pageData={pageData} />
+
+      <h1>{serviceData.title}</h1>
 
       <div className={styles.gridContainer}>
         {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
-        <div className={styles.carousel}>
-  <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
-  <div className={styles.highlightImage}>
-    <Image
-      src={`https://www.studioamendollanoivas.com.br${serviceData.images[currentImage]}`}
-      alt={`Atendimento a Domicílio para Maquiagem - Imagem ${currentImage + 1} - Studio Amendolla`}
-      title={`Atendimento a Domicílio para Maquiagem - Studio Amendolla`}
-      width={400}
-      height={300}
-      className={styles.serviceImage}
-      quality={85} // Aumentei um pouco a qualidade para SEO de imagens
-      priority={currentImage === 0}
-    />
-  </div>
-  <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
-</div>
+          <div className={styles.carousel}>
+            <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
+            <div className={styles.highlightImage}>
+              <Image
+                src={serviceData.images[currentImage]}
+                alt={`Atendimento a Domicílio para Maquiagem - Imagem ${currentImage + 1} - Studio Amendolla`}
+                title={`Atendimento a Domicílio para Maquiagem - Studio Amendolla`}
+                width={400}
+                height={300}
+                className={styles.serviceImage}
+                quality={85}
+                priority={currentImage === 0}
+              />
+            </div>
+            <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
+          </div>
 
           <div className={styles.detailedDescription}>
             <p>{serviceData.detailedDescription}</p>
@@ -168,7 +169,7 @@ const AtendimentoMaquiagemDomicilioPage = () => {
         </div>
       </div>
       <FeaturesCards />
-      <ServiceSimulator/>
+      <ServiceSimulator />
     </div>
   );
 };

@@ -82,6 +82,7 @@ const pageData = {
 export default function AtendimentoDomicilioPage() {
   return (
     <div className={styles.container}>
+      <UnifiedSchemas pageData={pageData} />
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
         <p className={styles.description}>{pageData.article.description}</p>
@@ -151,7 +152,6 @@ export default function AtendimentoDomicilioPage() {
       </section>
 
       <FeaturesCards />
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 }

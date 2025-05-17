@@ -21,6 +21,8 @@ const pageData = {
 const AtendimentoDomicilioPenteadoPage = () => {
   return (
     <div className={styles.container}>
+      <UnifiedSchemas pageData={pageData} /> {/* Corrigido: agora no topo */}
+
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
         <p className={styles.description}>{pageData.article.description}</p>
@@ -41,7 +43,7 @@ const AtendimentoDomicilioPenteadoPage = () => {
         <div className={styles.textContent}>
           <h2>Penteados Profissionais em Casa</h2>
           <p>
-            Realce sua beleza com nossos penteados profissionais, agora disponíveis em domicílio.  Do clássico ao moderno, criamos o penteado perfeito para você, no conforto do seu lar.
+            Realce sua beleza com nossos penteados profissionais, agora disponíveis em domicílio. Do clássico ao moderno, criamos o penteado perfeito para você, no conforto do seu lar.
           </p>
         </div>
       </div>
@@ -78,17 +80,15 @@ const AtendimentoDomicilioPenteadoPage = () => {
       <section className={styles.faqSection}>
         <h2>Perguntas Frequentes sobre Atendimento Domiciliar de Penteado</h2>
         <div className={styles.faqGrid}>
-          {/* Add FAQ questions and answers specific to penteado */}
           <details className={styles.faqItem}>
             <summary>Quanto tempo leva em média para fazer um penteado em domicílio?</summary>
             <p>O tempo varia de acordo com a complexidade do penteado, mas em média, leva de 1 a 2 horas.</p>
           </details>
-          {/* Add more FAQ items as needed */}
+          {/* Adicione mais perguntas frequentes conforme necessário */}
         </div>
       </section>
 
       <FeaturesCards />
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };
