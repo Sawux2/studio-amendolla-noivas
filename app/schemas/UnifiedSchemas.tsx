@@ -8,7 +8,7 @@ interface ArticleProps {
   description: string;
   author: string;
   datePublished: string;
-  image: string[]; // Array de URLs absolutas
+  image: string;
 }
 
 interface FAQItem {
@@ -51,11 +51,11 @@ export const generateArticleSchema = (articleData: ArticleProps) => ({
   headline: articleData.headline,
   description: articleData.description,
   author: {
-    '@type': 'Organization',
+    '@type': 'Person',
     name: articleData.author,
   },
   datePublished: articleData.datePublished,
-  image: articleData.image, // Já deve vir como array de URLs absolutas
+  image: articleData.image,
 });
 
 export const generateFAQSchema = (faqItems: FAQItem[]) => ({
@@ -139,31 +139,23 @@ export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
 // Componente que adiciona schemas ao head
 const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
   useEffect(() => {
-    // Garantir que todas as URLs são absolutas
-    const baseUrl = 'https://www.studioamendollanoivas.com.br';
-    const ensureAbsoluteUrl = (url: string) => 
-      url.startsWith('http') ? url : `${baseUrl}${url}`;
+    // Filtrando palavras comuns para keywords
+    const stopWords = ['de', 'para', 'com', 'em', 'a', 'o', 'na', 'no']; // Exemplo de palavras comuns
+    const keywordsContent = pageData.article?.headline
+      .replace(/,|\./g, '')
+      .split(' ')
+      .filter(word => !stopWords.includes(word.toLowerCase()))
+      .join(', ') || '';
 
     const schemaData = {
-      article: pageData.article && {
-        ...generateArticleSchema(pageData.article),
-        image: Array.isArray(pageData.article.image) 
-          ? pageData.article.image.map(ensureAbsoluteUrl)
-          : [ensureAbsoluteUrl(pageData.article.image)]
-      },
+      article: pageData.article && generateArticleSchema(pageData.article),
       breadcrumb: pageData.breadcrumb && generateBreadcrumbSchema(pageData.breadcrumb),
       faq: pageData.faq && generateFAQSchema(pageData.faq),
       services: pageData.services && generateServiceSchema(pageData.services),
-      images: pageData.images && generateImageObjectSchema(pageData.images.map(img => ({
-        ...img,
-        url: ensureAbsoluteUrl(img.url)
-      })))
+      images: pageData.images && generateImageObjectSchema(pageData.images),
     };
 
-    // Limpar schemas antigos
-    document.querySelectorAll('script[type="application/ld+json"]').forEach(el => el.remove());
-
-    // Adicionar novos schemas
+    // Adicionar schemas ao <head>
     Object.values(schemaData).forEach((schema, index) => {
       if (schema) {
         const script = document.createElement('script');
@@ -181,10 +173,6 @@ const UnifiedSchemas: React.FC<{ pageData: PageData }> = ({ pageData }) => {
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       
       const descriptionContent = pageData.article.description;
-      // Define keywordsContent, for example using headline words
-      const keywordsContent = pageData.article.headline
-        ? pageData.article.headline.split(' ').join(', ')
-        : '';
 
       if (metaDescription) {
         metaDescription.setAttribute('content', descriptionContent);

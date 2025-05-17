@@ -5,11 +5,16 @@ import { useState } from "react";
 import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
+import ArticleSchema from "app/schemas/ArticleSchema";
+import BreadcrumbSchema from "app/schemas/BreadcrumbSchema";
+import FAQSchema from "app/schemas/FAQSchema";
+import ImageObjectSchema from "app/schemas/ImageObjectSchema";
+import ServiceSchema from "app/schemas/ServiceSchema";
+import OrganizationSchema from "app/schemas/OrganizationSchema";
+import WebsiteSchema from "app/schemas/WebsiteSchema";
 import FeaturesCards from "app/components/FeaturesCards";
 import ServiceSimulator from "app/components/calculadora";
 
-// Dados do serviço
 const serviceData = {
   title: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
   description:
@@ -39,7 +44,6 @@ const serviceData = {
   ],
 };
 
-// FAQ
 const faqData = [
   {
     question: "Como funciona o atendimento de maquiagem a domicílio?",
@@ -66,7 +70,7 @@ const faqData = [
 const AtendimentoMaquiagemDomicilioPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Handlers para carrossel
+  // Handlers para o carrossel
   const handleNextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
   };
@@ -75,67 +79,148 @@ const AtendimentoMaquiagemDomicilioPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
-  // Dados estruturados para SEO
-  const pageData = {
-    article: {
-      headline: serviceData.title,
-      description: serviceData.description,
-      author: "Studio Amendolla",
-      datePublished: "2025-01-18",
-      image: serviceData.images.map(img => 
-        `https://www.studioamendollanoivas.com.br${img}`
-      ),
-    },
-    faq: faqData.map(item => ({
-      question: item.question,
-      answer: item.answer
-    })),
-    breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { 
-        name: "Atendimento a Domicílio para Maquiagem", 
-        url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem" 
-      }
-    ],
-    images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
-      width: 400,
-      height: 300,
-      name: `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
-      datePublished: "2025-01-18",
-      author: "Studio Amendolla"
-    }))
+  // Dados para Article Schema
+  const articleData = {
+    headline: serviceData.title,
+    description: serviceData.description,
+    author: "Studio Amendolla",
+    datePublished: "2025-01-18",
+    image: serviceData.images.map(img => 
+      `https://www.studioamendollanoivas.com.br${img}`
+    ),
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem"
   };
+
+  // Dados para Breadcrumb Schema
+  const breadcrumbData = {
+    items: [
+      {
+        name: "Início",
+        item: "/",
+        position: 1
+      },
+      {
+        name: "Serviços",
+        item: "/servicos",
+        position: 2
+      },
+      {
+        name: "Atendimento a Domicílio para Maquiagem",
+        item: "/paginaSeo/atendimento-domicilio-maquiagem",
+        position: 3
+      }
+    ]
+  };
+
+  // Dados para FAQ Schema
+  const faqSchemaData = {
+    items: faqData
+  };
+
+  // Dados para Service Schema
+  const serviceSchemaData = {
+    name: serviceData.title,
+    description: serviceData.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: serviceData.images.map(img => 
+      `https://www.studioamendollanoivas.com.br${img}`
+    ),
+    url: "/paginaSeo/atendimento-domicilio-maquiagem",
+    serviceType: "Maquiagem Profissional",
+    offers: [
+      {
+        price: 500,
+        priceCurrency: "BRL",
+        availability: "https://schema.org/InStock",
+        validFrom: "2024-05-17"
+      }
+    ]
+  };
+
+  // Dados para Organization Schema
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  // Dados para Website Schema
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    inLanguage: "pt-BR",
+    keywords: ["maquiagem noiva a domicilio", "atendimento maquiagem a domicílio", "São Paulo"]
+  };
+
+  // Dados para Image Schema
+  const imageData = serviceData.images.map((image, index) => ({
+    url: image,
+    description: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
+    width: 600,
+    height: 400,
+    name: `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
+    caption: "Serviço de maquiagem profissional a domicílio",
+    representativeOfPage: index === 0,
+    creator: {
+      name: "Studio Amendolla",
+      url: "https://www.studioamendollanoivas.com.br"
+    },
+    datePublished: "2024-05-17"
+  }));
 
   return (
     <div className={styles.servicePage}>
-      {/* Apenas UnifiedSchemas, sem schemas inline */}
-      <UnifiedSchemas pageData={pageData} />
-      <CanonicalURL />
-
       <h1>{serviceData.title}</h1>
+      
+      {/* SEO Schemas */}
+      <CanonicalURL />
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={faqSchemaData} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      {imageData.map((imgData, index) => (
+        <ImageObjectSchema key={index} data={imgData} />
+      ))}
 
+      {/* Resto do conteúdo existente */}
       <div className={styles.gridContainer}>
         {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
-          <div className={styles.carousel}>
-            <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
-            <div className={styles.highlightImage}>
-              <Image
-                src={serviceData.images[currentImage]}
-                alt={`Atendimento a Domicílio para Maquiagem - Imagem ${currentImage + 1} - Studio Amendolla`}
-                title={`Atendimento a Domicílio para Maquiagem - Studio Amendolla`}
-                width={400}
-                height={300}
-                className={styles.serviceImage}
-                quality={85}
-                priority={currentImage === 0}
-              />
-            </div>
-            <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
-          </div>
+        <div className={styles.carousel}>
+  <button onClick={handlePrevImage} className={styles.carouselButton}>❮</button>
+  <div className={styles.highlightImage}>
+    <Image
+      src={`https://www.studioamendollanoivas.com.br${serviceData.images[currentImage]}`}
+      alt={`Atendimento a Domicílio para Maquiagem - Imagem ${currentImage + 1} - Studio Amendolla`}
+      title={`Atendimento a Domicílio para Maquiagem - Studio Amendolla`}
+      width={400}
+      height={300}
+      className={styles.serviceImage}
+      quality={85} // Aumentei um pouco a qualidade para SEO de imagens
+      priority={currentImage === 0}
+    />
+  </div>
+  <button onClick={handleNextImage} className={styles.carouselButton}>❯</button>
+</div>
 
           <div className={styles.detailedDescription}>
             <p>{serviceData.detailedDescription}</p>
@@ -165,7 +250,7 @@ const AtendimentoMaquiagemDomicilioPage = () => {
         </div>
       </div>
       <FeaturesCards />
-      <ServiceSimulator />
+      <ServiceSimulator/>
     </div>
   );
 };
