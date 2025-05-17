@@ -114,35 +114,6 @@ const AtendimentoMaquiagemDomicilioPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
-  // FAQPage schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqData.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer,
-      },
-    })),
-  };
-
-  // Article schema
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": serviceData.title,
-    "description": serviceData.description,
-    "author": {
-      "@type": "Organization",
-      "name": "Studio Amendolla"
-    },
-    "datePublished": "2025-01-18",
-    "image": `https://www.studioamendollanoivas.com.br${serviceData.image}`,
-    "imageObject": imagesSchema
-  };
-
   return (
     <div className={styles.servicePage}>
       <CanonicalURL />
@@ -150,15 +121,50 @@ const AtendimentoMaquiagemDomicilioPage = () => {
       {/* SCHEMAS JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+              },
+            })),
+          }),
+        }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": serviceData.title,
+            "description": serviceData.description,
+            "author": {
+              "@type": "Organization",
+              "name": "Studio Amendolla"
+            },
+            "datePublished": "2025-01-18",
+            "image": serviceData.images.map(img => `https://www.studioamendollanoivas.com.br${img}`)
+          }),
+        }}
+      />
+      {/* SCHEMA DE IMAGENS */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(imagesSchema.length === 1 ? imagesSchema[0] : imagesSchema),
+        }}
       />
 
       <UnifiedSchemas
