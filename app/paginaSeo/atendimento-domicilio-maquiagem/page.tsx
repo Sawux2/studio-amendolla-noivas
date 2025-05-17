@@ -2,10 +2,16 @@
 
 import React from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import styles from "app/styles/BelezaNoivasSP.module.css";
 import FeaturesCards from "app/components/FeaturesCards";
 import GaleriaDeFotos from "app/components/GaleriaDeFotos";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
+import WebsiteSchema from "@/schemas/WebsiteSchema";
 
 const pageData = {
   article: {
@@ -14,26 +20,105 @@ const pageData = {
       "Receba os melhores serviços de maquiagem no conforto da sua casa com o atendimento domiciliar especializado do Studio Amendolla. Praticidade e qualidade ao seu alcance.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
-    image: "/images/atendimento-domicilio-maquiagem.webp",
+    image: ["/images/atendimento-domicilio-maquiagem.webp"],
   },
+};
+
+// Dados para os schemas
+const articleData = {
+  headline: pageData.article.headline,
+  description: pageData.article.description,
+  author: pageData.article.author,
+  datePublished: pageData.article.datePublished,
+  image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
+  url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem",
+};
+
+const breadcrumbData = {
+  items: [
+    { name: "Início", item: "/", position: 1 },
+    { name: "Serviços", item: "/servicos", position: 2 },
+    { name: "Atendimento Domicílio Maquiagem", item: "/paginaSeo/atendimento-domicilio-maquiagem", position: 3 },
+  ],
+};
+
+const faqData = {
+  items: [
+    {
+      question: "Como funciona o atendimento domiciliar de maquiagem?",
+      answer: "Nosso maquiador vai até o seu endereço no dia e horário combinados, levando todos os produtos e ferramentas necessários para o serviço.",
+    },
+    // ... seus outros FAQs existentes
+  ],
+};
+
+const serviceSchemaData = {
+  name: pageData.article.headline,
+  description: pageData.article.description,
+  provider: "Studio Amendolla",
+  areaServed: "São Paulo",
+  image: pageData.article.image,
+  url: "/paginaSeo/atendimento-domicilio-maquiagem",
+  serviceType: "Maquiagem Profissional",
+  offers: [
+    {
+      price: 500,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+    },
+  ],
+};
+
+const organizationData = {
+  name: "Studio Amendolla Noivas",
+  url: "https://www.studioamendollanoivas.com.br",
+  description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+  logoUrl: "/images/logo.webp",
+  telephone: "+55 11 97767-0498",
+  contactType: "customer service",
+  areaServed: "São Paulo",
+  // ... resto dos dados da organização
+};
+
+const websiteData = {
+  name: "Studio Amendolla Noivas",
+  url: "https://www.studioamendollanoivas.com.br",
+  description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+  inLanguage: "pt-BR",
+  keywords: ["maquiagem noiva", "atendimento domicílio", "São Paulo"],
 };
 
 const AtendimentoDomicilioMaquiagemPage = () => {
   return (
     <div className={styles.container}>
-      <UnifiedSchemas pageData={pageData} /> {/* Corrigido: agora no topo */}
+      {/* Schemas */}
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={faqData} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      <ImageObjectSchema
+        data={{
+          url: pageData.article.image[0],
+          description: pageData.article.description,
+          width: 500,
+          height: 333,
+          name: pageData.article.headline,
+          caption: "Atendimento Domicílio Maquiagem",
+        }}
+      />
 
-      {/* Cabeçalho */}
+      {/* Conteúdo existente */}
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
         <p className={styles.description}>{pageData.article.description}</p>
       </header>
 
-      {/* Conteúdo Principal */}
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src={pageData.article.image}
+            src={pageData.article.image[0]}
             alt="Atendimento Domicílio Maquiagem"
             width={500}
             height={333}
