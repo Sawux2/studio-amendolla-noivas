@@ -10,7 +10,7 @@ import BreadcrumbSchema from "app/schemas/BreadcrumbSchema";
 import FAQSchema from "app/schemas/FAQSchema";
 import ImageObjectSchema from "app/schemas/ImageObjectSchema";
 import ServiceSchema from "app/schemas/ServiceSchema";
-import OrganizationSchema from "app/schemas/OrganizationSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
 import WebsiteSchema from "app/schemas/WebsiteSchema";
 import FeaturesCards from "app/components/FeaturesCards";
 import ServiceSimulator from "app/components/calculadora";
