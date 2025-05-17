@@ -61,6 +61,48 @@ const faqData = [
   },
 ];
 
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://www.studioamendollanoivas.com.br"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços",
+      "item": "https://www.studioamendollanoivas.com.br/servicos"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Atendimento a Domicílio para Maquiagem",
+      "item": "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem"
+    }
+  ]
+};
+
+// Imagens schema (ImageObject)
+const imagesSchema = serviceData.images.map((image, index) => ({
+  "@type": "ImageObject",
+  "contentUrl": `https://www.studioamendollanoivas.com.br${image}`,
+  "url": `https://www.studioamendollanoivas.com.br${image}`,
+  "description": "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
+  "name": `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
+  "datePublished": "2025-01-18",
+  "author": {
+    "@type": "Organization",
+    "name": "Studio Amendolla"
+  },
+  "inLanguage": "pt-BR",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}));
+
 const AtendimentoMaquiagemDomicilioPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -72,45 +114,65 @@ const AtendimentoMaquiagemDomicilioPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
-  const pageData = {
-    article: {
-      headline: serviceData.title,
-      description: serviceData.description,
-      author: "Studio Amendolla",
-      datePublished: "2025-01-18",
-      image: `/images/maquiagem-domicilio.webp`,
-    },
-    faq: faqData, // <-- Corrigido: agora é um array
-    breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Atendimento a Domicílio para Maquiagem", url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem" },
-    ],
-    images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
-      width: 600,
-      height: 400,
-      name: `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
-      datePublished: "2025-01-18",
-      author: "Studio Amendolla",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
+  // FAQPage schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
       },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
     })),
+  };
+
+  // Article schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": serviceData.title,
+    "description": serviceData.description,
+    "author": {
+      "@type": "Organization",
+      "name": "Studio Amendolla"
+    },
+    "datePublished": "2025-01-18",
+    "image": `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+    "imageObject": imagesSchema
   };
 
   return (
     <div className={styles.servicePage}>
       <CanonicalURL />
-      <UnifiedSchemas pageData={pageData} />
+
+      {/* SCHEMAS JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
+      <UnifiedSchemas
+        pageData={{
+          article: {
+            headline: serviceData.title,
+            description: serviceData.description,
+            author: "Studio Amendolla",
+            datePublished: "2025-01-18",
+            image: serviceData.image,
+          },
+          faq: faqData,
+        }}
+      />
 
       <h1>{serviceData.title}</h1>
 
@@ -163,9 +225,6 @@ const AtendimentoMaquiagemDomicilioPage = () => {
       </div>
       <FeaturesCards />
       <ServiceSimulator />
-      <script type="application/ld+json">
-        {JSON.stringify(pageData)}
-      </script>
     </div>
   );
 };
