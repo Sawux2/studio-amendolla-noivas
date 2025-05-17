@@ -5,10 +5,10 @@ import { useState } from "react";
 import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 import ServiceSimulator from "app/components/calculadora";
 
+// Dados do serviço
 const serviceData = {
   title: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
   description:
@@ -38,6 +38,7 @@ const serviceData = {
   ],
 };
 
+// FAQ
 const faqData = [
   {
     question: "Como funciona o atendimento de maquiagem a domicílio?",
@@ -61,7 +62,21 @@ const faqData = [
   },
 ];
 
-// Breadcrumb schema
+// SCHEMA FAQ
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
+// SCHEMA BREADCRUMB
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -87,7 +102,7 @@ const breadcrumbSchema = {
   ]
 };
 
-// Imagens schema (ImageObject)
+// SCHEMA IMAGENS
 const imagesSchema = serviceData.images.map((image, index) => ({
   "@type": "ImageObject",
   "contentUrl": `https://www.studioamendollanoivas.com.br${image}`,
@@ -103,6 +118,20 @@ const imagesSchema = serviceData.images.map((image, index) => ({
   "license": "https://creativecommons.org/licenses/by/4.0/"
 }));
 
+// SCHEMA ARTICLE
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": serviceData.title,
+  "description": serviceData.description,
+  "author": {
+    "@type": "Organization",
+    "name": "Studio Amendolla"
+  },
+  "datePublished": "2025-01-18",
+  "image": serviceData.images.map(img => `https://www.studioamendollanoivas.com.br${img}`)
+};
+
 const AtendimentoMaquiagemDomicilioPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -116,50 +145,19 @@ const AtendimentoMaquiagemDomicilioPage = () => {
 
   return (
     <div className={styles.servicePage}>
-      <CanonicalURL />
-
-      {/* SCHEMAS JSON-LD */}
+      {/* SCHEMAS DEVEM VIR PRIMEIRO NO HTML */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer,
-              },
-            })),
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": serviceData.title,
-            "description": serviceData.description,
-            "author": {
-              "@type": "Organization",
-              "name": "Studio Amendolla"
-            },
-            "datePublished": "2025-01-18",
-            "image": serviceData.images.map(img => `https://www.studioamendollanoivas.com.br${img}`)
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {/* SCHEMA DE IMAGENS */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -167,18 +165,7 @@ const AtendimentoMaquiagemDomicilioPage = () => {
         }}
       />
 
-      <UnifiedSchemas
-        pageData={{
-          article: {
-            headline: serviceData.title,
-            description: serviceData.description,
-            author: "Studio Amendolla",
-            datePublished: "2025-01-18",
-            image: serviceData.image,
-          },
-          faq: faqData,
-        }}
-      />
+      <CanonicalURL />
 
       <h1>{serviceData.title}</h1>
 
