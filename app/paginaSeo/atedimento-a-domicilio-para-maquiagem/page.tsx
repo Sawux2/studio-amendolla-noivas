@@ -80,14 +80,7 @@ const AtendimentoMaquiagemDomicilioPage = () => {
       datePublished: "2025-01-18",
       image: `/images/maquiagem-domicilio.webp`,
     },
-    services: [
-      {
-        title: serviceData.title,
-        description: serviceData.description,
-        image: `/images/maquiagem-domicilio.webp`,
-      },
-    ],
-    faq: faqData,
+    faq: faqData, // <-- Corrigido: agora é um array
     breadcrumb: [
       { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
       { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
@@ -170,6 +163,9 @@ const AtendimentoMaquiagemDomicilioPage = () => {
       </div>
       <FeaturesCards />
       <ServiceSimulator />
+      <script type="application/ld+json">
+        {JSON.stringify(pageData)}
+      </script>
     </div>
   );
 };
