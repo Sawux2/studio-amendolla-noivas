@@ -5,6 +5,7 @@ import { useState } from "react";
 import OrcamentoForm from "app/components/OrcamentoForm";
 import styles from "app/styles/PaginaSeo.module.css";
 import CanonicalURL from "app/components/CanonicalURL";
+import UnifiedSchemas from "app/schemas/UnifiedSchemas";
 import FeaturesCards from "app/components/FeaturesCards";
 import ServiceSimulator from "app/components/calculadora";
 
@@ -62,79 +63,10 @@ const faqData = [
   },
 ];
 
-// SCHEMA FAQ
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqData.map((faq) => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer,
-    },
-  })),
-};
-
-// SCHEMA BREADCRUMB
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Início",
-      "item": "https://www.studioamendollanoivas.com.br"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Serviços",
-      "item": "https://www.studioamendollanoivas.com.br/servicos"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Atendimento a Domicílio para Maquiagem",
-      "item": "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem"
-    }
-  ]
-};
-
-// SCHEMA IMAGENS
-const imagesSchema = serviceData.images.map((image, index) => ({
-  "@type": "ImageObject",
-  "contentUrl": `https://www.studioamendollanoivas.com.br${image}`,
-  "url": `https://www.studioamendollanoivas.com.br${image}`,
-  "description": "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
-  "name": `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
-  "datePublished": "2025-01-18",
-  "author": {
-    "@type": "Organization",
-    "name": "Studio Amendolla"
-  },
-  "inLanguage": "pt-BR",
-  "license": "https://creativecommons.org/licenses/by/4.0/"
-}));
-
-// SCHEMA ARTICLE
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": serviceData.title,
-  "description": serviceData.description,
-  "author": {
-    "@type": "Organization",
-    "name": "Studio Amendolla"
-  },
-  "datePublished": "2025-01-18",
-  "image": serviceData.images.map(img => `https://www.studioamendollanoivas.com.br${img}`)
-};
-
 const AtendimentoMaquiagemDomicilioPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
+  // Handlers para carrossel
   const handleNextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % serviceData.images.length);
   };
@@ -143,28 +75,44 @@ const AtendimentoMaquiagemDomicilioPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
+  // Dados estruturados para SEO
+  const pageData = {
+    article: {
+      headline: serviceData.title,
+      description: serviceData.description,
+      author: "Studio Amendolla",
+      datePublished: "2025-01-18",
+      image: serviceData.images.map(img => 
+        `https://www.studioamendollanoivas.com.br${img}`
+      ),
+    },
+    faq: faqData.map(item => ({
+      question: item.question,
+      answer: item.answer
+    })),
+    breadcrumb: [
+      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
+      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
+      { 
+        name: "Atendimento a Domicílio para Maquiagem", 
+        url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem" 
+      }
+    ],
+    images: serviceData.images.map((image, index) => ({
+      url: `https://www.studioamendollanoivas.com.br${image}`,
+      description: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
+      width: 400,
+      height: 300,
+      name: `Imagem ${index + 1} - Atendimento a Domicílio para Maquiagem`,
+      datePublished: "2025-01-18",
+      author: "Studio Amendolla"
+    }))
+  };
+
   return (
     <div className={styles.servicePage}>
-      {/* SCHEMAS DEVEM VIR PRIMEIRO NO HTML */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(imagesSchema.length === 1 ? imagesSchema[0] : imagesSchema),
-        }}
-      />
-
+      {/* Apenas UnifiedSchemas, sem schemas inline */}
+      <UnifiedSchemas pageData={pageData} />
       <CanonicalURL />
 
       <h1>{serviceData.title}</h1>
