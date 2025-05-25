@@ -155,12 +155,13 @@ const BelezaNoivasSPPage = () => {
         <ImageObjectSchema 
           key={index} 
           data={{
-            url: `https://www.studioamendollanoivas.com.br${imgData}`,
+            url: `https://www.studioamendollanoivas.com.br${imgData}`, // URL absoluta correta
             description: serviceData.description,
             width: 600,
             height: 400,
             name: `Beleza para Noivas em SP - Imagem ${index + 1}`,
-            caption: "Serviços de beleza para noivas"
+            caption: "Serviços de beleza para noivas",
+            contentUrl: `https://www.studioamendollanoivas.com.br${imgData}` // Adicionar contentUrl
           }} 
         />
       ))}
