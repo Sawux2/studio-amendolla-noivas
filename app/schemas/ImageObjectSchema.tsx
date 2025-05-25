@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 interface ImageObjectProps {
   url: string;
-  contentUrl: string; // Adicionar esta propriedade
+  contentUrl: string; // This is required
   description: string;
   width: number;
   height: number;

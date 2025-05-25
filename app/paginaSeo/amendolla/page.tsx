@@ -137,6 +137,7 @@ const MaquiagemCasamentoDiaPage = () => {
 
   const imageData = serviceData.images.map((image, index) => ({
     url: image,
+    contentUrl: image,
     description: serviceData.title,
     width: 400,
     height: 300,

@@ -101,6 +101,7 @@ const AtendimentoDomicilioMaquiagemPage = () => {
       <ImageObjectSchema
         data={{
           url: pageData.article.image[0],
+          contentUrl: pageData.article.image[0],
           description: pageData.article.description,
           width: 500,
           height: 333,

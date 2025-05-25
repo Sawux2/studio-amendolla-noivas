@@ -118,6 +118,7 @@ const BelezaParaEventosSPPage = () => {
       <WebsiteSchema data={websiteData} />
       <ImageObjectSchema data={{
         url: pageData.article.image,
+        contentUrl: `https://www.studioamendollanoivas.com.br${pageData.article.image}`, // Add this line
         description: pageData.article.description,
         width: 500,
         height: 333,

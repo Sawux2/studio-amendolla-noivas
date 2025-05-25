@@ -153,7 +153,9 @@ const BelezaParaEventosPage = () => {
           key={index} 
           data={{
             ...imgData,
-            url: `https://www.studioamendollanoivas.com.br${imgData.url}`
+            url: `https://www.studioamendollanoivas.com.br${imgData.url}`,
+            contentUrl: `https://www.studioamendollanoivas.com.br${imgData.url}`,
+            caption: imgData.description
           }} 
         />
       ))}

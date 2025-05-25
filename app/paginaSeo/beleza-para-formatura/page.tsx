@@ -136,6 +136,7 @@ const BelezaFormaturaPage = () => {
       <WebsiteSchema data={websiteData} />
       <ImageObjectSchema data={{
         url: pageData.article.image,
+        contentUrl: pageData.article.image,
         description: pageData.article.description,
         width: 500,
         height: 333,

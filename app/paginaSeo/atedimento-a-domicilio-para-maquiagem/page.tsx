@@ -172,6 +172,7 @@ const AtendimentoMaquiagemDomicilioPage = () => {
   // Dados para Image Schema
   const imageData = serviceData.images.map((image, index) => ({
     url: image,
+    contentUrl: `https://www.studioamendollanoivas.com.br${image}`,
     description: "Atendimento a Domicílio para Maquiagem - Studio Amendolla",
     width: 600,
     height: 400,
