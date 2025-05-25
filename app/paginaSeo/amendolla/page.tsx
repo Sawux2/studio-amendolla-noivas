@@ -2,13 +2,19 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import OrcamentoForm from "app/components/OrcamentoForm";
-import styles from "app/styles/PaginaSeo.module.css";
-import CanonicalURL from "app/components/CanonicalURL";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import FeaturesCards from "app/components/FeaturesCards";
-import ServiceSimulator from "app/components/calculadora";
-import GaleriaDeFotos from 'app/components/GaleriaDeFotos'; // Ajuste o caminho conforme a estrutura do seu projeto
+import OrcamentoForm from "@/components/OrcamentoForm";
+import styles from "@/styles/PaginaSeo.module.css";
+import CanonicalURL from "@/components/CanonicalURL";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
+import WebsiteSchema from "@/schemas/WebsiteSchema";
+import FeaturesCards from "@/components/FeaturesCards";
+import ServiceSimulator from "@/components/calculadora";
+import GaleriaDeFotos from '@/components/GaleriaDeFotos'; // Ajuste o caminho conforme a estrutura do seu projeto
 
 
 const serviceData = {
@@ -58,54 +64,109 @@ const MaquiagemCasamentoDiaPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
-  const pageData = {
-    article: {
-      headline: serviceData.title,
-      description: serviceData.description,
-      author: "Priscila Helena",
-      datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
-    },
-    services: [
-      {
-        title: serviceData.title,
-        description: serviceData.description,
-        image: serviceData.image,
-      },
-    ],
-    faq: faqData,
-    breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiagem para Casamento de Dia", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-para-casamento-dia" },
-    ],
-    images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Maquiagem para Casamento de Dia - Priscila Helena",
-      width: 600,
-      height: 400,
-      name: `Imagem ${index + 1} - Maquiagem para Casamento de Dia`,
-      datePublished: "2025-01-18",
-      author: "Priscila Helena",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
-    })),
+  // Schema data
+  const articleData = {
+    headline: serviceData.title,
+    description: serviceData.description,
+    author: "Priscila Helena",
+    datePublished: "2025-01-18",
+    image: serviceData.images.map(img => 
+      `https://www.studioamendollanoivas.com.br${img}`
+    ),
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/amendolla"
   };
+
+  const breadcrumbData = {
+    items: [
+      { name: "Início", item: "/", position: 1 },
+      { name: "Serviços", item: "/servicos", position: 2 },
+      { name: "Maquiagem para Casamento de Dia", item: "/paginaSeo/amendolla", position: 3 }
+    ]
+  };
+
+  const faqSchemaData = {
+    items: faqData
+  };
+
+  const serviceSchemaData = {
+    name: serviceData.title,
+    description: serviceData.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: serviceData.images.map(img => 
+      `https://www.studioamendollanoivas.com.br${img}`
+    ),
+    url: "/paginaSeo/amendolla",
+    serviceType: "Maquiagem para Noivas",
+    offers: [{
+      price: 500,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }]
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    inLanguage: "pt-BR",
+    keywords: ["maquiagem noiva", "casamento de dia", "São Paulo"]
+  };
+
+  const imageData = serviceData.images.map((image, index) => ({
+    url: image,
+    description: serviceData.title,
+    width: 400,
+    height: 300,
+    name: `Imagem ${index + 1} - Maquiagem para Casamento de Dia`,
+    caption: "Serviço de maquiagem profissional para noivas",
+    representativeOfPage: index === 0,
+    creator: {
+      name: "Studio Amendolla",
+      url: "https://www.studioamendollanoivas.com.br"
+    },
+    datePublished: "2024-05-17"
+  }));
 
   return (
     <div className={styles.servicePage}>
       <h1>{serviceData.title}</h1>
+      
+      {/* SEO Schemas */}
       <CanonicalURL />
-      <UnifiedSchemas pageData={pageData} />
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={faqSchemaData} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      {imageData.map((imgData, index) => (
+        <ImageObjectSchema key={index} data={imgData} />
+      ))}
 
+      {/* Existing content structure */}
       <div className={styles.gridContainer}>
         {/* Primeira Coluna: Carrossel de Imagens e Descrição Detalhada */}
         <div className={styles.photosColumn}>
@@ -151,10 +212,9 @@ const MaquiagemCasamentoDiaPage = () => {
           <OrcamentoForm />
         </div>
       </div>
-          <FeaturesCards />
-          <ServiceSimulator/>
-          <GaleriaDeFotos/>
-          
+      <FeaturesCards />
+      <ServiceSimulator/>
+      <GaleriaDeFotos/>
     </div>
   );
 };

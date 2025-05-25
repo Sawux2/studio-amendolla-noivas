@@ -1,12 +1,17 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas"; //manter assim schemas
-import styles from "app/styles/BelezaNoivasSP.module.css";//manter assim 
-import ServiceSimulator from "app/components/calculadora";//manter assim
-import FeaturesCards from "app/components/FeaturesCards";//manter assim
-import GaleriaDeFotos from "app/components/GaleriaDeFotos";//manter assim
+import styles from "app/styles/BelezaNoivasSP.module.css";
+import ServiceSimulator from "app/components/calculadora";
+import FeaturesCards from "app/components/FeaturesCards";
+import GaleriaDeFotos from "app/components/GaleriaDeFotos";
+import ArticleSchema from "app/schemas/ArticleSchema";
+import BreadcrumbSchema from "app/schemas/BreadcrumbSchema";
+import FAQSchema from "app/schemas/FAQSchema";
+import ImageObjectSchema from "app/schemas/ImageObjectSchema";
+import ServiceSchema from "app/schemas/ServiceSchema";
+import OrganizationSchema from "app/schemas/organizationSchema";
+import WebsiteSchema from "app/schemas/WebsiteSchema";
 
 const pageData = {
   article: {
@@ -35,17 +40,17 @@ const pageData = {
     {
       title: "Maquiagem para Festas",
       description: "Realce sua beleza com uma maquiagem que combina com seu estilo e a temática do evento.",
-      image: "", // Repetir imagem padrão já tem no schema
+      image: "/images/beleza-eventos.webp",
     },
     {
       title: "Penteado Elegante para Eventos",
       description: "Crie um penteado que complemente seu look, seja um coque sofisticado ou ondas soltas.",
-      image: "", // Repetir imagem padrão já tem no schema
+      image: "/images/beleza-eventos.webp",
     },
     {
       title: "Pacote Completo de Beleza para Eventos",
       description: "Oferecemos pacotes que incluem maquiagem e penteado, garantindo que você esteja perfeita para a ocasião.",
-      image: "", // Repetir imagem padrão já tem no schema
+      image: "/images/beleza-eventos.webp",
     }
   ],
   breadcrumb: [
@@ -55,7 +60,7 @@ const pageData = {
   images: [
     {
       url: "/images/beleza-eventos.webp",
-      description: "Beleza para Eventos",
+      description: "Beleza para Eventos - Studio Amendolla",
       width: 500,
       height: 333,
       name: "Beleza para Eventos",
@@ -65,8 +70,94 @@ const pageData = {
 };
 
 const BelezaParaEventosPage = () => {
+  const articleData = {
+    headline: pageData.article.headline,
+    description: pageData.article.description,
+    author: pageData.article.author,
+    datePublished: pageData.article.datePublished,
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/busca"
+  };
+
+  const breadcrumbData = {
+    items: pageData.breadcrumb.map((item, index) => ({
+      name: item.name,
+      item: item.url,
+      position: index + 1
+    }))
+  };
+
+  const serviceSchemaData = {
+    name: pageData.article.headline,
+    description: pageData.article.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "/paginaSeo/busca",
+    serviceType: "Maquiagem e Penteado",
+    offers: [{
+      price: 300,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }]
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: pageData.article.description,
+    inLanguage: "pt-BR",
+    keywords: [
+      "maquiagem eventos SP",
+      "penteado festas",
+      "beleza eventos São Paulo",
+      "make festa",
+      "studio amendolla eventos",
+      "produção festa SP"
+    ]
+  };
+
   return (
     <div className={styles.container}>
+      {/* SEO Schemas */}
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={{ items: pageData.faq }} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      {pageData.images.map((imgData, index) => (
+        <ImageObjectSchema 
+          key={index} 
+          data={{
+            ...imgData,
+            url: `https://www.studioamendollanoivas.com.br${imgData.url}`
+          }} 
+        />
+      ))}
+
       {/* Cabeçalho */}
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
@@ -134,9 +225,6 @@ const BelezaParaEventosPage = () => {
       {/* Outros Componentes */}
       <FeaturesCards />
       <ServiceSimulator />
-
-      {/* Schemas */}
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };

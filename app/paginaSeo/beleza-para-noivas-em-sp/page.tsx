@@ -2,11 +2,17 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import styles from "app/styles/BelezaNoivasSP.module.css"; // Novo arquivo CSS
-import GaleriaDeFotos from "app/components/GaleriaDeFotos";
-import FeaturesCards from "app/components/FeaturesCards";
-import ServiceSimulator from "app/components/calculadora";
+import styles from "@/styles/BelezaNoivasSP.module.css";
+import GaleriaDeFotos from "@/components/GaleriaDeFotos";
+import FeaturesCards from "@/components/FeaturesCards";
+import ServiceSimulator from "@/components/calculadora";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
+import WebsiteSchema from "@/schemas/WebsiteSchema";
 
 const serviceData = {
   title: "Beleza para Noivas em SP - Studio Amendolla",
@@ -67,50 +73,98 @@ const BelezaNoivasSPPage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + serviceData.images.length) % serviceData.images.length);
   };
 
-  const pageData = {
-    article: {
-      headline: serviceData.title,
-      description: serviceData.description,
-      author: "Priscila Helena",
-      datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
-    },
-    services: [
-      {
-        title: serviceData.title,
-        description: serviceData.description,
-        image: serviceData.image,
-      },
+  const articleData = {
+    headline: serviceData.title,
+    description: serviceData.description,
+    author: "Priscila Helena",
+    datePublished: "2025-01-18",
+    image: [`https://www.studioamendollanoivas.com.br${serviceData.image}`],
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-noivas-em-sp"
+  };
+
+  const breadcrumbData = {
+    items: [
+      { name: "Início", item: "/", position: 1 },
+      { name: "Serviços", item: "/servicos", position: 2 },
+      { name: "Beleza para Noivas em SP", item: "/paginaSeo/beleza-para-noivas-em-sp", position: 3 }
+    ]
+  };
+
+  const serviceSchemaData = {
+    name: serviceData.title,
+    description: serviceData.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: [`https://www.studioamendollanoivas.com.br${serviceData.image}`],
+    url: "/paginaSeo/beleza-para-noivas-em-sp",
+    serviceType: "Maquiagem e Penteado",
+    offers: [{
+      price: 600,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }]
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
     ],
-    faq: faqData,
-    breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Beleza para Noivas em SP", url: "https://www.studioamendollanoivas.com.br/beleza-noivas-sp" },
-    ],
-    images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
-      description: "Beleza para Noivas em SP - Studio Amendolla",
-      width: 600,
-      height: 400,
-      name: `Imagem ${index + 1} - Beleza para Noivas em SP`,
-      datePublished: "2025-01-18",
-      author: "Priscila Helena",
-      publisher: {
-        "@type": "Organization",
-        name: "Studio Amendolla",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
-        },
-      },
-      inLanguage: "pt-BR",
-      license: "https://creativecommons.org/licenses/by/4.0/",
-    })),
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: serviceData.description,
+    inLanguage: "pt-BR",
+    keywords: [
+      "beleza noiva SP",
+      "maquiagem noiva São Paulo",
+      "penteado noiva SP",
+      "studio amendolla noivas",
+      "make noiva zona norte",
+      "dia da noiva SP"
+    ]
   };
 
   return (
     <div className={styles.container}>
+      {/* SEO Schemas */}
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={{ items: faqData }} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      {serviceData.images.map((imgData, index) => (
+        <ImageObjectSchema 
+          key={index} 
+          data={{
+            url: `https://www.studioamendollanoivas.com.br${imgData}`,
+            description: serviceData.description,
+            width: 600,
+            height: 400,
+            name: `Beleza para Noivas em SP - Imagem ${index + 1}`,
+            caption: "Serviços de beleza para noivas"
+          }} 
+        />
+      ))}
+
       {/* Cabeçalho */}
       <header className={styles.header}>
         <h1 className={styles.title}>{serviceData.title}</h1>
@@ -219,7 +273,6 @@ const BelezaNoivasSPPage = () => {
       </section>
 
       {/* Schemas */}
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };

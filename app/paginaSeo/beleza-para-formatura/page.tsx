@@ -1,11 +1,16 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import styles from "app/styles/BelezaNoivasSP.module.css";
-import FeaturesCards from "app/components/FeaturesCards";
-import GaleriaDeFotos from "app/components/GaleriaDeFotos";
+import styles from "@/styles/BelezaNoivasSP.module.css";
+import FeaturesCards from "@/components/FeaturesCards";
+import GaleriaDeFotos from "@/components/GaleriaDeFotos";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
+import WebsiteSchema from "@/schemas/WebsiteSchema";
 
 const pageData = {
   article: {
@@ -16,11 +21,128 @@ const pageData = {
     datePublished: "2025-02-01",
     image: "/images/maquiagem-casamento-dia-priscila-1.webp",
   },
+  faq: [
+    {
+      question: "Quando devo agendar?",
+      answer: "Recomendamos agendar com 3 meses de antecedência."
+    },
+    {
+      question: "Oferecem pacotes para turmas?",
+      answer: "Sim, temos condições especiais para grupos de formandas."
+    },
+    {
+      question: "Atendem no local da formatura?",
+      answer: "Sim, nos deslocamos até o local do evento."
+    },
+    {
+      question: "A prova de maquiagem é obrigatória?",
+      answer: "Recomendamos fortemente para garantir o resultado perfeito."
+    }
+  ],
+  services: [
+    {
+      title: "Pacote Completo",
+      description: "Maquiagem + penteado com teste prévio incluso"
+    },
+    {
+      title: "Maquiagem Premium",
+      description: "Maquiagem profissional de longa duração"
+    },
+    {
+      title: "Penteado Exclusivo",
+      description: "Penteados personalizados para seu estilo"
+    }
+  ]
 };
 
 const BelezaFormaturaPage = () => {
+  const articleData = {
+    headline: pageData.article.headline,
+    description: pageData.article.description,
+    author: pageData.article.author,
+    datePublished: pageData.article.datePublished,
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-formatura"
+  };
+
+  const breadcrumbData = {
+    items: [
+      { name: "Início", item: "/", position: 1 },
+      { name: "Serviços", item: "/servicos", position: 2 },
+      { name: "Beleza para Formatura", item: "/paginaSeo/beleza-para-formatura", position: 3 }
+    ]
+  };
+
+  const serviceSchemaData = {
+    name: pageData.article.headline,
+    description: pageData.article.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "/paginaSeo/beleza-para-formatura",
+    serviceType: "Maquiagem e Penteado",
+    offers: [{
+      price: 250,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }]
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: pageData.article.description,
+    inLanguage: "pt-BR",
+    keywords: [
+      "maquiagem formatura",
+      "penteado formatura",
+      "beleza formanda",
+      "make formatura SP",
+      "pacote formanda",
+      "studio amendolla"
+    ]
+  };
+
   return (
     <div className={styles.container}>
+      {/* SEO Schemas */}
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={{ items: pageData.faq }} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      <ImageObjectSchema data={{
+        url: pageData.article.image,
+        description: pageData.article.description,
+        width: 500,
+        height: 333,
+        name: pageData.article.headline,
+        caption: "Beleza para Formatura"
+      }} />
+
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
         <p className={styles.description}>{pageData.article.description}</p>
@@ -100,7 +222,6 @@ const BelezaFormaturaPage = () => {
       </section>
 
       <FeaturesCards />
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };

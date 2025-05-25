@@ -1,23 +1,17 @@
-import { Metadata } from 'next';
+"use client";
 import React from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import styles from "app/styles/BelezaNoivasSP.module.css";
-import FeaturesCards from "app/components/FeaturesCards";
-import GaleriaDeFotos from "app/components/GaleriaDeFotos";
+import styles from "@/styles/BelezaNoivasSP.module.css";
+import FeaturesCards from "@/components/FeaturesCards";
+import GaleriaDeFotos from "@/components/GaleriaDeFotos";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from '@/schemas/organizationSchema';
+import WebsiteSchema from "@/schemas/WebsiteSchema";
 
-export const metadata: Metadata = {
-    title: 'Atendimento a Domicílio para Maquiagem em São Paulo | Studio Amendolla',
-    description: 'Serviço premium de maquiagem e penteado a domicílio em São Paulo. Nossa equipe leva todo o glamour e estrutura profissional até você, garantindo uma experiência exclusiva com resultados deslumbrantes para seu evento especial.',
-    keywords: [
-      'maquiagem a domicílio SP',
-      'make e cabelo em casa',
-      'maquiadora profissional domicílio',
-      'beleza noiva em casa',
-      'penteado a domicílio',
-      'atendimento domiciliar zona norte'
-    ].join(', ')
-};
 
 const pageData = {
   article: {
@@ -80,9 +74,96 @@ const pageData = {
 };
 
 export default function AtendimentoDomicilioPage() {
+  // Schema data
+  const articleData = {
+    headline: pageData.article.headline,
+    description: pageData.article.description,
+    author: pageData.article.author,
+    datePublished: pageData.article.datePublished,
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-sao-paulo"
+  };
+
+  const breadcrumbData = {
+    items: pageData.breadcrumb.map((item, index) => ({
+      name: item.name,
+      item: item.url,
+      position: index + 1
+    }))
+  };
+
+  const serviceSchemaData = {
+    name: pageData.article.headline,
+    description: pageData.article.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "/paginaSeo/atendimento-domicilio-sao-paulo",
+    serviceType: "Maquiagem e Penteado",
+    offers: pageData.services.map(() => ({
+      price: 500,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }))
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: pageData.article.description,
+    inLanguage: "pt-BR",
+    keywords: [
+      'maquiagem a domicílio SP',
+      'make e cabelo em casa',
+      'maquiadora profissional domicílio',
+      'beleza noiva em casa',
+      'penteado a domicílio',
+      'atendimento domiciliar zona norte'
+    ]
+  };
+
   return (
     <div className={styles.container}>
-      <UnifiedSchemas pageData={pageData} />
+      {/* SEO Schemas */}
+      
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={{ items: pageData.faq }} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      {pageData.images.map((imgData, index) => (
+        <ImageObjectSchema 
+          key={index} 
+          data={{
+            ...imgData,
+            url: `https://www.studioamendollanoivas.com.br${imgData.url}`
+          }} 
+        />
+      ))}
+
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
         <p className={styles.description}>{pageData.article.description}</p>

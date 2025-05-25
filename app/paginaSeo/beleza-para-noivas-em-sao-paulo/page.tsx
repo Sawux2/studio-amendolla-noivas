@@ -1,27 +1,130 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
-import UnifiedSchemas from "app/schemas/UnifiedSchemas";
-import styles from "app/styles/BelezaNoivasSP.module.css"; // CSS reutilizado
-import ServiceSimulator from "app/components/calculadora";
-import FeaturesCards from "app/components/FeaturesCards";
-import GaleriaDeFotos from "app/components/GaleriaDeFotos";
+import styles from "@/styles/BelezaNoivasSP.module.css";
+import ServiceSimulator from "@/components/calculadora";
+import FeaturesCards from "@/components/FeaturesCards";
+import GaleriaDeFotos from "@/components/GaleriaDeFotos";
+import ArticleSchema from "@/schemas/ArticleSchema";
+import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
+import FAQSchema from "@/schemas/FAQSchema";
+import ImageObjectSchema from "@/schemas/ImageObjectSchema";
+import ServiceSchema from "@/schemas/ServiceSchema";
+import OrganizationSchema from "@/schemas/organizationSchema";
+import WebsiteSchema from "@/schemas/WebsiteSchema";
 
 const pageData = {
   article: {
     headline: "Beleza para Noivas em São Paulo | Maquiagem e Penteado Studio Amendolla",
-    description:
-      "Noiva deslumbrante, com maquiagem e penteado exclusivos para o grande dia. No Studio Amendolla, oferecemos serviços personalizados para garantir que você se sinta única em sua cerimônia.",
+    description: "Noiva deslumbrante, com maquiagem e penteado exclusivos para o grande dia. No Studio Amendolla, oferecemos serviços personalizados para garantir que você se sinta única em sua cerimônia.",
     author: "Priscila Helena",
     datePublished: "2025-02-01",
     image: "/images/beleza-para-noivas-sao-paulo.webp",
   },
+  faq: [
+    {
+      question: "Quais estilos de maquiagem e penteado estão disponíveis para noivas?",
+      answer: "Temos opções de maquiagem sofisticada, romântica e glamourosa, além de penteados clássicos, modernos e exclusivos para cada tipo de noiva."
+    },
+    {
+      question: "Como funciona o teste de maquiagem e penteado?",
+      answer: "Recomendamos que você agende uma sessão de teste para garantir que o look escolhido seja exatamente o que você deseja para o seu casamento."
+    },
+    {
+      question: "Posso agendar os serviços diretamente para o meu casamento?",
+      answer: "Sim! Você pode agendar sua maquiagem e penteado de noiva diretamente pelo WhatsApp ou preenchendo o formulário de contato em nosso site."
+    }
+  ]
 };
 
 const BelezaParaNoivasSPPage = () => {
+  const articleData = {
+    headline: pageData.article.headline,
+    description: pageData.article.description,
+    author: pageData.article.author,
+    datePublished: pageData.article.datePublished,
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-noivas-em-sao-paulo"
+  };
+
+  const breadcrumbData = {
+    items: [
+      { name: "Início", item: "/", position: 1 },
+      { name: "Serviços", item: "/servicos", position: 2 },
+      { name: "Beleza para Noivas", item: "/paginaSeo/beleza-para-noivas-em-sao-paulo", position: 3 }
+    ]
+  };
+
+  const serviceSchemaData = {
+    name: pageData.article.headline,
+    description: pageData.article.description,
+    provider: "Studio Amendolla",
+    areaServed: "São Paulo",
+    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    url: "/paginaSeo/beleza-para-noivas-em-sao-paulo",
+    serviceType: "Maquiagem e Penteado",
+    offers: [{
+      price: 500,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      validFrom: "2024-05-17"
+    }]
+  };
+
+  const organizationData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
+    logoUrl: "/images/logo.webp",
+    telephone: "+55 11 97767-0498",
+    contactType: "customer service",
+    areaServed: "São Paulo",
+    sameAs: [
+      "https://www.instagram.com/studioamendolla",
+      "https://www.facebook.com/studioamendolla"
+    ],
+    address: {
+      streetAddress: "Avenida Julio Buono 2386",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "02201-002",
+      addressCountry: "BR"
+    }
+  };
+
+  const websiteData = {
+    name: "Studio Amendolla Noivas",
+    url: "https://www.studioamendollanoivas.com.br",
+    description: pageData.article.description,
+    inLanguage: "pt-BR",
+    keywords: [
+      "maquiagem noiva SP",
+      "penteado noiva São Paulo",
+      "beleza noivas",
+      "make noiva",
+      "studio amendolla noivas",
+      "produção noiva SP"
+    ]
+  };
+
   return (
     <div className={styles.container}>
+      {/* SEO Schemas */}
+      <ArticleSchema data={articleData} />
+      <BreadcrumbSchema data={breadcrumbData} />
+      <FAQSchema data={{ items: pageData.faq }} />
+      <ServiceSchema data={serviceSchemaData} />
+      <OrganizationSchema data={organizationData} />
+      <WebsiteSchema data={websiteData} />
+      <ImageObjectSchema data={{
+        url: pageData.article.image,
+        description: pageData.article.description,
+        width: 500,
+        height: 333,
+        name: pageData.article.headline,
+        caption: "Beleza para Noivas em São Paulo"
+      }} />
+
       {/* Cabeçalho */}
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
@@ -104,9 +207,6 @@ const BelezaParaNoivasSPPage = () => {
       {/* Outros Componentes */}
       <ServiceSimulator />
       <FeaturesCards />
-
-      {/* Schemas */}
-      <UnifiedSchemas pageData={pageData} />
     </div>
   );
 };
