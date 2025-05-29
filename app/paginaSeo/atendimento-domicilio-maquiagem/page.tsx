@@ -12,6 +12,7 @@ import ImageObjectSchema from "@/schemas/ImageObjectSchema";
 import ServiceSchema from "@/schemas/ServiceSchema";
 import OrganizationSchema from "@/schemas/organizationSchema";
 import WebsiteSchema from "@/schemas/WebsiteSchema";
+import ContactForm from "@/components/ContactForm";
 
 const pageData = {
   article: {
@@ -135,7 +136,7 @@ const AtendimentoDomicilioMaquiagemPage = () => {
           </p>
         </div>
       </div>
-
+<ContactForm />
       <GaleriaDeFotos />
 
       {/* CTA para WhatsApp */}
