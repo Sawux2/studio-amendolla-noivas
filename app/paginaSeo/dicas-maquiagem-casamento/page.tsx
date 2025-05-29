@@ -2,13 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 import styles from "app/styles/BelezaNoivasSP.module.css";
 import FeaturesCards from "app/components/FeaturesCards";
 import GaleriaDeFotos from "app/components/GaleriaDeFotos";
 import ArticleSchema from "@/schemas/ArticleSchema";
 import BreadcrumbSchema from "@/schemas/BreadcrumbSchema";
 import FAQSchema from "@/schemas/FAQSchema";
-import ImageObjectSchema from "@/schemas/ImageObjectSchema";
 import ServiceSchema from "@/schemas/ServiceSchema";
 import OrganizationSchema from "@/schemas/organizationSchema";
 import WebsiteSchema from "@/schemas/WebsiteSchema";
@@ -36,10 +36,25 @@ const articleData = {
 
 const breadcrumbData = {
   items: [
-    { name: "Início", item: "/", position: 1 },
-    { name: "Blog", item: "/blog", position: 2 },
-    { name: "Dicas de Maquiagem", item: "/paginaSeo/dicas-maquiagem-casamento", position: 3 },
-  ],
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: "https://www.studioamendollanoivas.com.br"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://www.studioamendollanoivas.com.br/blog"
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Dicas de Maquiagem para Casamento",
+      item: "https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento"
+    }
+  ]
 };
 
 const faqData = {
@@ -91,9 +106,53 @@ const websiteData = {
   keywords: ["dicas maquiagem noiva", "maquiagem casamento", "tutorial noivas"],
 };
 
+const imageSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  url: "https://www.studioamendollanoivas.com.br/images/dicas-maquiagem-casamento.webp",
+  contentUrl: "https://www.studioamendollanoivas.com.br/images/dicas-maquiagem-casamento.webp",
+  description: pageData.article.description,
+  width: 1200,
+  height: 630,
+  name: pageData.article.headline,
+  caption: "Dicas de Maquiagem para Casamento",
+  creator: {
+    "@type": "Organization",
+    name: "Studio Amendolla Noivas"
+  },
+  datePublished: pageData.article.datePublished,
+  copyrightHolder: {
+    "@type": "Organization",
+    name: "Studio Amendolla Noivas"
+  }
+};
+
 const DicasMaquiagemCasamentoPage = () => {
   return (
-    <div className={styles.container}>
+    <>
+      <Head>
+        <title>{pageData.article.headline}</title>
+        <meta name="description" content={pageData.article.description} />
+        <meta property="og:image" content={`https://www.studioamendollanoivas.com.br${pageData.article.image[0]}`} />
+        <meta property="og:title" content={pageData.article.headline} />
+        <meta property="og:description" content={pageData.article.description} />
+        <meta property="og:url" content="https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento" />
+        <link rel="canonical" href="https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento" />
+      </Head>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(imageSchemaData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData)
+        }}
+      />
+
       {/* Schemas */}
       <ArticleSchema data={articleData} />
       <BreadcrumbSchema data={breadcrumbData} />
@@ -101,17 +160,6 @@ const DicasMaquiagemCasamentoPage = () => {
       <ServiceSchema data={serviceSchemaData} />
       <OrganizationSchema data={organizationData} />
       <WebsiteSchema data={websiteData} />
-      <ImageObjectSchema
-        data={{
-          url: pageData.article.image[0],
-          contentUrl: pageData.article.image[0],
-          description: pageData.article.description,
-          width: 500,
-          height: 333,
-          name: pageData.article.headline,
-          caption: "Dicas de Maquiagem para Casamento",
-        }}
-      />
 
       <header className={styles.header}>
         <h1 className={styles.title}>{pageData.article.headline}</h1>
@@ -193,7 +241,7 @@ const DicasMaquiagemCasamentoPage = () => {
       </a>
 
       <FeaturesCards />
-    </div>
+    </>
   );
 };
 
