@@ -30,8 +30,8 @@ const articleData = {
   description: pageData.article.description,
   author: pageData.article.author,
   datePublished: pageData.article.datePublished,
-  image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
-  url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-para-formaturas-sao-paulo",
+  image: pageData.article.image.map((img) => `https://studio-amendolla-noivas.vercel.app${img}`),
+  url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiagem-para-formaturas-sao-paulo",
 };
 
 const breadcrumbData = {
@@ -82,7 +82,7 @@ const serviceSchemaData = {
 
 const organizationData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: "Especialistas em maquiagem profissional em São Paulo",
   logoUrl: "/images/logo.webp",
   telephone: "+55 11 97767-0498",
@@ -92,7 +92,7 @@ const organizationData = {
 
 const websiteData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: pageData.article.description,
   inLanguage: "pt-BR",
   keywords: ["maquiagem formatura", "makeup graduation", "maquiadora SP"],

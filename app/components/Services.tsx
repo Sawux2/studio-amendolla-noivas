@@ -57,10 +57,10 @@ const Services = () => {
     services: servicesData.map((service) => ({
       title: service.title,
       description: service.description,
-      image: `https://www.studioamendollanoivas.com.br${service.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${service.image}`,
     })),
     images: servicesData.map((service, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${service.image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${service.image}`,
       description: service.description,
       width: 400,
       height: 300,
@@ -72,15 +72,15 @@ const Services = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp", // URL do logo do Studio Amendolla
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp", // URL do logo do Studio Amendolla
         },
       },
       inLanguage: "pt-BR", // Idioma da imagem
       license: "https://creativecommons.org/licenses/by/4.0/", // Licença de uso
     })),
     breadcrumb: [
-      { name: "Home", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
+      { name: "Home", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
     ],
   };
 

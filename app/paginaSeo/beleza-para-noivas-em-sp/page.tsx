@@ -78,8 +78,8 @@ const BelezaNoivasSPPage = () => {
     description: serviceData.description,
     author: "Priscila Helena",
     datePublished: "2025-01-18",
-    image: [`https://www.studioamendollanoivas.com.br${serviceData.image}`],
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-noivas-em-sp"
+    image: [`https://studio-amendolla-noivas.vercel.app${serviceData.image}`],
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/beleza-para-noivas-em-sp"
   };
 
   const breadcrumbData = {
@@ -95,7 +95,7 @@ const BelezaNoivasSPPage = () => {
     description: serviceData.description,
     provider: "Studio Amendolla",
     areaServed: "São Paulo",
-    image: [`https://www.studioamendollanoivas.com.br${serviceData.image}`],
+    image: [`https://studio-amendolla-noivas.vercel.app${serviceData.image}`],
     url: "/paginaSeo/beleza-para-noivas-em-sp",
     serviceType: "Maquiagem e Penteado",
     offers: [{
@@ -108,7 +108,7 @@ const BelezaNoivasSPPage = () => {
 
   const organizationData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -129,7 +129,7 @@ const BelezaNoivasSPPage = () => {
 
   const websiteData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: serviceData.description,
     inLanguage: "pt-BR",
     keywords: [
@@ -155,13 +155,13 @@ const BelezaNoivasSPPage = () => {
         <ImageObjectSchema 
           key={index} 
           data={{
-            url: `https://www.studioamendollanoivas.com.br${imgData}`, // URL absoluta correta
+            url: `https://studio-amendolla-noivas.vercel.app${imgData}`, // URL absoluta correta
             description: serviceData.description,
             width: 600,
             height: 400,
             name: `Beleza para Noivas em SP - Imagem ${index + 1}`,
             caption: "Serviços de beleza para noivas",
-            contentUrl: `https://www.studioamendollanoivas.com.br${imgData}` // Adicionar contentUrl
+            contentUrl: `https://studio-amendolla-noivas.vercel.app${imgData}` // Adicionar contentUrl
           }} 
         />
       ))}
@@ -226,7 +226,7 @@ const BelezaNoivasSPPage = () => {
         </div>
 
         <a
-          href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studioamendollanoivas.com.br%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
+          href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studio-amendolla-noivas.vercel.app%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
           className={styles.whatsappButton}
           target="_blank"
           rel="noopener noreferrer"

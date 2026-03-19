@@ -43,8 +43,8 @@ const BelezaParaEventosSPPage = () => {
     description: pageData.article.description,
     author: pageData.article.author,
     datePublished: pageData.article.datePublished,
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-eventos-em-sao-paulo"
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/beleza-para-eventos-em-sao-paulo"
   };
 
   const breadcrumbData = {
@@ -60,7 +60,7 @@ const BelezaParaEventosSPPage = () => {
     description: pageData.article.description,
     provider: "Studio Amendolla",
     areaServed: "São Paulo",
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
     url: "/paginaSeo/beleza-para-eventos-em-sao-paulo",
     serviceType: "Maquiagem e Penteado",
     offers: [{
@@ -73,7 +73,7 @@ const BelezaParaEventosSPPage = () => {
 
   const organizationData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -94,7 +94,7 @@ const BelezaParaEventosSPPage = () => {
 
   const websiteData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: pageData.article.description,
     inLanguage: "pt-BR",
     keywords: [
@@ -118,7 +118,7 @@ const BelezaParaEventosSPPage = () => {
       <WebsiteSchema data={websiteData} />
       <ImageObjectSchema data={{
         url: pageData.article.image,
-        contentUrl: `https://www.studioamendollanoivas.com.br${pageData.article.image}`, // Add this line
+        contentUrl: `https://studio-amendolla-noivas.vercel.app${pageData.article.image}`, // Add this line
         description: pageData.article.description,
         width: 500,
         height: 333,

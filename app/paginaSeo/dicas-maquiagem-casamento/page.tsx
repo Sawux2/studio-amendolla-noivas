@@ -30,8 +30,8 @@ const articleData = {
   description: pageData.article.description,
   author: pageData.article.author,
   datePublished: pageData.article.datePublished,
-  image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
-  url: "https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento",
+  image: pageData.article.image.map((img) => `https://studio-amendolla-noivas.vercel.app${img}`),
+  url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/dicas-maquiagem-casamento",
 };
 
 const breadcrumbData = {
@@ -40,19 +40,19 @@ const breadcrumbData = {
       "@type": "ListItem",
       position: 1,
       name: "Início",
-      item: "https://www.studioamendollanoivas.com.br"
+      item: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Blog",
-      item: "https://www.studioamendollanoivas.com.br/blog"
+      item: "https://studio-amendolla-noivas.vercel.app/blog"
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Dicas de Maquiagem para Casamento",
-      item: "https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento"
+      item: "https://studio-amendolla-noivas.vercel.app/paginaSeo/dicas-maquiagem-casamento"
     }
   ]
 };
@@ -90,7 +90,7 @@ const serviceSchemaData = {
 
 const organizationData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: "Especialistas em maquiagem para noivas em São Paulo",
   logoUrl: "/images/logo.webp",
   telephone: "+55 11 97767-0498",
@@ -100,7 +100,7 @@ const organizationData = {
 
 const websiteData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: pageData.article.description,
   inLanguage: "pt-BR",
   keywords: ["dicas maquiagem noiva", "maquiagem casamento", "tutorial noivas"],
@@ -109,8 +109,8 @@ const websiteData = {
 const imageSchemaData = {
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  url: "https://www.studioamendollanoivas.com.br/images/dicas-maquiagem-casamento.webp",
-  contentUrl: "https://www.studioamendollanoivas.com.br/images/dicas-maquiagem-casamento.webp",
+  url: "https://studio-amendolla-noivas.vercel.app/images/dicas-maquiagem-casamento.webp",
+  contentUrl: "https://studio-amendolla-noivas.vercel.app/images/dicas-maquiagem-casamento.webp",
   description: pageData.article.description,
   width: 1200,
   height: 630,
@@ -133,11 +133,11 @@ const DicasMaquiagemCasamentoPage = () => {
       <Head>
         <title>{pageData.article.headline}</title>
         <meta name="description" content={pageData.article.description} />
-        <meta property="og:image" content={`https://www.studioamendollanoivas.com.br${pageData.article.image[0]}`} />
+        <meta property="og:image" content={`https://studio-amendolla-noivas.vercel.app${pageData.article.image[0]}`} />
         <meta property="og:title" content={pageData.article.headline} />
         <meta property="og:description" content={pageData.article.description} />
-        <meta property="og:url" content="https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento" />
-        <link rel="canonical" href="https://www.studioamendollanoivas.com.br/paginaSeo/dicas-maquiagem-casamento" />
+        <meta property="og:url" content="https://studio-amendolla-noivas.vercel.app/paginaSeo/dicas-maquiagem-casamento" />
+        <link rel="canonical" href="https://studio-amendolla-noivas.vercel.app/paginaSeo/dicas-maquiagem-casamento" />
       </Head>
 
       <script

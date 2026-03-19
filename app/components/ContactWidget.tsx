@@ -36,7 +36,7 @@ const serviceLinks = [
   { name: "SPA", link: "/spa" },
   { name: "Nosso Espaço", link: "/nosso-espaco" },
   { name: "Galeria de fotos", link: "/galeria-de-fotos-maquiagem-e-penteados" },
-  { name: "Home", link: "https://studioamendollanoivas.com.br/" },
+  { name: "Home", link: "https://studio-amendolla-noivas.vercel.app/" },
 ];
 
 const ContactWidget = () => {

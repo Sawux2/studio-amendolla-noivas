@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 const CanonicalURL = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentUrl = `https://www.studioamendollanoivas.com.br${pathname}${searchParams ? `?${searchParams.toString()}` : ''}`;
+  const currentUrl = `https://studio-amendolla-noivas.vercel.app${pathname}${searchParams ? `?${searchParams.toString()}` : ''}`;
 
   React.useEffect(() => {
     const canonicalElement = document.querySelector('link[rel="canonical"]');

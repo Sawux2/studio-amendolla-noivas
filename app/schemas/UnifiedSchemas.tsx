@@ -80,15 +80,15 @@ export const generateServiceSchema = (services: ServiceItem[]) => ({
   provider: {
     "@type": "Organization",
     "name": "Studio Amendolla Noivas",
-    "url": "https://www.studioamendollanoivas.com.br",
+    "url": "https://studio-amendolla-noivas.vercel.app",
   },
   offers: services.map(service => ({
     "@type": "Offer",
     "description": service.description,
-    "image": service.image || "https://www.studioamendollanoivas.com.br/images/dia-da-noiva-1.webp", // Imagem padrão se não houver
+    "image": service.image || "https://studio-amendolla-noivas.vercel.app/images/dia-da-noiva-1.webp", // Imagem padrão se não houver
     "priceCurrency": "BRL",
     "price": "Consultar",
-    "url": "https://www.studioamendollanoivas.com.br/servicos"
+    "url": "https://studio-amendolla-noivas.vercel.app/servicos"
   })),
 });
 export const generateBreadcrumbSchema = (breadcrumbs: Breadcrumb[]) => ({
@@ -129,7 +129,7 @@ export const generateImageObjectSchema = (images: ImageObjectProps[]) =>
     },
     creditText: 'Fotografia por Studio Amendolla Noivas',
     copyrightNotice: '© Studio Amendolla Noivas 2024',
-    acquireLicensePage: 'https://www.studioamendollanoivas.com.br',
+    acquireLicensePage: 'https://studio-amendolla-noivas.vercel.app',
     creator: {
       '@type': 'Organization',
       name: 'Studio Amendolla Noivas',

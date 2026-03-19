@@ -43,7 +43,7 @@ const MaquiagemNoivaZonaNortePage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -54,12 +54,12 @@ const MaquiagemNoivaZonaNortePage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Maquiagem de Noiva Zona Norte', url: 'https://www.studioamendollanoivas.com.br/maquiagem-noiva-zona-norte' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Maquiagem de Noiva Zona Norte', url: 'https://studio-amendolla-noivas.vercel.app/maquiagem-noiva-zona-norte' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Maquiagem de noiva na Zona Norte no Studio Amendolla - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,

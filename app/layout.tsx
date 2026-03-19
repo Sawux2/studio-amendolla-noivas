@@ -34,7 +34,7 @@ export default function RootLayout({ children, pageData }: LayoutProps) {
   const defaultSEO: SEOProps = {
     title: 'Studio Amendolla Noivas',
     description: 'Salão especializado em maquiagem, penteados e pacotes de dia da noiva.',
-    image: 'https://www.studioamendollanoivas.com.br/images/favicon.ico',
+    image: 'https://studio-amendolla-noivas.vercel.app/images/favicon.ico',
     keywords: 'maquiagem para noivas, penteados para noivas, maquiagem para madrinhas, maquiagem debutantes, dia da noiva',
   };
 

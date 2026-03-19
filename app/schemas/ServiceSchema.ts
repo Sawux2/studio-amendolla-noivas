@@ -40,11 +40,11 @@ export const ServiceSchema: React.FC<{ data: ServiceProps }> = ({ data }) => {
       areaServed: data.areaServed,
       ...(data.image && {
         image: data.image.map(img => 
-          `https://www.studioamendollanoivas.com.br${img}`
+          `https://studio-amendolla-noivas.vercel.app${img}`
         )
       }),
       ...(data.url && { 
-        url: `https://www.studioamendollanoivas.com.br${data.url}` 
+        url: `https://studio-amendolla-noivas.vercel.app${data.url}` 
       }),
       ...(data.price && {
         offers: {
@@ -65,7 +65,7 @@ export const ServiceSchema: React.FC<{ data: ServiceProps }> = ({ data }) => {
         offers: data.offers.map(offer => ({
           '@type': 'Offer',
           ...offer,
-          url: `https://www.studioamendollanoivas.com.br${data.url}`
+          url: `https://studio-amendolla-noivas.vercel.app${data.url}`
         }))
       })
     };

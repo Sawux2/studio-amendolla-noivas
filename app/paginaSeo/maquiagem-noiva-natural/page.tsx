@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Maquiagem Noiva Natural",
-      url: "https://studioamendollanoivas.com.br/maquiagem-noiva-natural"
+      url: "https://studio-amendolla-noivas.vercel.app/maquiagem-noiva-natural"
     }
   ],
   images: [

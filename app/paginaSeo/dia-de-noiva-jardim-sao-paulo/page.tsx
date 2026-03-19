@@ -62,11 +62,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Dia de Noiva Jardim São Paulo",
-      url: "https://studioamendollanoivas.com.br/dia-de-noiva-jardim-sao-paulo"
+      url: "https://studio-amendolla-noivas.vercel.app/dia-de-noiva-jardim-sao-paulo"
     }
   ],
   images: [

@@ -19,7 +19,7 @@ export const BreadcrumbSchema: React.FC<{ data: BreadcrumbProps }> = ({ data }) 
         '@type': 'ListItem',
         position: item.position,
         name: item.name,
-        item: `https://www.studioamendollanoivas.com.br${item.item}`
+        item: `https://studio-amendolla-noivas.vercel.app${item.item}`
       }))
     };
 

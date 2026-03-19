@@ -43,7 +43,7 @@ const SalaoMaquiagemPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-17',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -54,12 +54,12 @@ const SalaoMaquiagemPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Tendências de Maquiagem para Noivas 2024', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/tendencias-maquiagem-noivas-2024' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Tendências de Maquiagem para Noivas 2024', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/tendencias-maquiagem-noivas-2024' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Tendências de Maquiagem para Noivas 2024 - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,
@@ -71,7 +71,7 @@ const SalaoMaquiagemPage = () => {
         name: 'Studio Amendolla',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+          url: 'https://studio-amendolla-noivas.vercel.app/images/logo.webp', // URL do logo do Studio Amendolla
         },
       },
       inLanguage: 'pt-BR', // Idioma da imagem

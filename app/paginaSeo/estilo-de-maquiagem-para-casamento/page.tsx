@@ -31,19 +31,19 @@ const pageData = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.studioamendollanoivas.com.br",
+      item: "https://studio-amendolla-noivas.vercel.app",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Serviços",
-      item: "https://www.studioamendollanoivas.com.br/servicos",
+      item: "https://studio-amendolla-noivas.vercel.app/servicos",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Estilo de Maquiagem para Casamento",
-      item: "https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-para-casamento",
+      item: "https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-para-casamento",
     },
   ],
   faq: [
@@ -75,7 +75,7 @@ const pageData = {
   },
   organization: {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -84,7 +84,7 @@ const pageData = {
   },
   website: {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description:
       "Escolha o estilo de maquiagem perfeito para o seu grande dia. No Studio Amendolla, criamos maquiagens personalizadas para noivas, com acabamentos sofisticados e duradouros.",
     inLanguage: "pt-BR",
@@ -93,8 +93,8 @@ const pageData = {
   imageSchema: {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    url: "https://www.studioamendollanoivas.com.br/images/maquiagem-para-casamento.webp",
-    contentUrl: "https://www.studioamendollanoivas.com.br/images/maquiagem-para-casamento.webp",
+    url: "https://studio-amendolla-noivas.vercel.app/images/maquiagem-para-casamento.webp",
+    contentUrl: "https://studio-amendolla-noivas.vercel.app/images/maquiagem-para-casamento.webp",
     description: "Maquiagem personalizada para casamento em São Paulo",
     width: 800,
     height: 600,
@@ -118,8 +118,8 @@ const EstiloDeMaquiagemParaCasamentoPage = () => {
     description: pageData.article.description,
     author: pageData.article.author,
     datePublished: pageData.article.datePublished,
-    image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-para-casamento",
+    image: pageData.article.image.map((img) => `https://studio-amendolla-noivas.vercel.app${img}`),
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-para-casamento",
   };
 
   return (

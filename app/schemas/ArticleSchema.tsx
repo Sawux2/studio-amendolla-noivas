@@ -27,13 +27,13 @@ export const ArticleSchema: React.FC<{ data: ArticleProps }> = ({ data }) => {
       },
       datePublished: data.datePublished,
       image: data.image,
-      url: data.url || 'https://www.studioamendollanoivas.com.br',
+      url: data.url || 'https://studio-amendolla-noivas.vercel.app',
       publisher: {
         '@type': 'Organization',
         name: data.publisher?.name || 'Studio Amendolla Noivas',
         logo: {
           '@type': 'ImageObject',
-          url: data.publisher?.logo || 'https://www.studioamendollanoivas.com.br/logo.png'
+          url: data.publisher?.logo || 'https://studio-amendolla-noivas.vercel.app/logo.png'
         }
       }
     };

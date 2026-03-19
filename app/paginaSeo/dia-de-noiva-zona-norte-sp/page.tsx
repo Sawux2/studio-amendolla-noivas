@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Dia da Noiva",
-      url: "https://studioamendollanoivas.com.br/dia-da-noiva-zona-norte"
+      url: "https://studio-amendolla-noivas.vercel.app/dia-da-noiva-zona-norte"
     }
   ],
   images: [

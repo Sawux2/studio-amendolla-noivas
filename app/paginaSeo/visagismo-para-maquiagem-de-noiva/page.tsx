@@ -73,7 +73,7 @@ const VisagismoParaNoivaMaquiagemPage = () => {
       description: serviceData.description,
       author: "Studio Amendolla",
       datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -84,12 +84,12 @@ const VisagismoParaNoivaMaquiagemPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Visagismo para Noiva - Maquiagem", url: "https://www.studioamendollanoivas.com.br/paginaSeo/visagismo-maquiagem-noiva" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Visagismo para Noiva - Maquiagem", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/visagismo-maquiagem-noiva" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Visagismo para Noiva - Maquiagem - Studio Amendolla",
       width: 600,
       height: 400,
@@ -101,7 +101,7 @@ const VisagismoParaNoivaMaquiagemPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",

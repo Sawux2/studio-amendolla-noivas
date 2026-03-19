@@ -50,7 +50,7 @@ const SpaPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceImages[0].src}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceImages[0].src}`,
     },
     services: [
       {
@@ -61,12 +61,12 @@ const SpaPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'SPA e Relaxamento', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/spa-relaxamento' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'SPA e Relaxamento', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/spa-relaxamento' },
     ],
     images: serviceImages.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image.src}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image.src}`,
       description: image.alt,
       width: 600,
       height: 400,
@@ -78,7 +78,7 @@ const SpaPage = () => {
         name: 'Studio Amendolla',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+          url: 'https://studio-amendolla-noivas.vercel.app/images/logo.webp', // URL do logo do Studio Amendolla
         },
       },
       inLanguage: 'pt-BR', // Idioma da imagem

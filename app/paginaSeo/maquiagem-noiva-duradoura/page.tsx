@@ -56,7 +56,7 @@ const MaquiagemNoivaDuradouraPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-10',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -67,12 +67,12 @@ const MaquiagemNoivaDuradouraPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Maquiagem Duradoura para Noivas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-duradoura-noiva' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Maquiagem Duradoura para Noivas', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiagem-duradoura-noiva' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Maquiagem Duradoura para Noivas no Studio Amendolla - Beleza que Dura Todo o Dia`,
       width: 600,
       height: 400,
@@ -84,7 +84,7 @@ const MaquiagemNoivaDuradouraPage = () => {
         name: 'Studio Amendolla',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+          url: 'https://studio-amendolla-noivas.vercel.app/images/logo.webp', // URL do logo do Studio Amendolla
         },
       },
       inLanguage: 'pt-BR', // Idioma da imagem

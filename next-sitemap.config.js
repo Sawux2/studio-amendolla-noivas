@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://studioamendollanoivas.com.br',
+  siteUrl: 'https://studio-amendolla-noivas.vercel.app',
   generateRobotsTxt: true,
   // Não exclua as páginas da pasta /paginaSeo
   // exclude: ['/paginaSeo/*'], // Remova ou ajuste essa linha conforme necessário

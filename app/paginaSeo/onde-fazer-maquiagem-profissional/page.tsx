@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Onde Fazer Maquiagem Profissional",
-      url: "https://studioamendollanoivas.com.br/onde-fazer-maquiagem-profissional"
+      url: "https://studio-amendolla-noivas.vercel.app/onde-fazer-maquiagem-profissional"
     }
   ],
   images: [

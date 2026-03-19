@@ -53,7 +53,7 @@ const NossoEspacoPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -64,12 +64,12 @@ const NossoEspacoPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Nosso Espaço', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/nosso-espaco' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Nosso Espaço', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/nosso-espaco' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Nosso espaço no Studio Amendolla - Imagem ${index + 1}`,
       width: 600,
       height: 400,
@@ -81,7 +81,7 @@ const NossoEspacoPage = () => {
         name: 'Studio Amendolla',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp', // URL do logo do Studio Amendolla
+          url: 'https://studio-amendolla-noivas.vercel.app/images/logo.webp', // URL do logo do Studio Amendolla
         },
       },
       inLanguage: 'pt-BR', // Idioma da imagem

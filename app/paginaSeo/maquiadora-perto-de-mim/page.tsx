@@ -60,7 +60,7 @@ const MaquiadoraPertoDeMimPage = () => {
       description: serviceData.description,
       author: "Priscila Helena",
       datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -71,12 +71,12 @@ const MaquiadoraPertoDeMimPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiadora Perto de Mim", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiadora-perto-de-mim" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Maquiadora Perto de Mim", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiadora-perto-de-mim" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Maquiadora Perto de Mim - Priscila Helena",
       width: 600,
       height: 400,
@@ -88,7 +88,7 @@ const MaquiadoraPertoDeMimPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",

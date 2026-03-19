@@ -14,11 +14,11 @@ export const WebsiteSchema: React.FC<{ data?: WebsiteProps }> = ({ data }) => {
   useEffect(() => {
     const defaultData = {
       name: 'Studio Amendolla Noivas',
-      url: 'https://www.studioamendollanoivas.com.br',
+      url: 'https://studio-amendolla-noivas.vercel.app',
       description: 'Especialistas em maquiagem e penteados para noivas em São Paulo',
       inLanguage: 'pt-BR',
       keywords: ['maquiagem noiva', 'penteado noiva', 'São Paulo'],
-      searchTemplate: 'https://www.studioamendollanoivas.com.br/search?q={search_term_string}'
+      searchTemplate: 'https://studio-amendolla-noivas.vercel.app/search?q={search_term_string}'
     };
 
     const websiteData = {

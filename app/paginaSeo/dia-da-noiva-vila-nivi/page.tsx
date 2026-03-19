@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Dia da Noiva na Vila Nivi",
-      url: "https://studioamendollanoivas.com.br/dia-da-noiva-vila-nivi"
+      url: "https://studio-amendolla-noivas.vercel.app/dia-da-noiva-vila-nivi"
     }
   ],
   images: [

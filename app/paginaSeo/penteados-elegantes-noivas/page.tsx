@@ -64,7 +64,7 @@ const PenteadosElegantesNoivasPage = () => {
       description: serviceData.description,
       author: "Equipe Studio Amendolla",
       datePublished: "2025-01-20",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -75,12 +75,12 @@ const PenteadosElegantesNoivasPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Penteados Elegantes para Noivas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/penteados-elegantes-noivas" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Penteados Elegantes para Noivas", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/penteados-elegantes-noivas" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Penteados Elegantes para Noivas",
       width: 600,
       height: 400,
@@ -92,7 +92,7 @@ const PenteadosElegantesNoivasPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",

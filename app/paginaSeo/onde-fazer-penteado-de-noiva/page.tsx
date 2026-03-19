@@ -57,7 +57,7 @@ const PenteadoNoivaPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-10',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -68,12 +68,12 @@ const PenteadoNoivaPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Início', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Penteado de Noiva', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/penteado-noiva' },
+      { name: 'Início', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Penteado de Noiva', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/penteado-noiva' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: 'Penteado de Noiva no Studio Amendolla',
       width: 600,
       height: 400,
@@ -85,7 +85,7 @@ const PenteadoNoivaPage = () => {
         name: 'Studio Amendolla',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.studioamendollanoivas.com.br/images/logo.webp',
+          url: 'https://studio-amendolla-noivas.vercel.app/images/logo.webp',
         },
       },
       inLanguage: 'pt-BR',

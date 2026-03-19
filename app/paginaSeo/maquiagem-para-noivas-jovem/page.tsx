@@ -61,7 +61,7 @@ const MaquiagemNoivaJovemPage = () => {
       description: serviceData.description,
       author: "Priscila Amendolla",
       datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -72,12 +72,12 @@ const MaquiagemNoivaJovemPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiagem para Noiva Jovem", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-para-noiva-jovem" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Maquiagem para Noiva Jovem", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiagem-para-noiva-jovem" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Maquiagem para Noiva Jovem - Studio Amendolla",
       width: 600,
       height: 400,
@@ -89,7 +89,7 @@ const MaquiagemNoivaJovemPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",

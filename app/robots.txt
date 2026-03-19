@@ -9,4 +9,4 @@ Allow: /
 Disallow: /*?*
 
 # Sitemap para facilitar o rastreamento do site
-Sitemap: https://www.studioamendollanoivas.com.br/sitemap.xml
+Sitemap: https://studio-amendolla-noivas.vercel.app/sitemap.xml

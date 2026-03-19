@@ -19,7 +19,7 @@ export default function HomePage() {
       description: pageDescription,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: 'https://www.studioamendollanoivas.com.br/images/studio-amendolla-noivas.webp',
+      image: 'https://studio-amendolla-noivas.vercel.app/images/studio-amendolla-noivas.webp',
     },
     faq: [
       { question: 'Qual o preço da maquiagem?', answer: 'consulte nossos com uma base , em nossa calculadora.' },

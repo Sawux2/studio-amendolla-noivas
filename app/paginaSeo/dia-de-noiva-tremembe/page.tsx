@@ -65,11 +65,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Dia de Noiva Tremembé",
-      url: "https://studioamendollanoivas.com.br/dia-de-noiva-tremembe"
+      url: "https://studio-amendolla-noivas.vercel.app/dia-de-noiva-tremembe"
     }
   ],
   images: [
