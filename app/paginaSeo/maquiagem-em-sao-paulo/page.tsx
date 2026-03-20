@@ -42,7 +42,7 @@ const MaquiagemSaoPauloPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -53,12 +53,12 @@ const MaquiagemSaoPauloPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Maquiagem em São Paulo', url: 'https://www.studioamendollanoivas.com.br/maquiagem-sao-paulo' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Maquiagem em São Paulo', url: 'https://studio-amendolla-noivas.vercel.app/maquiagem-sao-paulo' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Maquiagem em São Paulo no Studio Amendolla - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,

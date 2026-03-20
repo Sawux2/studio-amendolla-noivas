@@ -71,9 +71,9 @@ const MaquiagemCasamentoDiaPage = () => {
     author: "Priscila Helena",
     datePublished: "2025-01-18",
     image: serviceData.images.map(img => 
-      `https://www.studioamendollanoivas.com.br${img}`
+      `https://studio-amendolla-noivas.vercel.app${img}`
     ),
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/amendolla"
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/amendolla"
   };
 
   const breadcrumbData = {
@@ -94,7 +94,7 @@ const MaquiagemCasamentoDiaPage = () => {
     provider: "Studio Amendolla",
     areaServed: "São Paulo",
     image: serviceData.images.map(img => 
-      `https://www.studioamendollanoivas.com.br${img}`
+      `https://studio-amendolla-noivas.vercel.app${img}`
     ),
     url: "/paginaSeo/amendolla",
     serviceType: "Maquiagem para Noivas",
@@ -108,7 +108,7 @@ const MaquiagemCasamentoDiaPage = () => {
 
   const organizationData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -129,7 +129,7 @@ const MaquiagemCasamentoDiaPage = () => {
 
   const websiteData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     inLanguage: "pt-BR",
     keywords: ["maquiagem noiva", "casamento de dia", "São Paulo"]
@@ -146,7 +146,7 @@ const MaquiagemCasamentoDiaPage = () => {
     representativeOfPage: index === 0,
     creator: {
       name: "Studio Amendolla",
-      url: "https://www.studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     datePublished: "2024-05-17"
   }));

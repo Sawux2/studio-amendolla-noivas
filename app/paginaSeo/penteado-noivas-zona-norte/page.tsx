@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Penteado para Noivas",
-      url: "https://studioamendollanoivas.com.br/penteado-noivas-zona-norte"
+      url: "https://studio-amendolla-noivas.vercel.app/penteado-noivas-zona-norte"
     }
   ],
   images: [

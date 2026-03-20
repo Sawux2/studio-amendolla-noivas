@@ -65,7 +65,7 @@ const MaquiagemPeleNegraPage = () => {
       description: serviceData.description,
       author: "Studio Amendolla",
       datePublished: "2025-02-24",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -76,12 +76,12 @@ const MaquiagemPeleNegraPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiagem para Pele Negra", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-pele-negra" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Maquiagem para Pele Negra", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiagem-pele-negra" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Maquiagem Profissional para Pele Negra",
       width: 600,
       height: 400,

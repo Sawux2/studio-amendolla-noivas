@@ -60,11 +60,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Eventos Especiais",
-      url: "https://studioamendollanoivas.com.br/eventos-cha-de-bebe-zona-norte"
+      url: "https://studio-amendolla-noivas.vercel.app/eventos-cha-de-bebe-zona-norte"
     }
   ],
   images: [

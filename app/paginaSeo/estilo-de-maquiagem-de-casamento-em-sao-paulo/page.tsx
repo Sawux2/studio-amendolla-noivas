@@ -31,19 +31,19 @@ const pageData = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.studioamendollanoivas.com.br",
+      item: "https://studio-amendolla-noivas.vercel.app",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Serviços",
-      item: "https://www.studioamendollanoivas.com.br/servicos",
+      item: "https://studio-amendolla-noivas.vercel.app/servicos",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Maquiagem de Casamento",
-      item: "https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo",
+      item: "https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo",
     },
   ],
   faq: [
@@ -75,7 +75,7 @@ const pageData = {
   },
   organization: {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -84,7 +84,7 @@ const pageData = {
   },
   website: {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description:
       "Escolher o estilo de maquiagem ideal para o seu casamento é essencial para garantir um visual deslumbrante no grande dia.",
     inLanguage: "pt-BR",
@@ -93,8 +93,8 @@ const pageData = {
   imageSchema: {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    url: "https://www.studioamendollanoivas.com.br/images/maquiagem-casamento-sao-paulo.webp",
-    contentUrl: "https://www.studioamendollanoivas.com.br/images/maquiagem-casamento-sao-paulo.webp",
+    url: "https://studio-amendolla-noivas.vercel.app/images/maquiagem-casamento-sao-paulo.webp",
+    contentUrl: "https://studio-amendolla-noivas.vercel.app/images/maquiagem-casamento-sao-paulo.webp",
     description: "Maquiagem de casamento em São Paulo",
     width: 800,
     height: 600,
@@ -118,8 +118,8 @@ const EstiloDeMaquiagemDeCasamentoSPPage = () => {
     description: pageData.article.description,
     author: pageData.article.author,
     datePublished: pageData.article.datePublished,
-    image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo",
+    image: pageData.article.image.map((img) => `https://studio-amendolla-noivas.vercel.app${img}`),
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo",
   };
 
   return (
@@ -129,9 +129,9 @@ const EstiloDeMaquiagemDeCasamentoSPPage = () => {
         <meta name="description" content={pageData.article.description} />
         <meta property="og:title" content={pageData.article.headline} />
         <meta property="og:description" content={pageData.article.description} />
-        <meta property="og:url" content="https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo" />
-        <meta property="og:image" content={`https://www.studioamendollanoivas.com.br${pageData.article.image[0]}`} />
-        <link rel="canonical" href="https://www.studioamendollanoivas.com.br/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo" />
+        <meta property="og:url" content="https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo" />
+        <meta property="og:image" content={`https://studio-amendolla-noivas.vercel.app${pageData.article.image[0]}`} />
+        <link rel="canonical" href="https://studio-amendolla-noivas.vercel.app/paginaSeo/estilo-de-maquiagem-de-casamento-em-sao-paulo" />
       </Head>
 
       {/* JSON-LD direto */}

@@ -1,0 +1,350 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  ARTIST
+  ASSISTANT
+}
+
+enum LeadStatus {
+  NEW
+  QUALIFYING
+  QUOTED
+  NEGOTIATING
+  WON
+  LOST
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING
+  PARTIAL
+  PAID
+  REFUNDED
+  OVERDUE
+}
+
+enum ContentStatus {
+  DRAFT
+  REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String        @unique
+  passwordHash String?
+  role         UserRole      @default(ADMIN)
+  phone        String?
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  leads        Lead[]        @relation("LeadOwner")
+  appointments Appointment[] @relation("AppointmentArtist")
+  quotes       Quote[]       @relation("QuoteAuthor")
+  auditLogs    AuditLog[]
+}
+
+model Client {
+  id            String        @id @default(cuid())
+  fullName      String
+  email         String?
+  phone         String
+  whatsapp      String?
+  eventDate     DateTime?
+  eventLocation String?
+  ceremonyTime  String?
+  notes         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  leads         Lead[]
+  appointments  Appointment[]
+  quotes        Quote[]
+  payments      Payment[]
+}
+
+model LeadSource {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  leads       Lead[]
+}
+
+model Lead {
+  id              String      @id @default(cuid())
+  clientId        String?
+  sourceId        String?
+  ownerId         String?
+  name            String
+  email           String?
+  phone           String
+  whatsapp        String?
+  serviceInterest String
+  eventDate       DateTime?
+  eventLocation   String?
+  budgetRange     String?
+  message         String?
+  status          LeadStatus  @default(NEW)
+  score           Int         @default(0)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  client          Client?     @relation(fields: [clientId], references: [id])
+  source          LeadSource? @relation(fields: [sourceId], references: [id])
+  owner           User?       @relation("LeadOwner", fields: [ownerId], references: [id])
+  quotes          Quote[]
+
+  @@index([status, eventDate])
+}
+
+model ServiceCategory {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  services    Service[]
+}
+
+model Service {
+  id               String               @id @default(cuid())
+  categoryId       String?
+  name             String
+  slug             String               @unique
+  shortDescription String
+  fullDescription  String?
+  durationMinutes  Int
+  basePriceCents   Int?
+  isActive         Boolean              @default(true)
+  isFeatured       Boolean              @default(false)
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  category         ServiceCategory?     @relation(fields: [categoryId], references: [id])
+  packageItems     PackageItem[]
+  appointmentItems AppointmentService[]
+  quoteItems       QuoteItem[]
+}
+
+model Package {
+  id                 String        @id @default(cuid())
+  name               String
+  slug               String        @unique
+  description        String?
+  startingPriceCents Int?
+  isActive           Boolean       @default(true)
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  items              PackageItem[]
+  quotes             Quote[]
+}
+
+model PackageItem {
+  id        String  @id @default(cuid())
+  packageId String
+  serviceId String
+  quantity  Int     @default(1)
+  sortOrder Int     @default(0)
+  package   Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  service   Service @relation(fields: [serviceId], references: [id])
+
+  @@unique([packageId, serviceId])
+}
+
+model Appointment {
+  id        String               @id @default(cuid())
+  clientId  String
+  artistId  String?
+  title     String
+  startAt   DateTime
+  endAt     DateTime
+  status    AppointmentStatus    @default(PENDING)
+  location  String?
+  notes     String?
+  createdAt DateTime             @default(now())
+  updatedAt DateTime             @updatedAt
+  client    Client               @relation(fields: [clientId], references: [id])
+  artist    User?                @relation("AppointmentArtist", fields: [artistId], references: [id])
+  services  AppointmentService[]
+
+  @@index([startAt, status])
+}
+
+model AppointmentService {
+  id            String      @id @default(cuid())
+  appointmentId String
+  serviceId     String
+  quantity      Int         @default(1)
+  appointment   Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  service       Service     @relation(fields: [serviceId], references: [id])
+
+  @@unique([appointmentId, serviceId])
+}
+
+model AvailabilityRule {
+  id          String   @id @default(cuid())
+  artistId    String?
+  weekday     Int
+  startTime   String
+  endTime     String
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  artistId  String?
+  startAt   DateTime
+  endAt     DateTime
+  reason    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Quote {
+  id            String      @id @default(cuid())
+  clientId      String
+  leadId        String?
+  packageId     String?
+  authorId      String?
+  title         String
+  status        QuoteStatus @default(DRAFT)
+  subtotalCents Int         @default(0)
+  discountCents Int         @default(0)
+  totalCents    Int         @default(0)
+  validUntil    DateTime?
+  notes         String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  client        Client      @relation(fields: [clientId], references: [id])
+  lead          Lead?       @relation(fields: [leadId], references: [id])
+  package       Package?    @relation(fields: [packageId], references: [id])
+  author        User?       @relation("QuoteAuthor", fields: [authorId], references: [id])
+  items         QuoteItem[]
+  payments      Payment[]
+}
+
+model QuoteItem {
+  id              String   @id @default(cuid())
+  quoteId         String
+  serviceId       String?
+  description     String
+  quantity        Int      @default(1)
+  unitPriceCents  Int      @default(0)
+  totalPriceCents Int      @default(0)
+  quote           Quote    @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  service         Service? @relation(fields: [serviceId], references: [id])
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  clientId    String
+  quoteId     String?
+  status      PaymentStatus @default(PENDING)
+  amountCents Int
+  method      String?
+  paidAt      DateTime?
+  dueAt       DateTime?
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  client      Client        @relation(fields: [clientId], references: [id])
+  quote       Quote?        @relation(fields: [quoteId], references: [id])
+}
+
+model GalleryItem {
+  id          String        @id @default(cuid())
+  title       String
+  slug        String        @unique
+  imageUrl    String
+  altText     String
+  description String?
+  category    String?
+  isFeatured  Boolean       @default(false)
+  status      ContentStatus @default(PUBLISHED)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model SeoPage {
+  id              String        @id @default(cuid())
+  title           String
+  slug            String        @unique
+  metaTitle       String
+  metaDescription String
+  canonicalUrl    String?
+  schemaType      String?
+  heroTitle       String?
+  heroDescription String?
+  content         String?
+  faqJson         Json?
+  status          ContentStatus @default(DRAFT)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model BlogPost {
+  id            String        @id @default(cuid())
+  title         String
+  slug          String        @unique
+  excerpt       String
+  content       String
+  coverImageUrl String?
+  status        ContentStatus @default(DRAFT)
+  publishedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Testimonial {
+  id         String        @id @default(cuid())
+  authorName String
+  authorRole String?
+  quote      String
+  rating     Int?
+  source     String?
+  status     ContentStatus @default(PUBLISHED)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  payload   Json?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([entity, entityId])
+}

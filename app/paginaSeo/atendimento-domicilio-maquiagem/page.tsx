@@ -31,8 +31,8 @@ const articleData = {
   description: pageData.article.description,
   author: pageData.article.author,
   datePublished: pageData.article.datePublished,
-  image: pageData.article.image.map((img) => `https://www.studioamendollanoivas.com.br${img}`),
-  url: "https://www.studioamendollanoivas.com.br/paginaSeo/atendimento-domicilio-maquiagem",
+  image: pageData.article.image.map((img) => `https://studio-amendolla-noivas.vercel.app${img}`),
+  url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/atendimento-domicilio-maquiagem",
 };
 
 const breadcrumbData = {
@@ -72,7 +72,7 @@ const serviceSchemaData = {
 
 const organizationData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
   logoUrl: "/images/logo.webp",
   telephone: "+55 11 97767-0498",
@@ -83,7 +83,7 @@ const organizationData = {
 
 const websiteData = {
   name: "Studio Amendolla Noivas",
-  url: "https://www.studioamendollanoivas.com.br",
+  url: "https://studio-amendolla-noivas.vercel.app",
   description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
   inLanguage: "pt-BR",
   keywords: ["maquiagem noiva", "atendimento domicílio", "São Paulo"],

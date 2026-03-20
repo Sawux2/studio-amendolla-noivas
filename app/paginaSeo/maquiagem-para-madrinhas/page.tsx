@@ -67,7 +67,7 @@ const MaquiagemMadrinhasPage = () => {
       description: serviceData.description,
       author: "Studio Amendolla",
       datePublished: "2025-01-30",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -78,12 +78,12 @@ const MaquiagemMadrinhasPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Maquiagem para Madrinhas", url: "https://www.studioamendollanoivas.com.br/paginaSeo/maquiagem-para-madrinhas" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Maquiagem para Madrinhas", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/maquiagem-para-madrinhas" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Maquiagem Profissional para Madrinhas",
       width: 600,
       height: 400,
@@ -95,7 +95,7 @@ const MaquiagemMadrinhasPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",

@@ -64,7 +64,7 @@ const MassagemRelaxantePage = () => {
       description: serviceData.description,
       author: "Studio Amendolla",
       datePublished: "2025-02-24",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -75,12 +75,12 @@ const MassagemRelaxantePage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Massagem Relaxante", url: "https://www.studioamendollanoivas.com.br/paginaSeo/massagem-relaxante" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Massagem Relaxante", url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/massagem-relaxante" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Massagem Relaxante para Noivas",
       width: 600,
       height: 400,

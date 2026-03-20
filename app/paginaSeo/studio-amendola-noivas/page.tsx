@@ -10,7 +10,7 @@ export const metadata = {
   author: "Studio Amendolla Noivas",
   robots: "index, follow",
   alternates: {
-    canonical: "https://www.studioamendollanoivas.com.br",
+    canonical: "https://studio-amendolla-noivas.vercel.app",
   },
 };
 

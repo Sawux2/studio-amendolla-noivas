@@ -60,11 +60,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Madrinhas e Convidadas",
-      url: "https://studioamendollanoivas.com.br/maquiagem-madrinhas-convidadas-zona-norte"
+      url: "https://studio-amendolla-noivas.vercel.app/maquiagem-madrinhas-convidadas-zona-norte"
     }
   ],
   images: [

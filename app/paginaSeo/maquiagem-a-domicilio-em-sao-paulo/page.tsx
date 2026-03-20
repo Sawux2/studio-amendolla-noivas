@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Maquiagem a Domicílio em São Paulo",
-      url: "https://studioamendollanoivas.com.br/maquiagem-a-domicilio-em-sao-paulo"
+      url: "https://studio-amendolla-noivas.vercel.app/maquiagem-a-domicilio-em-sao-paulo"
     }
   ],
   images: [

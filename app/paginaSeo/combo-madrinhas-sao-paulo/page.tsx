@@ -60,11 +60,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Combo Madrinhas",
-      url: "https://studioamendollanoivas.com.br/combo-madrinhas-sao-paulo"
+      url: "https://studio-amendolla-noivas.vercel.app/combo-madrinhas-sao-paulo"
     }
   ],
   images: [

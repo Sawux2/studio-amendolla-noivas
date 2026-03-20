@@ -51,15 +51,15 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://www.studioamendollanoivas.com.br",
+      url: "https://studio-amendolla-noivas.vercel.app",
     },
     {
       name: "Serviços",
-      url: "https://www.studioamendollanoivas.com.br/servicos",
+      url: "https://studio-amendolla-noivas.vercel.app/servicos",
     },
     {
       name: "Maquiagem de Casamento",
-      url: "https://www.studioamendollanoivas.com.br/servicos/maquiagem-casamento",
+      url: "https://studio-amendolla-noivas.vercel.app/servicos/maquiagem-casamento",
     },
   ],
   localBusiness: {
@@ -73,7 +73,7 @@ const pageData = {
     },
     telephone: "+5511999999999",
     email: "contato@studioamendollanoivas.com.br",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     openingHours: "Mo-Fr 09:00-18:00",
     image: "/images/logo.webp",
     priceRange: "$$$",

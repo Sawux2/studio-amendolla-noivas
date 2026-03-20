@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Maquiagem para Casamento Diurno",
-      url: "https://studioamendollanoivas.com.br/maquiagem-para-casamento-diurno"
+      url: "https://studio-amendolla-noivas.vercel.app/maquiagem-para-casamento-diurno"
     }
   ],
   images: [

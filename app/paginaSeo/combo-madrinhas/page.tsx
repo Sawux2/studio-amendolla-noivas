@@ -46,7 +46,7 @@ const CombosMadrinhasPage = () => {
       description: serviceData.description,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -57,12 +57,12 @@ const CombosMadrinhasPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: 'Home', url: 'https://www.studioamendollanoivas.com.br' },
-      { name: 'Serviços', url: 'https://www.studioamendollanoivas.com.br/servicos' },
-      { name: 'Combos para Madrinhas', url: 'https://www.studioamendollanoivas.com.br/paginaSeo/combos-para-madrinhas' },
+      { name: 'Home', url: 'https://studio-amendolla-noivas.vercel.app' },
+      { name: 'Serviços', url: 'https://studio-amendolla-noivas.vercel.app/servicos' },
+      { name: 'Combos para Madrinhas', url: 'https://studio-amendolla-noivas.vercel.app/paginaSeo/combos-para-madrinhas' },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: `Combos para madrinhas no Studio Amendolla - ${image.split('-')[2].replace('.webp', '')}`,
       width: 600,
       height: 400,

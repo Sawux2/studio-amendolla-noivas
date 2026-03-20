@@ -53,11 +53,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Maquiagem Noiva Olhos Marcantes",
-      url: "https://studioamendollanoivas.com.br/maquiagem-noiva-olhos-marcantes"
+      url: "https://studio-amendolla-noivas.vercel.app/maquiagem-noiva-olhos-marcantes"
     }
   ],
   images: [

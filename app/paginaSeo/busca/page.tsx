@@ -75,8 +75,8 @@ const BelezaParaEventosPage = () => {
     description: pageData.article.description,
     author: pageData.article.author,
     datePublished: pageData.article.datePublished,
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/busca"
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/busca"
   };
 
   const breadcrumbData = {
@@ -92,7 +92,7 @@ const BelezaParaEventosPage = () => {
     description: pageData.article.description,
     provider: "Studio Amendolla",
     areaServed: "São Paulo",
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
     url: "/paginaSeo/busca",
     serviceType: "Maquiagem e Penteado",
     offers: [{
@@ -105,7 +105,7 @@ const BelezaParaEventosPage = () => {
 
   const organizationData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -126,7 +126,7 @@ const BelezaParaEventosPage = () => {
 
   const websiteData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: pageData.article.description,
     inLanguage: "pt-BR",
     keywords: [
@@ -153,8 +153,8 @@ const BelezaParaEventosPage = () => {
           key={index} 
           data={{
             ...imgData,
-            url: `https://www.studioamendollanoivas.com.br${imgData.url}`,
-            contentUrl: `https://www.studioamendollanoivas.com.br${imgData.url}`,
+            url: `https://studio-amendolla-noivas.vercel.app${imgData.url}`,
+            contentUrl: `https://studio-amendolla-noivas.vercel.app${imgData.url}`,
             caption: imgData.description
           }} 
         />

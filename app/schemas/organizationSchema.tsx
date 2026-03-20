@@ -31,7 +31,7 @@ export const OrganizationSchema: React.FC<{ data: OrganizationSchema }> = ({ dat
       url: data.url,
       logo: {
         '@type': 'ImageObject',
-        url: `https://www.studioamendollanoivas.com.br${data.logoUrl}`,
+        url: `https://studio-amendolla-noivas.vercel.app${data.logoUrl}`,
         width: 112,
         height: 112,
         caption: `Logo ${data.name}`

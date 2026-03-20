@@ -90,7 +90,7 @@ const AlbumDeFotosPage = () => {
             Studio Amendolla. Estamos ansiosos para fazer parte do seu dia especial!
           </p>
           <a
-            href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studioamendollanoivas.com.br%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
+            href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studio-amendolla-noivas.vercel.app%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaButton}

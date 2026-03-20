@@ -54,11 +54,11 @@ const pageData = {
   breadcrumb: [
     {
       name: "Home",
-      url: "https://studioamendollanoivas.com.br"
+      url: "https://studio-amendolla-noivas.vercel.app"
     },
     {
       name: "Beleza para Formatura",
-      url: "https://studioamendollanoivas.com.br/beleza-para-formatura-sao-paulo"
+      url: "https://studio-amendolla-noivas.vercel.app/beleza-para-formatura-sao-paulo"
     }
   ],
   images: [
@@ -80,8 +80,8 @@ export default function BelezaParaFormaturaSPPage() {
     description: pageData.article.description,
     author: pageData.article.author,
     datePublished: pageData.article.datePublished,
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
-    url: "https://www.studioamendollanoivas.com.br/paginaSeo/beleza-para-formatura-sao-paulo"
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
+    url: "https://studio-amendolla-noivas.vercel.app/paginaSeo/beleza-para-formatura-sao-paulo"
   };
 
   const breadcrumbData = {
@@ -97,7 +97,7 @@ export default function BelezaParaFormaturaSPPage() {
     description: pageData.article.description,
     provider: "Studio Amendolla",
     areaServed: "São Paulo",
-    image: [`https://www.studioamendollanoivas.com.br${pageData.article.image}`],
+    image: [`https://studio-amendolla-noivas.vercel.app${pageData.article.image}`],
     url: "/paginaSeo/beleza-para-formatura-sao-paulo",
     serviceType: "Maquiagem e Penteado",
     offers: pageData.services.map(() => ({
@@ -110,7 +110,7 @@ export default function BelezaParaFormaturaSPPage() {
 
   const organizationData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: "Especialistas em maquiagem e penteados para noivas em São Paulo",
     logoUrl: "/images/logo.webp",
     telephone: "+55 11 97767-0498",
@@ -131,7 +131,7 @@ export default function BelezaParaFormaturaSPPage() {
 
   const websiteData = {
     name: "Studio Amendolla Noivas",
-    url: "https://www.studioamendollanoivas.com.br",
+    url: "https://studio-amendolla-noivas.vercel.app",
     description: pageData.article.description,
     inLanguage: "pt-BR",
     keywords: [
@@ -158,8 +158,8 @@ export default function BelezaParaFormaturaSPPage() {
           key={index} 
           data={{
             ...imgData,
-            url: `https://www.studioamendollanoivas.com.br${imgData.url}`,
-            contentUrl: `https://www.studioamendollanoivas.com.br${imgData.url}`,
+            url: `https://studio-amendolla-noivas.vercel.app${imgData.url}`,
+            contentUrl: `https://studio-amendolla-noivas.vercel.app${imgData.url}`,
             caption: imgData.description
           }} 
         />

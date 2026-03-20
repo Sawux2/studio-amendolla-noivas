@@ -67,7 +67,7 @@ const SalaoDiaDaNoivaZonaNorteSPPage = () => {
       description: serviceData.description,
       author: "Priscila Helena",
       datePublished: "2025-01-18",
-      image: `https://www.studioamendollanoivas.com.br${serviceData.image}`,
+      image: `https://studio-amendolla-noivas.vercel.app${serviceData.image}`,
     },
     services: [
       {
@@ -78,12 +78,12 @@ const SalaoDiaDaNoivaZonaNorteSPPage = () => {
     ],
     faq: faqData,
     breadcrumb: [
-      { name: "Início", url: "https://www.studioamendollanoivas.com.br" },
-      { name: "Serviços", url: "https://www.studioamendollanoivas.com.br/servicos" },
-      { name: "Salão Dia da Noiva Zona Norte SP", url: "https://www.studioamendollanoivas.com.br/salao-dia-da-noiva-zona-norte-sp" },
+      { name: "Início", url: "https://studio-amendolla-noivas.vercel.app" },
+      { name: "Serviços", url: "https://studio-amendolla-noivas.vercel.app/servicos" },
+      { name: "Salão Dia da Noiva Zona Norte SP", url: "https://studio-amendolla-noivas.vercel.app/salao-dia-da-noiva-zona-norte-sp" },
     ],
     images: serviceData.images.map((image, index) => ({
-      url: `https://www.studioamendollanoivas.com.br${image}`,
+      url: `https://studio-amendolla-noivas.vercel.app${image}`,
       description: "Salão Dia da Noiva Zona Norte SP - Studio Amendolla",
       width: 600,
       height: 400,
@@ -95,7 +95,7 @@ const SalaoDiaDaNoivaZonaNorteSPPage = () => {
         name: "Studio Amendolla",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.studioamendollanoivas.com.br/images/logo.webp",
+          url: "https://studio-amendolla-noivas.vercel.app/images/logo.webp",
         },
       },
       inLanguage: "pt-BR",
@@ -158,7 +158,7 @@ const SalaoDiaDaNoivaZonaNorteSPPage = () => {
             </div>
           </div>
           <a
-            href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studioamendollanoivas.com.br%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
+            href="https://wa.me/5511977670498?text=Olá%2C%20estou%20visitando%20o%20site%20studio-amendolla-noivas.vercel.app%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
             className={styles.whatsappButton}
             target="_blank"
             rel="noopener noreferrer"
