@@ -7,6 +7,7 @@ import CanonicalURL from './components/CanonicalURL';
 import UnifiedSchemas from './schemas/UnifiedSchemas';
 import { Suspense } from 'react';
 import GaleriaDeFotos from './components/GaleriaDeFotos';
+import { buildAbsoluteUrl } from '@/lib/site-config';
 
 export default function HomePage() {
   const pageTitle = 'Studio Amendolla - Serviços de Maquiagem e Penteados';
@@ -19,7 +20,7 @@ export default function HomePage() {
       description: pageDescription,
       author: 'Priscila Amendolla',
       datePublished: '2024-10-07',
-      image: 'https://studio-amendolla-noivas.vercel.app/images/studio-amendolla-noivas.webp',
+      image: buildAbsoluteUrl('/images/studio-amendolla-noivas.webp'),
     },
     faq: [
       { question: 'Qual o preço da maquiagem?', answer: 'consulte nossos com uma base , em nossa calculadora.' },

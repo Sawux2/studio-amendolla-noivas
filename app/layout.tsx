@@ -8,6 +8,7 @@ import Script from 'next/script';
 import Footer from './components/Footer';
 import ContactWidget from './components/ContactWidget';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { buildAbsoluteUrl, siteConfig } from '@/lib/site-config';
 
 interface SEOProps {
   title?: string;
@@ -32,10 +33,10 @@ interface LayoutProps {
 
 export default function RootLayout({ children, pageData }: LayoutProps) {
   const defaultSEO: SEOProps = {
-    title: 'Studio Amendolla Noivas',
-    description: 'Salão especializado em maquiagem, penteados e pacotes de dia da noiva.',
-    image: 'https://studio-amendolla-noivas.vercel.app/images/favicon.ico',
-    keywords: 'maquiagem para noivas, penteados para noivas, maquiagem para madrinhas, maquiagem debutantes, dia da noiva',
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
+    image: buildAbsoluteUrl(siteConfig.seo.defaultImage),
+    keywords: siteConfig.seo.defaultKeywords,
   };
 
   return (
@@ -53,9 +54,9 @@ export default function RootLayout({ children, pageData }: LayoutProps) {
         <meta property="og:description" content={pageData?.article ? pageData.article.description : defaultSEO.description} />
         <meta property="og:image" content={defaultSEO.image} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Studio Amendolla Noivas" />
+        <meta property="og:site_name" content={siteConfig.name} />
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:see_also" content="https://www.instagram.com/studioamendolla/" />
+        <meta property="og:see_also" content={siteConfig.instagramUrl} />
 
         {/* Scripts */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-3T09H7NL4T" strategy="afterInteractive" />

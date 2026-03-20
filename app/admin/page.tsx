@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { adminModules, adminStats } from '@/lib/admin-data';
+import { siteConfig } from '@/lib/site-config';
 
 const statusStyles = {
   ready: { label: 'Base pronta', bg: '#dcfce7', color: '#166534' },
@@ -20,7 +21,7 @@ export default function AdminPage() {
           }}
         >
           <p style={{ margin: 0, textTransform: 'uppercase', letterSpacing: 1.2, fontSize: 12, color: '#8f5b4d' }}>
-            Studio Amendolla Noivas • Painel SaaS
+            {siteConfig.name} • Painel SaaS
           </p>
           <h1 style={{ margin: '12px 0 16px', fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1 }}>
             Fundação do painel administrativo para operação comercial, agenda e SEO.
@@ -30,6 +31,20 @@ export default function AdminPage() {
             agenda operacional, catálogo de serviços, orçamentos, conteúdo orgânico e analytics do studio.
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
+            <Link
+              href="/admin/seo-pages"
+              style={{
+                padding: '12px 18px',
+                borderRadius: 999,
+                background: '#ffffff',
+                color: '#6f3f34',
+                border: '1px solid #ead3cc',
+                textDecoration: 'none',
+                fontWeight: 600,
+              }}
+            >
+              SEO pages
+            </Link>
             <Link
               href="/"
               style={{

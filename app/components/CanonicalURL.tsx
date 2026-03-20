@@ -1,10 +1,11 @@
 import { usePathname, useSearchParams } from 'next/navigation';
 import React, { Suspense } from 'react';
+import { buildAbsoluteUrl } from '@/lib/site-config';
 
 const CanonicalURL = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentUrl = `https://studio-amendolla-noivas.vercel.app${pathname}${searchParams ? `?${searchParams.toString()}` : ''}`;
+  const currentUrl = buildAbsoluteUrl(`${pathname}${searchParams ? `?${searchParams.toString()}` : ''}`);
 
   React.useEffect(() => {
     const canonicalElement = document.querySelector('link[rel="canonical"]');
